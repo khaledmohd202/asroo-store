@@ -1,0 +1,131 @@
+name: asroo_store
+description: "A new Flutter project."
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  #language
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+
+  # Core
+  connectivity_plus: ^5.0.2
+  flutter_dotenv: ^5.1.0
+  flutter_screenutil: ^5.9.0
+  flutter_native_splash: ^2.3.10
+  get_it: ^7.6.7
+
+  #UI
+  animate_do: ^3.3.2
+  fluttertoast: ^8.2.4
+  flutter_zoom_drawer: ^3.1.2
+  shimmer: ^3.0.0
+  cached_network_image: ^3.3.1
+  flutter_svg: ^2.0.9
+  flutter_animate: ^4.5.0
+  webview_flutter: ^4.7.0
+  package_info_plus: ^5.0.1
+  carousel_slider: ^4.2.1
+  share_plus: ^7.2.2
+  badges: ^3.1.2
+
+  #Bloc
+  flutter_bloc: ^8.1.3
+  #shared preferences
+  shared_preferences: ^2.2.2
+  #freezed
+  freezed_annotation: ^2.4.1
+
+  #Firebase
+  firebase_core: ^2.24.2
+  cloud_firestore: ^4.15.7
+
+  #image picker
+  image_picker: ^1.0.7
+  permission_handler: ^11.2.0
+
+  #APi
+  dio: ^5.4.0
+  pretty_dio_logger: ^1.3.1
+  retrofit: ^4.0.3
+
+  #Notifications
+  firebase_messaging: ^14.7.15
+  intl: 0.19.0
+
+  #local database Hive
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  #Patination
+  equatable: ^2.0.5
+  bloc_concurrency: ^0.2.4
+  firebase_dynamic_links: ^5.4.15
+  flutter_local_notifications: ^16.3.3
+
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^5.1.0
+  flutter_launcher_icons: ^0.13.1
+  flutter_lints: ^2.0.0
+  # dart run build_runner build --delete-conflicting-outputs
+  build_runner: ^2.4.8
+  freezed: ^2.4.6
+  retrofit_generator: ^8.0.6
+  json_serializable: ^6.7.1
+  hive_generator: ^2.0.1
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/icons/app_icon.jpg"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/images/icons/play_store_512.png"
+
+
+flutter:
+
+  uses-material-design: true
+
+
+  assets:
+    - .env.dev
+    - .env.prod
+    - lang/ar.json
+    - lang/en.json
+    - assets/images/core/
+    - assets/images/admin/
+    - assets/images/customer/
+    - assets/svg/
+
+
+  fonts:
+    # Arabic Font
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/arabic/cairo/Cairo-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/arabic/cairo/Cairo-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/arabic/cairo/Cairo-Regular.ttf
+          weight: 400
+    # English Font
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/english/poppins/Poppins-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/english/poppins/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/english/poppins/Poppins-Regular.ttf
+          weight: 400
