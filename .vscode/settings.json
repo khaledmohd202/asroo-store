@@ -6,5 +6,6 @@
         "firestore",
         "fluttertoast",
         "screenutil"
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "automatic"
 }
