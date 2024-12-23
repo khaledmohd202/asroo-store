@@ -13,7 +13,10 @@ class AsrooStoreApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: Scaffold(
-        appBar: AppBar(),
+        // complete the app bar with title khaled
+        appBar: AppBar(
+          
+        ),
       ),
     );
   }
