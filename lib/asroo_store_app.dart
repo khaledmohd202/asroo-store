@@ -14,7 +14,7 @@ class AsrooStoreApp extends StatelessWidget {
         if (value) {
           return MaterialApp(
             debugShowCheckedModeBanner: EnvVariables.instance.debugMode,
-            title: 'Asroo Store',
+            title: 'Asroo',
             theme: ThemeData(
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
