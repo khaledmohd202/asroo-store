@@ -5,6 +5,7 @@
         "dotenv",
         "firestore",
         "fluttertoast",
+        "lerp",
         "screenutil",
         "خالد"
     ],

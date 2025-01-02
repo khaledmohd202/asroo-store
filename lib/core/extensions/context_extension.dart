@@ -1,6 +1,13 @@
+import 'package:asroo/core/style/theme/color_extension.dart';
+import 'package:asroo/core/style/theme/image_extension.dart';
 import 'package:flutter/material.dart';
 
 extension ContextExtension on BuildContext {
+  // Colors
+  MyColors get color => Theme.of(this).extension<MyColors>()!;
+  // Images
+  MyImages get assets => Theme.of(this).extension<MyImages>()!;
+  // Navigator
   Future<dynamic> pushNamed(String routeName, {Object? arguments}) {
     return Navigator.of(this).pushNamed(routeName, arguments: arguments);
   }

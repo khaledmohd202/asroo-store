@@ -2,9 +2,7 @@ import 'package:asroo/core/app/connectivity_controller.dart';
 import 'package:asroo/core/app/env.variables.dart';
 import 'package:asroo/core/common/screens/no_network_screen.dart';
 import 'package:asroo/core/routes/app_routes.dart';
-import 'package:asroo/core/style/fonts/font_family_helper.dart';
-import 'package:asroo/core/style/fonts/font_weight_helper.dart';
-import 'package:asroo/test_one.dart';
+import 'package:asroo/core/style/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -23,10 +21,7 @@ class AsrooStoreApp extends StatelessWidget {
             child: MaterialApp(
               debugShowCheckedModeBanner: EnvVariables.instance.debugMode,
               title: 'Asroo',
-              theme: ThemeData(
-                colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-                useMaterial3: true,
-              ),
+              theme: themeLight(),
               builder: (context, widget) {
                 return Scaffold(
                   body: Builder(
