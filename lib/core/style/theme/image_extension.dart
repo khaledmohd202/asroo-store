@@ -28,6 +28,5 @@ class MyImages extends ThemeExtension<MyImages> {
 
   static const MyImages dark = MyImages(testImage: AppImages.testDark);
 
-  
   static const MyImages light = MyImages(testImage: AppImages.testLight);
 }
