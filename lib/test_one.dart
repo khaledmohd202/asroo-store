@@ -14,17 +14,25 @@ class TestOne extends StatelessWidget {
         backgroundColor: Colors.transparent,
         title: const Text('One'),
       ),
-      body: Center(
-        child: TextButton(
-          onPressed: () {
-            // Navigator.of(context).pushNamed(AppRoutes.testTwo);
-            context.pushNamed(AppRoutes.testTwo);
-          },
-          child: Text(
-            'Go to "Two Screen"',
-            style: TextStyle(color: Colors.white, fontSize: 20.sp),
+      body: Column(
+        children: [
+          Center(
+            child: TextButton(
+              onPressed: () {
+                // Navigator.of(context).pushNamed(AppRoutes.testTwo);
+                context.pushNamed(AppRoutes.testTwo);
+              },
+              child: Text(
+                'Go to "Two Screen"',
+                style: TextStyle(
+                  color: context.color.mainColor,
+                  fontSize: 20.sp,
+                ),
+              ),
+            ),
           ),
-        ),
+          Image.asset(context.assets.testImage ?? ''),
+        ],
       ),
     );
   }
