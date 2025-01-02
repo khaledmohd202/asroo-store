@@ -5,10 +5,7 @@
         "dotenv",
         "firestore",
         "fluttertoast",
-        "lerp",
-        "screenutil",
-        "unfocus",
-        "خالد"
+        "screenutil"
     ],
     "java.configuration.updateBuildConfiguration": "automatic"
 }
