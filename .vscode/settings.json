@@ -5,9 +5,7 @@
         "dotenv",
         "firestore",
         "fluttertoast",
-        "lerp",
-        "screenutil",
-        "خالد"
+        "screenutil"
     ],
     "java.configuration.updateBuildConfiguration": "automatic"
 }
