@@ -11,7 +11,8 @@ environment:
 dependencies:
   cupertino_icons: ^1.0.8
   #Core
-  connectivity_plus: ^6.1.2
+  # connectivity_plus: ^6.1.2
+  connectivity_plus: ^5.0.2
   flutter_dotenv: ^5.2.1
   flutter_screenutil: ^5.9.3
 
@@ -32,6 +33,7 @@ flutter:
   assets:
     - .env.dev
     - .env.prod
+    - assets/images/core/
   # example:
   # fonts:
   #   - family: S
