@@ -1,6 +1,7 @@
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/routes/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TestOneScreen extends StatelessWidget {
   const TestOneScreen({super.key});
@@ -8,18 +9,26 @@ class TestOneScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
+      backgroundColor: Colors.teal,
       appBar: AppBar(title: const Center(child: Text('One'))),
-      body: Center(
-        child: TextButton(
-          onPressed: () {
-            context.pushNamed(AppRoutes.testTwo);
-          },
-          child: const Text(
-            'Go To Two Screen',
-            style: TextStyle(color: Colors.white),
+      body: Column(
+        children: [
+          Center(
+            child: TextButton(
+              onPressed: () {
+                context.pushNamed(AppRoutes.testTwo);
+              },
+              child: Text(
+                'Go To Two Screen',
+                style: TextStyle(
+                  color: context.color.mainColor,
+                  fontSize: 20.sp,
+                ),
+              ),
+            ),
           ),
-        ),
+          Image.asset(context.assets.testImage ?? ''),
+        ],
       ),
     );
   }

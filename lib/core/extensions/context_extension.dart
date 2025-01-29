@@ -1,3 +1,5 @@
+import 'package:asroo_store/core/style/theme/color_extension.dart';
+import 'package:asroo_store/core/style/theme/image_extension.dart';
 import 'package:flutter/material.dart';
 
 extension ContextExtension on BuildContext {
@@ -23,4 +25,10 @@ extension ContextExtension on BuildContext {
   }
 
   void pop() => Navigator.of(this).pop();
+
+  // Colors
+  MyColors get color => Theme.of(this).extension<MyColors>()!;
+
+  // Images
+  MyImages get assets => Theme.of(this).extension<MyImages>()!;
 }
