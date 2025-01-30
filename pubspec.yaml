@@ -10,6 +10,9 @@ environment:
 
 dependencies:
   cupertino_icons: ^1.0.8
+  #language
+  flutter_localizations:
+    sdk: flutter
   #Core
   # connectivity_plus: ^6.1.2
   connectivity_plus: ^5.0.2
@@ -42,6 +45,8 @@ flutter:
     - .env.dev
     - .env.prod
     - assets/images/core/
+    - lang/ar.json
+    - lang/en.json
   fonts:
     # Arabic Fonts
     - family: Cairo

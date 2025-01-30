@@ -1,6 +1,7 @@
 import 'package:asroo_store/core/app/connectivity_controller.dart';
 import 'package:asroo_store/core/app/env.variables.dart';
 import 'package:asroo_store/core/common/screens/no_network_screen.dart';
+import 'package:asroo_store/core/languages/app_localizations_setup.dart';
 import 'package:asroo_store/core/routes/app_routes.dart';
 import 'package:asroo_store/core/style/theme/app_theme.dart';
 import 'package:flutter/material.dart';
@@ -23,13 +24,24 @@ class AsrooStoreApp extends StatelessWidget {
               title: 'Asroo Store',
               debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
               theme: darkTheme(),
+              locale: const Locale('en'),
+              supportedLocales: AppLocalizationsSetup.supportedLocales,
+              localizationsDelegates:
+                  AppLocalizationsSetup.localizationsDelegates,
+              localeResolutionCallback:
+                  AppLocalizationsSetup.localeResolutionCallback,
               builder: (context, widget) {
-                return Scaffold(
-                  body: Builder(
-                    builder: (context) {
-                      ConnectivityController.instance.init();
-                      return widget!;
-                    },
+                return GestureDetector(
+                  onTap: () {
+                    FocusManager.instance.primaryFocus?.unfocus();
+                  },
+                  child: Scaffold(
+                    body: Builder(
+                      builder: (context) {
+                        ConnectivityController.instance.init();
+                        return widget!;
+                      },
+                    ),
                   ),
                 );
               },
@@ -40,9 +52,7 @@ class AsrooStoreApp extends StatelessWidget {
         } else {
           return MaterialApp(
             title: 'No Network',
-
             debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
-
             home: const NoNetworkScreen(),
           );
         }

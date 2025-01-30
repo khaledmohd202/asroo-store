@@ -1,4 +1,5 @@
 import 'package:asroo_store/core/extensions/context_extension.dart';
+import 'package:asroo_store/core/languages/lang_keys.dart';
 import 'package:asroo_store/core/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,6 +27,10 @@ class TestOneScreen extends StatelessWidget {
                 ),
               ),
             ),
+          ),
+          Text(
+            context.translate(LangKeys.appName),
+            style: TextStyle(color: Colors.black, fontSize: 40.sp),
           ),
           Image.asset(context.assets.testImage ?? ''),
         ],
