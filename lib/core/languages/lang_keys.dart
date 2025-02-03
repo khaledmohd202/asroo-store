@@ -6,7 +6,7 @@ class LangKeys {
   static const String email = 'your_email';
   static const String password = 'password';
   static const String validEmail = 'valid_email';
-  static const String validPasswrod = 'valid_passwrod';
+  static const String validPassword = 'valid_password';
   static const String loggedSuccessfully = 'logged_successfully';
   static const String loggedError = 'logged_error';
   static const String createAccount = 'create_account';
@@ -20,7 +20,7 @@ class LangKeys {
   static const String imageRemoved = 'image_removed';
   static const String chooseProducts = 'choose_products';
   static const String applicationFeatures = 'application_features';
-  static const String languageTilte = 'language_tilte';
+  static const String languageTitle = 'language_title';
   static const String changeToTheLanguage = 'change_to_the_language';
   static const String sure = 'sure';
   static const String cancel = 'cancel';

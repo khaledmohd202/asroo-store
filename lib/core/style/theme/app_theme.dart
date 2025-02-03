@@ -4,7 +4,6 @@ import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/theme/assets_extension.dart';
 import 'package:asroo_store/core/style/theme/color_extension.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ThemeData darkTheme() {
   return ThemeData(
@@ -13,7 +12,7 @@ ThemeData darkTheme() {
     useMaterial3: true,
     textTheme: TextTheme(
       displaySmall: TextStyle(
-        fontSize: 14.sp,
+        fontSize: 14,
         color: DarkColors.white,
         fontFamily: FontFamilyHelper.getLocalizedFontFamily(),
       ),
@@ -28,7 +27,7 @@ ThemeData lightTheme() {
     useMaterial3: true,
     textTheme: TextTheme(
       displaySmall: TextStyle(
-        fontSize: 14.sp,
+        fontSize: 14,
         color: LightColors.black,
         fontFamily: FontFamilyHelper.getLocalizedFontFamily(),
       ),
