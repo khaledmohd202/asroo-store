@@ -6,9 +6,8 @@ import 'package:asroo_store/core/languages/lang_keys.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-class LoginButton extends StatelessWidget {
-  const LoginButton({super.key});
+class SignUpButton extends StatelessWidget {
+  const SignUpButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +18,7 @@ class LoginButton extends StatelessWidget {
         height: 50.sp,
         width: MediaQuery.of(context).size.width,
         child: TextApp(
-          text: context.translate(LangKeys.login),
+          text: context.translate(LangKeys.signUp),
           theme: context.textStyle.copyWith(
             fontSize: 18.sp,
             fontWeight: FontWeightHelper.bold,
