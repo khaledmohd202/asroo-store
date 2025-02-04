@@ -21,10 +21,17 @@ dependencies:
   flutter_native_splash: ^2.4.4
   # UI Animation
   animate_do: ^3.3.2
+  #Bloc
+  flutter_bloc: ^9.0.0
+  #Shared Preference
+  shared_preferences: ^2.5.1
+  #Freezed
+  freezed_annotation: ^2.4.4
   #Firebase
   firebase_core: ^3.10.1
   flutter:
     sdk: flutter
+
 
 dev_dependencies:
   very_good_analysis: ^7.0.0
@@ -32,6 +39,8 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
+  build_runner: ^2.4.14
+  freezed: ^2.5.8
 
 flutter_icons:
   android: true
