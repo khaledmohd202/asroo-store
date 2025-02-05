@@ -19,6 +19,7 @@ dependencies:
   flutter_dotenv: ^5.2.1
   flutter_screenutil: ^5.9.3
   flutter_native_splash: ^2.4.4
+  get_it: ^8.0.3
   # UI Animation
   animate_do: ^3.3.2
   #Bloc
@@ -34,11 +35,12 @@ dependencies:
 
 
 dev_dependencies:
+  flutter_test:
+    sdk: flutter
   very_good_analysis: ^7.0.0
   flutter_launcher_icons: ^0.14.3
   flutter_lints: ^5.0.0
-  flutter_test:
-    sdk: flutter
+  # dart run build_runner build --delete-conflicting-outputs
   build_runner: ^2.4.14
   freezed: ^2.5.8
 
