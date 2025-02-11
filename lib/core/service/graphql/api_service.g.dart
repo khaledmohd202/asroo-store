@@ -48,12 +48,11 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<UserRoleResponse> userRole(Map<String, dynamic> getUserRole) async {
+  Future<UserRoleResponse> userRole() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(getUserRole);
+    const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<UserRoleResponse>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
