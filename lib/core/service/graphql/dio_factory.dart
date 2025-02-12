@@ -20,7 +20,8 @@ class DioFactory {
             'Bearer ${SharedPref().getString(PrefKeys.accessToken)}';
 
       debugPrint(
-        "[USER Token] ====> ${SharedPref().getString(PrefKeys.accessToken) ?? 'NULL TOKEN'}",
+        "[USER Token] ====> ${SharedPref().getString(PrefKeys.accessToken)
+         ?? 'NULL TOKEN'}",
       );
 
       addDioInterceptor();
