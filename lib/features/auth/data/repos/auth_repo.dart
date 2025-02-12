@@ -1,3 +1,4 @@
+import 'package:asroo_store/core/languages/lang_keys.dart';
 import 'package:asroo_store/core/service/graphql/api_result.dart';
 import 'package:asroo_store/core/utils/app_strings.dart';
 import 'package:asroo_store/features/auth/data/data_source/auth_data_source.dart';
@@ -17,7 +18,7 @@ class AuthRepo {
       //
       // ignore: avoid_catches_without_on_clauses
     } catch (error) {
-      return const ApiResult.failure(errorMessage);
+      return const ApiResult.failure(LangKeys.loggedError);
     }
   }
 

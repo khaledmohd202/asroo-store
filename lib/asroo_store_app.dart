@@ -25,9 +25,11 @@ class AsrooStoreApp extends StatelessWidget {
           return BlocProvider(
             create:
                 (context) =>
-                    sl<AppCubit>()..changeAppThemeMode(
-                      sharedMode: SharedPref().getBoolean(PrefKeys.themeMode),
-                    )..getSavedLanguage(),
+                    sl<AppCubit>()
+                      ..changeAppThemeMode(
+                        sharedMode: SharedPref().getBoolean(PrefKeys.themeMode),
+                      )
+                      ..getSavedLanguage(),
             child: ScreenUtilInit(
               designSize: const Size(375, 812),
               minTextAdapt: true,
@@ -63,7 +65,13 @@ class AsrooStoreApp extends StatelessWidget {
                       );
                     },
                     onGenerateRoute: AppRoutes.onGenerateRoute,
-                    initialRoute: AppRoutes.login,
+                    initialRoute:
+                        SharedPref().getString(PrefKeys.accessToken) != null
+                            ? SharedPref().getString(PrefKeys.userRole) ==
+                                    'admin'
+                                ? AppRoutes.homeCustomer
+                                : AppRoutes.homeAdmin
+                            : AppRoutes.login,
                   );
                 },
               ),

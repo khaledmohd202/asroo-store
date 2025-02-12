@@ -22,6 +22,7 @@ dependencies:
   get_it: ^8.0.3
   # UI Animation
   animate_do: ^3.3.2
+  fluttertoast: ^8.2.12
   #Bloc
   flutter_bloc: ^9.0.0
   #Shared Preference
