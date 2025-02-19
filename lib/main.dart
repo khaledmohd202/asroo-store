@@ -15,8 +15,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EnvVariable.instance.init(envType: EnvTypeEnum.dev);
-
-  Platform.isAndroid
+Platform.isAndroid
       ? await Firebase.initializeApp(
         options: const FirebaseOptions(
           apiKey:
