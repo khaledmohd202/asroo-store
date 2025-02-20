@@ -12,7 +12,10 @@ class PickImageUtils {
 
   Future<XFile?> pickImage() async {
     try {
-      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+      final image = await ImagePicker().pickImage(
+        source: ImageSource.gallery,
+        imageQuality: 10,
+      );
       if (image != null) {
         return XFile(image.path);
       }
