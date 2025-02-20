@@ -3,12 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-class ImagePickUtils {
-  factory ImagePickUtils() {
+class PickImageUtils {
+  factory PickImageUtils() {
     return _instance;
   }
-  const ImagePickUtils._();
-  static const ImagePickUtils _instance = ImagePickUtils._();
+  const PickImageUtils._();
+  static const PickImageUtils _instance = PickImageUtils._();
 
   Future<XFile?> pickImage() async {
     try {

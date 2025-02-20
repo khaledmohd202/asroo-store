@@ -10,7 +10,7 @@ class UserAvatarImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        ImagePickUtils().pickImage();
+        PickImageUtils().pickImage();
       },
       child: CustomFadeInDown(
         duration: 500,
