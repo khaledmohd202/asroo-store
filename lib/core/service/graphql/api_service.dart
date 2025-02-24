@@ -1,5 +1,6 @@
 import 'package:asroo_store/core/app/upload_image/model/upload_image_response.dart';
 import 'package:asroo_store/features/auth/data/models/login_response.dart';
+import 'package:asroo_store/features/auth/data/models/sign_up_response.dart';
 import 'package:asroo_store/features/auth/data/models/user_role_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/error_logger.dart';
@@ -25,4 +26,7 @@ abstract class ApiService {
 
   @POST(uploadImagePath)
   Future<UploadImageResponse> uploadImage(@Body() FormData file);
+
+  @POST(graphql)
+  Future<SignUpResponse> signUp(@Body() Map<String, dynamic> mutation);
 }
