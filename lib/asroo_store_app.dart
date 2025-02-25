@@ -68,7 +68,7 @@ class AsrooStoreApp extends StatelessWidget {
                     onGenerateRoute: AppRoutes.onGenerateRoute,
                     initialRoute:
                         SharedPref().getString(PrefKeys.accessToken) != null
-                            ? SharedPref().getString(PrefKeys.userRole) ==
+                            ? SharedPref().getString(PrefKeys.userRole) !=
                                     'admin'
                                 ? AppRoutes.homeCustomer
                                 : AppRoutes.homeAdmin
