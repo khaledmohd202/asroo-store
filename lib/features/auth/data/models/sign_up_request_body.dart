@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-part 'sign_up_request.g.dart';
+part 'sign_up_request_body.g.dart';
 
 @JsonSerializable()
 class SignUpRequestBody {
@@ -15,5 +15,5 @@ class SignUpRequestBody {
   final String password;
   final String avatar;
 
-  Map<String, dynamic> toJson() => _$SignUpRequestToJson(this);
+  Map<String, dynamic> toJson() => _$SignUpRequestBodyToJson(this);
 }
