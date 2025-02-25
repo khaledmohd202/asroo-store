@@ -6,7 +6,7 @@ class ShowToast {
   const ShowToast._();
 
   static void showToastErrorTop({
-    required BuildContext context,
+    // required BuildContext context,
     required String message,
     int? seconds,
   }) => Fluttertoast.showToast(
@@ -20,7 +20,7 @@ class ShowToast {
   );
 
   static void showToastSuccessTop({
-    required BuildContext context,
+    // required BuildContext context,
     required String message,
     int? seconds,
   }) => Fluttertoast.showToast(

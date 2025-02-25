@@ -2,6 +2,8 @@ import 'package:asroo_store/core/service/graphql/api_service.dart';
 import 'package:asroo_store/core/service/graphql/graphql_queries/auth_queries.dart';
 import 'package:asroo_store/features/auth/data/models/login_request_body.dart';
 import 'package:asroo_store/features/auth/data/models/login_response.dart';
+import 'package:asroo_store/features/auth/data/models/sign_up_request_body.dart';
+import 'package:asroo_store/features/auth/data/models/sign_up_response.dart';
 import 'package:asroo_store/features/auth/data/models/user_role_response.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
@@ -27,6 +29,14 @@ class AuthDataSource {
     final response = await client.userRole();
 
     debugPrint('User Role ==> ${response.userRole}');
+    return response;
+  }
+
+  //SignUp
+  Future<SignUpResponse> signUp({required SignUpRequestBody body}) async {
+    final response = await _graphql.signUp(
+      AuthQueries().signUpMapQuery(body: body),
+    );
     return response;
   }
 }

@@ -28,7 +28,7 @@ class AppImages {
   static const carShop = 'assets/svg/car_shop.svg';
   static const homeTab = 'assets/svg/home_tab_icon.svg';
   static const profileTab = 'assets/svg/profile_tab_icon.svg';
-  static const favouritesTab = 'assets/svg/favourite_tab_icon.svg';
+  static const favoritesTab = 'assets/svg/favorite_tab_icon.svg';
   static const categoriesTab = 'assets/svg/categories_tap_icon.svg';
   static const darkMode = 'assets/svg/dark_mode.svg';
   static const language = 'assets/svg/language.svg';
