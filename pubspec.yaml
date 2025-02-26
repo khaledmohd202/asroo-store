@@ -59,9 +59,9 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/icons/app_icon.jpg"
+  image_path: "assets/images/core/app_icon_com.png"
   adaptive_icon_background: "#ffffff"
-  adaptive_icon_foreground: "assets/icons/play_store_512.png"
+  adaptive_icon_foreground: "assets/images/core/play_store_512.png"
 
 flutter:
   uses-material-design: true
