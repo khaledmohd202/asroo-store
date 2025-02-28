@@ -10,16 +10,17 @@ part 'products_number_bloc.freezed.dart';
 class ProductsNumberBloc
     extends Bloc<ProductsNumberEvent, ProductsNumberState> {
   ProductsNumberBloc(this._repo) : super(const ProductsNumberState.loading()) {
-    on<GetProductsNumberEvent>(getProductsNumber);
+    on<GetProductsNumberEvent>(_getProductsNumber);
   }
 
   final DashboardRepo _repo;
 
   // Get the number of Products.
-  FutureOr<void> getProductsNumber(
+  FutureOr<void> _getProductsNumber(
     GetProductsNumberEvent event,
     Emitter<ProductsNumberState> emit,
   ) async {
+    emit(const ProductsNumberState.loading());
     final result = await _repo.numberOfProducts();
 
     result.when(
@@ -33,6 +34,4 @@ class ProductsNumberBloc
       },
     );
   }
-
-  
 }

@@ -11,15 +11,16 @@ class CategoriesNumberBloc
     extends Bloc<CategoriesNumberEvent, CategoriesNumberState> {
   CategoriesNumberBloc(this._repo)
     : super(const CategoriesNumberState.loading()) {
-    on<GetCategoriesNumberEvent>(getCategoriesNumber);
+    on<GetCategoriesNumberEvent>(_getCategoriesNumber);
   }
 
   final DashboardRepo _repo;
 
-  FutureOr<void> getCategoriesNumber(
+  FutureOr<void> _getCategoriesNumber(
     GetCategoriesNumberEvent event,
     Emitter<CategoriesNumberState> emit,
   ) async {
+    emit(const CategoriesNumberState.loading());
     final result = await _repo.numberOfCategories();
 
     result.when(

@@ -9,15 +9,16 @@ part 'users_number_bloc.freezed.dart';
 
 class UsersNumberBloc extends Bloc<UsersNumberEvent, UsersNumberState> {
   UsersNumberBloc(this._repo) : super(const UsersNumberState.loading()) {
-    on<GetUsersNumberEvent>(getUsersNumber);
+    on<GetUsersNumberEvent>(_getUsersNumber);
   }
 
   final DashboardRepo _repo;
 
-  FutureOr<void> getUsersNumber(
+  FutureOr<void> _getUsersNumber(
     GetUsersNumberEvent event,
     Emitter<UsersNumberState> emit,
   ) async {
+    emit(const UsersNumberState.loading());
     final result = await _repo.numberOfUsers();
 
     result.when(
