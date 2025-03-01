@@ -56,7 +56,7 @@ class CustomButton extends StatelessWidget {
         child: TextApp(
           text: text,
           theme: context.textStyle.copyWith(
-            color: textColor ?? DarkColors.white,
+            color: textColor ?? DarkColors.black1,
             fontWeight: FontWeightHelper.medium,
             fontFamily: FontFamilyHelper.poppinsEnglish,
             fontSize: 16.sp,

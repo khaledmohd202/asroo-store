@@ -10,7 +10,7 @@ class CustomTextField extends StatelessWidget {
     this.readOnly = false,
     super.key,
     this.validator,
-    this.fillColour,
+    this.fillColor,
     this.suffixIcon,
     this.hintText,
     this.keyboardType,
@@ -26,7 +26,7 @@ class CustomTextField extends StatelessWidget {
   final String? Function(String?)? onChanged;
   final TextEditingController controller;
   final bool filled;
-  final Color? fillColour;
+  final Color? fillColor;
   final bool obscureText;
   final bool readOnly;
   final Widget? suffixIcon;
@@ -79,7 +79,7 @@ class CustomTextField extends StatelessWidget {
           vertical: 16,
         ),
         filled: filled,
-        fillColor: fillColour,
+        fillColor: fillColor,
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
         hintText: hintText,

@@ -1,9 +1,11 @@
+import 'package:asroo_store/core/common/bottom_sheet/custom_bottom_sheet.dart';
 import 'package:asroo_store/core/common/widgets/custom_button.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/style/colors/dark_colors.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/widgets/create/create_category_bottom_sheet_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -25,7 +27,11 @@ class CreateCategory extends StatelessWidget {
         ),
         CustomButton(
           onPressed: () {
-            // TODO Create Category Bottom Sheet.
+            CustomBottomSheet.showModalBottomSheetContainer(
+              context: context,
+              widget: const CreateCategoryBottomSheetWidget(),
+              backgroundColor: DarkColors.blueDark,
+            );
           },
           text: 'Add',
           width: 90.w,
@@ -33,6 +39,7 @@ class CreateCategory extends StatelessWidget {
           lastRadius: 10.r,
           threeRadius: 10.r,
           backgroundColor: DarkColors.blueDark,
+          textColor: Colors.white,
         ),
       ],
     );
