@@ -1,8 +1,10 @@
+import 'package:asroo_store/core/common/bottom_sheet/custom_bottom_sheet.dart';
 import 'package:asroo_store/core/common/widgets/custom_container_linear_admin.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/widgets/update/update_category_bottom_sheet_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -57,9 +59,13 @@ class AddCategoryItem extends StatelessWidget {
                       ),
                     ),
                     SizedBox(width: 20.w),
+                    // Update
                     InkWell(
                       onTap: () {
-                        // TODO Update
+                        CustomBottomSheet.showModalBottomSheetContainer(
+                          context: context,
+                          widget: const UpdateCategoryBottomSheetWidget(),
+                        );
                       },
                       child: const Icon(
                         Icons.edit,

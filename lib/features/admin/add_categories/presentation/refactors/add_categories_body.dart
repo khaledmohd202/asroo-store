@@ -37,7 +37,7 @@ class AddCategoriesBody extends StatelessWidget {
                       },
                       separatorBuilder:
                           (context, index) => SizedBox(height: 10.h),
-                      itemCount: 8,
+                      itemCount: 6,
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                     ),
