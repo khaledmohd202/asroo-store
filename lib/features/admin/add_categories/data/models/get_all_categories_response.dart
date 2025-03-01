@@ -8,7 +8,7 @@ class GetAllCategoriesResponse {
   factory GetAllCategoriesResponse.fromJson(Map<String, dynamic> json) =>
       _$GetAllCategoriesResponseFromJson(json);
 
-  List<GetAllCategoriesModel> get getAllCategories {
+  List<GetAllCategoriesModel> get getAllCategoriesList {
     if (data.categoriesList.isEmpty) {
       return [];
     }
