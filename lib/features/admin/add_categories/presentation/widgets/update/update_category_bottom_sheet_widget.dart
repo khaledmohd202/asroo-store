@@ -5,7 +5,6 @@ import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/style/colors/dark_colors.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
-import 'package:asroo_store/features/admin/add_categories/presentation/widgets/create/category_upload_image.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/widgets/update/update_uploaded_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
