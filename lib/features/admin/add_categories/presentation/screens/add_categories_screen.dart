@@ -21,7 +21,7 @@ class AddCategoriesScreen extends StatelessWidget {
                   ),
         ),
       ],
-      child: const Scaffold(
+      child: Scaffold(
         backgroundColor: DarkColors.mainColor,
         appBar: AdminAppBar(
           title: 'Categories',

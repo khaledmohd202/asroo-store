@@ -83,7 +83,7 @@ class AddCategoryItem extends StatelessWidget {
                 imageUrl: image,
                 height: 90.h,
                 width: 120.w,
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
                 errorWidget:
                     (context, url, error) =>
                         const Icon(Icons.error, color: Colors.red, size: 70),
