@@ -28,4 +28,13 @@ class CategoriesAdminDataSource {
 
     return response;
   }
+
+  // Delete an exist Category
+  Future<void> deleteCategory(String categoryId) async {
+    final response = await _graphql.deleteCategory(
+      CategoriesQueries().deleteCategoryMapQuery(categoryId: categoryId),
+    );
+
+    return response;
+  }
 }

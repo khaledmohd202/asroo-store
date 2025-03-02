@@ -7,6 +7,7 @@ import 'package:asroo_store/core/service/graphql/dio_factory.dart';
 import 'package:asroo_store/features/admin/add_categories/data/data_source/categories_admin_data_source.dart';
 import 'package:asroo_store/features/admin/add_categories/data/repos/categories_admin_repos.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/bloc/create_category/create_category_bloc.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/delete_category/delete_category_bloc.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
 import 'package:asroo_store/features/admin/dashboard/data/data_source/dashboard_data_source.dart';
 import 'package:asroo_store/features/admin/dashboard/data/repos/dashboard_repo.dart';
@@ -61,5 +62,6 @@ Future<void> _initCategoriesAdmin() async {
     ..registerLazySingleton(() => CategoriesAdminDataSource(sl()))
     ..registerLazySingleton(() => CategoriesAdminRepos(sl()))
     ..registerFactory(() => GetAllAdminCategoriesBloc(sl()))
-    ..registerFactory(() => CreateCategoryBloc(sl()));
+    ..registerFactory(() => CreateCategoryBloc(sl()))
+    ..registerFactory(() => DeleteCategoryBloc(sl()));
 }
