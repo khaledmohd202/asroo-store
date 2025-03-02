@@ -1,3 +1,5 @@
+import 'package:asroo_store/features/admin/add_categories/data/models/create_category_request_body.dart';
+
 class CategoriesQueries {
   factory CategoriesQueries() {
     return _instance;
@@ -19,6 +21,32 @@ class CategoriesQueries {
         }
     }
   ''',
+    };
+  }
+
+  // Create Categories
+  Map<String, dynamic> createCategoryMapQuery({
+    required CreateCategoryRequestBody body,
+  }) {
+    return {
+      'query': r'''
+        mutation Create($name: String!, $image: String!){
+	        addCategory(
+		        data: {
+              name: $name,
+              image: $image,
+            }
+    	) {
+		  id
+		  name
+		  image
+	  }
+  }
+  ''',
+    'variables': {
+      'name': body.name,
+      'image': body.image,
+    },
     };
   }
 }

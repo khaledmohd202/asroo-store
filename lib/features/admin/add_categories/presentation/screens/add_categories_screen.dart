@@ -1,6 +1,7 @@
 import 'package:asroo_store/core/common/widgets/admin_app_bar.dart';
 import 'package:asroo_store/core/di/injection_container.dart';
 import 'package:asroo_store/core/style/colors/dark_colors.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/create_category/create_category_bloc.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/refactors/add_categories_body.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ class AddCategoriesScreen extends StatelessWidget {
                     const GetAllAdminCategoriesEvent.fetchAdminAllCategories(),
                   ),
         ),
+        BlocProvider(create: (context) => sl<CreateCategoryBloc>()),
       ],
       child: Scaffold(
         backgroundColor: DarkColors.mainColor,
