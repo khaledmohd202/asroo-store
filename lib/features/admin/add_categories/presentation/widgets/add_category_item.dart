@@ -4,6 +4,7 @@ import 'package:asroo_store/core/common/widgets/text_app.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/widgets/delete/delete_category_widget.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/widgets/update/update_category_bottom_sheet_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -48,16 +49,7 @@ class AddCategoryItem extends StatelessWidget {
                 Row(
                   children: [
                     // Delete
-                    InkWell(
-                      onTap: () {
-                        // TODO Delete
-                      },
-                      child: const Icon(
-                        Icons.delete,
-                        color: Colors.red,
-                        size: 25,
-                      ),
-                    ),
+                    DeleteCategoryWidget(categoryId: categoryId),
                     SizedBox(width: 20.w),
                     // Update
                     InkWell(
