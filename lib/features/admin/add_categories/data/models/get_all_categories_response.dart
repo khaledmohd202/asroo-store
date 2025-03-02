@@ -12,7 +12,7 @@ class GetAllCategoriesResponse {
     if (data.categoriesList.isEmpty) {
       return [];
     }
-    return data.categoriesList;
+    return data.categoriesList.reversed.toList();
   }
 
   final GetAllCategoriesData data;

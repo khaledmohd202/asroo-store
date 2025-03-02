@@ -20,17 +20,17 @@ mixin _$GetAllAdminCategoriesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() fetchAdminAllCategories,
+    required TResult Function(bool isNotLoading) fetchAdminAllCategories,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? fetchAdminAllCategories,
+    TResult? Function(bool isNotLoading)? fetchAdminAllCategories,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? fetchAdminAllCategories,
+    TResult Function(bool isNotLoading)? fetchAdminAllCategories,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -127,7 +127,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() fetchAdminAllCategories,
+    required TResult Function(bool isNotLoading) fetchAdminAllCategories,
   }) {
     return started();
   }
@@ -136,7 +136,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? fetchAdminAllCategories,
+    TResult? Function(bool isNotLoading)? fetchAdminAllCategories,
   }) {
     return started?.call();
   }
@@ -145,7 +145,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? fetchAdminAllCategories,
+    TResult Function(bool isNotLoading)? fetchAdminAllCategories,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -199,6 +199,8 @@ abstract class _$$FetchAdminAllCategoriesEventImplCopyWith<$Res> {
     _$FetchAdminAllCategoriesEventImpl value,
     $Res Function(_$FetchAdminAllCategoriesEventImpl) then,
   ) = __$$FetchAdminAllCategoriesEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isNotLoading});
 }
 
 /// @nodoc
@@ -216,56 +218,86 @@ class __$$FetchAdminAllCategoriesEventImplCopyWithImpl<$Res>
 
   /// Create a copy of GetAllAdminCategoriesEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? isNotLoading = null}) {
+    return _then(
+      _$FetchAdminAllCategoriesEventImpl(
+        isNotLoading:
+            null == isNotLoading
+                ? _value.isNotLoading
+                : isNotLoading // ignore: cast_nullable_to_non_nullable
+                    as bool,
+      ),
+    );
+  }
 }
 
 /// @nodoc
 
 class _$FetchAdminAllCategoriesEventImpl
     implements FetchAdminAllCategoriesEvent {
-  const _$FetchAdminAllCategoriesEventImpl();
+  const _$FetchAdminAllCategoriesEventImpl({required this.isNotLoading});
+
+  @override
+  final bool isNotLoading;
 
   @override
   String toString() {
-    return 'GetAllAdminCategoriesEvent.fetchAdminAllCategories()';
+    return 'GetAllAdminCategoriesEvent.fetchAdminAllCategories(isNotLoading: $isNotLoading)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchAdminAllCategoriesEventImpl);
+            other is _$FetchAdminAllCategoriesEventImpl &&
+            (identical(other.isNotLoading, isNotLoading) ||
+                other.isNotLoading == isNotLoading));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, isNotLoading);
+
+  /// Create a copy of GetAllAdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FetchAdminAllCategoriesEventImplCopyWith<
+    _$FetchAdminAllCategoriesEventImpl
+  >
+  get copyWith => __$$FetchAdminAllCategoriesEventImplCopyWithImpl<
+    _$FetchAdminAllCategoriesEventImpl
+  >(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() fetchAdminAllCategories,
+    required TResult Function(bool isNotLoading) fetchAdminAllCategories,
   }) {
-    return fetchAdminAllCategories();
+    return fetchAdminAllCategories(isNotLoading);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? fetchAdminAllCategories,
+    TResult? Function(bool isNotLoading)? fetchAdminAllCategories,
   }) {
-    return fetchAdminAllCategories?.call();
+    return fetchAdminAllCategories?.call(isNotLoading);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? fetchAdminAllCategories,
+    TResult Function(bool isNotLoading)? fetchAdminAllCategories,
     required TResult orElse(),
   }) {
     if (fetchAdminAllCategories != null) {
-      return fetchAdminAllCategories();
+      return fetchAdminAllCategories(isNotLoading);
     }
     return orElse();
   }
@@ -307,8 +339,19 @@ class _$FetchAdminAllCategoriesEventImpl
 
 abstract class FetchAdminAllCategoriesEvent
     implements GetAllAdminCategoriesEvent {
-  const factory FetchAdminAllCategoriesEvent() =
-      _$FetchAdminAllCategoriesEventImpl;
+  const factory FetchAdminAllCategoriesEvent({
+    required final bool isNotLoading,
+  }) = _$FetchAdminAllCategoriesEventImpl;
+
+  bool get isNotLoading;
+
+  /// Create a copy of GetAllAdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FetchAdminAllCategoriesEventImplCopyWith<
+    _$FetchAdminAllCategoriesEventImpl
+  >
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

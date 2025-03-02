@@ -25,7 +25,9 @@ class AddCategoriesBody extends StatelessWidget {
             child: RefreshIndicator(
               onRefresh: () async {
                 context.read<GetAllAdminCategoriesBloc>().add(
-                  const GetAllAdminCategoriesEvent.fetchAdminAllCategories(),
+                  const GetAllAdminCategoriesEvent.fetchAdminAllCategories(
+                    isNotLoading: true,
+                  ),
                 );
               },
               color: DarkColors.blueLight,
