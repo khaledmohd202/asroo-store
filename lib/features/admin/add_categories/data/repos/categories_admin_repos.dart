@@ -7,6 +7,7 @@ import 'package:asroo_store/features/admin/add_categories/data/data_source/categ
 import 'package:asroo_store/features/admin/add_categories/data/models/create_category_request_body.dart';
 import 'package:asroo_store/features/admin/add_categories/data/models/create_category_response.dart';
 import 'package:asroo_store/features/admin/add_categories/data/models/get_all_categories_response.dart';
+import 'package:asroo_store/features/admin/add_categories/data/models/update_category_request_body.dart';
 
 class CategoriesAdminRepos {
   const CategoriesAdminRepos(this._dataSource);
@@ -41,6 +42,18 @@ class CategoriesAdminRepos {
   Future<ApiResult<void>> deleteCategory({required String categoryIds}) async {
     try {
       final response = await _dataSource.deleteCategory(categoryIds);
+      return ApiResult.success(response);
+    } catch (e) {
+      return const ApiResult.failure(errorMessage);
+    }
+  }
+
+  // Update the Categories.
+  Future<ApiResult<void>> updateCategory({
+    required UpdateCategoryRequestBody body,
+  }) async {
+    try {
+      final response = await _dataSource.updateCategory(body);
       return ApiResult.success(response);
     } catch (e) {
       return const ApiResult.failure(errorMessage);
