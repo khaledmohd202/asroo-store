@@ -6,6 +6,7 @@ import 'package:asroo_store/core/di/injection_container.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/bloc/update_category/update_category_bloc.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/widgets/delete/delete_category_widget.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/widgets/update/update_category_bottom_sheet_widget.dart';
@@ -47,6 +48,7 @@ class AddCategoryItem extends StatelessWidget {
                     fontSize: 18.sp,
                     fontFamily: FontFamilyHelper.poppinsEnglish,
                     fontWeight: FontWeightHelper.bold,
+                    // overflow: TextOverflow.ellipsis,
                   ),
                 ),
                 const Spacer(),
@@ -93,15 +95,22 @@ class AddCategoryItem extends StatelessWidget {
       context: context,
       widget: MultiBlocProvider(
         providers: [
-          BlocProvider(
-            create: (context) => sl<UpdateCategoryBloc>(),
-          ),
-          BlocProvider(
-            create: (context) => sl<UploadImageCubit>(),
-          ),
+          BlocProvider(create: (context) => sl<UpdateCategoryBloc>()),
+          BlocProvider(create: (context) => sl<UploadImageCubit>()),
         ],
-        child: const UpdateCategoryBottomSheetWidget(),
+        child: UpdateCategoryBottomSheetWidget(
+          categoryID: categoryId,
+          categoryName: name,
+          imageUrl: image,
+        ),
       ),
+      whenComplete: () {
+        context.read<GetAllAdminCategoriesBloc>().add(
+          const GetAllAdminCategoriesEvent.fetchAdminAllCategories(
+            isNotLoading: false,
+          ),
+        );
+      },
     );
   }
 }
