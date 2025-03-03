@@ -1,9 +1,11 @@
+import 'package:asroo_store/core/common/bottom_sheet/custom_bottom_sheet.dart';
 import 'package:asroo_store/core/common/widgets/custom_button.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/style/colors/dark_colors.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/add_products/presentation/widgets/create/create_product_bottom_sheet_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -25,7 +27,10 @@ class CreateProduct extends StatelessWidget {
         ),
         CustomButton(
           onPressed: () {
-            // TODO: create Bottomsheet for Products.
+            CustomBottomSheet.showModalBottomSheetContainer(
+              context: context,
+              widget: const CreateProductBottomSheetWidget(),
+            );
           },
           text: 'Add',
           width: 90.w,
