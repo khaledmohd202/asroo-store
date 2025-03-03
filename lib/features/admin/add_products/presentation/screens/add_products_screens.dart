@@ -1,26 +1,21 @@
 import 'package:asroo_store/core/common/widgets/admin_app_bar.dart';
 import 'package:asroo_store/core/style/colors/dark_colors.dart';
+import 'package:asroo_store/features/admin/add_products/presentation/redactors/add_products_body.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddProductsScreens extends StatelessWidget {
   const AddProductsScreens({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: DarkColors.mainColor,
-      appBar: const AdminAppBar(
+      appBar: AdminAppBar(
         title: 'Products',
         backgroundColor: DarkColors.mainColor,
         isMain: true,
       ),
-      body: Center(
-        child: Text(
-          'Products',
-          style: TextStyle(fontSize: 20.sp, color: Colors.white),
-        ),
-      ),
+      body: AddProductsBody(),
     );
   }
 }
