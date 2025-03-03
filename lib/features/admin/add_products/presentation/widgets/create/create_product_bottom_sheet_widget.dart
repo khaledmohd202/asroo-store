@@ -48,7 +48,7 @@ class _CreateProductBottomSheetWidgetState
               // Create Product title
               Center(
                 child: TextApp(
-                  text: 'Update Product',
+                  text: 'Create Product',
                   theme: context.textStyle.copyWith(
                     fontFamily: FontFamilyHelper.poppinsEnglish,
                     fontSize: 20.sp,
@@ -59,7 +59,7 @@ class _CreateProductBottomSheetWidgetState
               SizedBox(height: 20.h),
               // Add a Photo "Title"
               TextApp(
-                text: 'Update a Photos',
+                text: 'Adding Photos',
                 theme: context.textStyle.copyWith(
                   fontFamily: FontFamilyHelper.poppinsEnglish,
                   fontSize: 16.sp,
