@@ -1,3 +1,4 @@
+import 'package:asroo_store/core/app/upload_image/cubit/cubit/upload_image_cubit.dart';
 import 'package:asroo_store/core/common/bottom_sheet/custom_bottom_sheet.dart';
 import 'package:asroo_store/core/common/widgets/custom_button.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
@@ -35,6 +36,7 @@ class CreateProduct extends StatelessWidget {
               widget: MultiBlocProvider(
                 providers: [
                   BlocProvider(create: (context) => sl<CreateProductBloc>()),
+                  BlocProvider(create: (context) => sl<UploadImageCubit>()),
                 ],
                 child: const CreateProductBottomSheetWidget(),
               ),
