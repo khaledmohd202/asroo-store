@@ -1,6 +1,7 @@
 import 'package:asroo_store/core/app/upload_image/cubit/cubit/upload_image_cubit.dart';
 import 'package:asroo_store/core/common/toast/show_toast.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
+import 'package:asroo_store/core/extensions/string_extension.dart';
 import 'package:asroo_store/core/languages/lang_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -102,7 +103,7 @@ class UpdateSelectedImageWidget extends StatelessWidget {
               color: Colors.grey.withValues(alpha: 0.8),
               borderRadius: BorderRadius.circular(15.r),
               image: DecorationImage(
-                image: NetworkImage(imageList[index]),
+                image: NetworkImage(imageList[index].imageProductFormat()),
                 fit: BoxFit.fill,
               ),
             ),

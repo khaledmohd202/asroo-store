@@ -1,3 +1,5 @@
+import 'package:asroo_store/core/app/upload_image/cubit/cubit/upload_image_cubit.dart';
+import 'package:asroo_store/core/common/toast/show_toast.dart';
 import 'package:asroo_store/core/common/widgets/custom_button.dart';
 import 'package:asroo_store/core/common/widgets/custom_drop_down.dart';
 import 'package:asroo_store/core/common/widgets/custom_text_field.dart';
@@ -6,13 +8,32 @@ import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/style/colors/dark_colors.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
+import 'package:asroo_store/features/admin/add_products/data/models/update_product_request_body.dart';
+import 'package:asroo_store/features/admin/add_products/presentation/bloc/update_product/update_product_bloc.dart';
 import 'package:asroo_store/features/admin/add_products/presentation/widgets/update/update_image_product.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class UpdateProductBottomSheetWidget extends StatefulWidget {
-  const UpdateProductBottomSheetWidget({required this.imageList, super.key});
+  const UpdateProductBottomSheetWidget({
+    required this.imageList,
+    required this.categoryName,
+    required this.title,
+    required this.price,
+    required this.description,
+    required this.productId,
+    required this.categoryId,
+    super.key,
+  });
   final List<String> imageList;
+  final String categoryName;
+  final String title;
+  final String price;
+  final String description;
+  final String productId;
+  final String categoryId;
 
   @override
   State<UpdateProductBottomSheetWidget> createState() =>
@@ -22,11 +43,25 @@ class UpdateProductBottomSheetWidget extends StatefulWidget {
 class _UpdateProductBottomSheetWidgetState
     extends State<UpdateProductBottomSheetWidget> {
   final _formKey = GlobalKey<FormState>();
+
+
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _priceController = TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
 
-  String? categoryName;
+  String? categoryValueName;
+  double? categoryValueId;
+
+  @override
+  void initState() {
+    super.initState();
+
+    categoryValueName = widget.categoryName;
+    categoryValueId = double.parse(widget.categoryId);
+    _titleController.text = widget.title;
+    _priceController.text = widget.price;
+    _descriptionController.text = widget.description;
+  }
 
   @override
   void dispose() {
@@ -69,7 +104,7 @@ class _UpdateProductBottomSheetWidgetState
               ),
               SizedBox(height: 15.h),
               // Update Image Product.
-              UpdateImageProduct(imageList: widget.imageList,),
+              UpdateImageProduct(imageList: widget.imageList),
               SizedBox(height: 20.h),
               // Enter the Product Name "Title".
               TextApp(
@@ -152,27 +187,92 @@ class _UpdateProductBottomSheetWidgetState
               ),
               SizedBox(height: 10.h),
               // Category Drop Down to Choose its Section.
-              CustomDropDown(
-                items: const [],
-                hintText: 'Mushaf',
-                onChanged: (value) {
-                  setState(() {
-                    categoryName = value;
-                  });
+              BlocBuilder<
+                GetAllAdminCategoriesBloc,
+                GetAllAdminCategoriesState
+              >(
+                builder: (context, state) {
+                  return state.maybeWhen(
+                    success: (categoryModel) {
+                      return CustomDropDown(
+                        items: categoryModel.categoryDropDownList,
+                        hintText: '',
+                        onChanged: (value) {
+                          setState(() {
+                            categoryValueName = value;
+
+                            final categoryIdString =
+                                categoryModel
+                                .getAllCategoriesList
+                                .firstWhere((e) => e.name == value)
+                                .id!;
+                            categoryValueId = double.parse(categoryIdString);
+                          });
+                        },
+                        value: categoryValueName,
+                      );
+                    },
+                    orElse: () {
+                      return CustomDropDown(
+                        items: const [],
+                        hintText: '',
+                        onChanged: (value) {},
+                        value: '',
+                      );
+                    },
+                  );
                 },
-                value: categoryName,
               ),
               SizedBox(height: 15.h),
               // Update Product Button.
-              CustomButton(
-                onPressed: () {},
-                text: 'Update Product',
-                width: MediaQuery.of(context).size.width,
-                height: 50.h,
-                lastRadius: 20.r,
-                threeRadius: 20.r,
-                backgroundColor: Colors.white,
-                textColor: DarkColors.blueDark,
+              BlocConsumer<UpdateProductBloc, UpdateProductState>(
+                listener: (context, state) {
+                  state.whenOrNull(
+                    success: () {
+                      context.pop();
+
+                      ShowToast.showToastSuccessTop(
+                        message: '${_titleController.text} Updated.',
+                        seconds: 2,
+                      );
+                    },
+                    error: (error) {
+                      ShowToast.showToastErrorTop(message: error);
+                    },
+                  );
+                },
+                builder: (context, state) {
+                  return state.maybeWhen(
+                    success: () {
+                      return Container(
+                        height: 50.h,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.r),
+                        ),
+                        child: const Center(
+                          child: CircularProgressIndicator(
+                            color: DarkColors.blueDark,
+                          ),
+                        ),
+                      );
+                    },
+                    orElse: () {
+                      return CustomButton(
+                        onPressed: () {
+                          _validUpdateProductButton(context);
+                        },
+                        text: 'Update Product',
+                        width: MediaQuery.of(context).size.width,
+                        height: 50.h,
+                        lastRadius: 20.r,
+                        threeRadius: 20.r,
+                        backgroundColor: Colors.white,
+                        textColor: DarkColors.blueDark,
+                      );
+                    },
+                  );
+                },
               ),
               SizedBox(height: 15.h),
             ],
@@ -180,5 +280,26 @@ class _UpdateProductBottomSheetWidgetState
         ),
       ),
     );
+  }
+
+  void _validUpdateProductButton(BuildContext context) {
+    if (_formKey.currentState!.validate()) {
+      // Update Category
+      context.read<UpdateProductBloc>().add(
+        UpdateProductEvent.updateProduct(
+          body: UpdateProductRequestBody(
+            title: _titleController.text.trim(),
+            price: double.parse(_priceController.text.trim()),
+            imageList:
+                context.read<UploadImageCubit>().updateImageList.isEmpty
+                    ? widget.imageList
+                    : context.read<UploadImageCubit>().updateImageList,
+            description: _descriptionController.text.trim(),
+            categoryId: categoryValueId ?? 0,
+            productId: widget.productId,
+          ),
+        ),
+      );
+    }
   }
 }

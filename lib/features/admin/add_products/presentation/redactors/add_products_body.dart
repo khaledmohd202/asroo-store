@@ -79,9 +79,11 @@ class AddProductsBody extends StatelessWidget {
                               itemBuilder: (context, index) {
                                 return AddProductItem(
                                   imageUrl: list[index].images!.first,
-                                  title: list[index].title!,
+                                  title: list[index].title ?? '',
+                                  description: list[index].description ?? '',
                                   price: list[index].price!.toString(),
-                                  productId: list[index].id!,
+                                  productId: list[index].id ?? '',
+                                  categoryId: list[index].category!.id ?? '',
                                   imageList: list[index].images ?? [],
                                   categoryName:
                                       list[index].category!.name ?? '',

@@ -179,7 +179,7 @@ class _CreateProductBottomSheetWidgetState
                                     .firstWhere((e) => e.name == value)
                                     .id!;
                             // and convert it from String to double.
-                            categoryId = double.tryParse(categoryIdString);
+                            categoryId = double.parse(categoryIdString);
                           });
                         },
                         value: categoryName,
