@@ -6,6 +6,7 @@ import 'package:asroo_store/core/utils/app_strings.dart';
 import 'package:asroo_store/features/admin/add_products/data/data_source/products_admin_data_source.dart';
 import 'package:asroo_store/features/admin/add_products/data/models/create_product_request_body.dart';
 import 'package:asroo_store/features/admin/add_products/data/models/get_all_product_response.dart';
+import 'package:asroo_store/features/admin/add_products/data/models/update_product_request_body.dart';
 import 'package:flutter/rendering.dart';
 
 class ProductAdminRepo {
@@ -41,6 +42,18 @@ class ProductAdminRepo {
   Future<ApiResult<void>> deleteProduct({required String productId}) async {
     try {
       final response = await _dataSource.deleteProduct(productId: productId);
+      return ApiResult.success(response);
+    } catch (e) {
+      return const ApiResult.failure(errorMessage);
+    }
+  }
+
+  // Update the Products.
+  Future<ApiResult<void>> updateProduct({
+    required UpdateProductRequestBody body,
+  }) async {
+    try {
+      final response = await _dataSource.updateProduct(body: body);
       return ApiResult.success(response);
     } catch (e) {
       return const ApiResult.failure(errorMessage);
