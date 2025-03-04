@@ -36,4 +36,14 @@ class ProductAdminRepo {
       return const ApiResult.failure(errorMessage);
     }
   }
+
+  // Delete an exist Product.
+  Future<ApiResult<void>> deleteProduct({required String productId}) async {
+    try {
+      final response = await _dataSource.deleteProduct(productId: productId);
+      return ApiResult.success(response);
+    } catch (e) {
+      return const ApiResult.failure(errorMessage);
+    }
+  }
 }

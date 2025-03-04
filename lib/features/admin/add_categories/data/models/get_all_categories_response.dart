@@ -8,6 +8,8 @@ class GetAllCategoriesResponse {
   factory GetAllCategoriesResponse.fromJson(Map<String, dynamic> json) =>
       _$GetAllCategoriesResponseFromJson(json);
 
+  final GetAllCategoriesData data;
+
   List<GetAllCategoriesModel> get getAllCategoriesList {
     if (data.categoriesList.isEmpty) {
       return [];
@@ -15,7 +17,11 @@ class GetAllCategoriesResponse {
     return data.categoriesList.reversed.toList();
   }
 
-  final GetAllCategoriesData data;
+  List<String> get categoryDropDownList {
+    final categoryList = data.categoriesList.map((e) => e.name ?? '').toList();
+
+    return categoryList;
+  }
 }
 
 @JsonSerializable()

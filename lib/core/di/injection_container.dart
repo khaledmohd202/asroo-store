@@ -78,5 +78,6 @@ Future<void> _initProductsAdmin() async {
     ..registerLazySingleton(() => ProductsAdminDataSource(sl()))
     ..registerLazySingleton(() => ProductAdminRepo(sl()))
     ..registerFactory(() => GetAllAdminProductsBloc(sl()))
-    ..registerFactory(() => CreateProductBloc(sl()));
+    ..registerFactory(() => CreateProductBloc(sl()))
+    ..registerFactory(() => DeleteCategoryBloc(sl()));
 }

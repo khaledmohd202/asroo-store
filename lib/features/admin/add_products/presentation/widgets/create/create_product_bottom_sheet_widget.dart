@@ -1,13 +1,20 @@
+import 'package:asroo_store/core/app/upload_image/cubit/cubit/upload_image_cubit.dart';
+import 'package:asroo_store/core/common/toast/show_toast.dart';
 import 'package:asroo_store/core/common/widgets/custom_button.dart';
 import 'package:asroo_store/core/common/widgets/custom_drop_down.dart';
 import 'package:asroo_store/core/common/widgets/custom_text_field.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
+import 'package:asroo_store/core/languages/lang_keys.dart';
 import 'package:asroo_store/core/style/colors/dark_colors.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
+import 'package:asroo_store/features/admin/add_products/data/models/create_product_request_body.dart';
+import 'package:asroo_store/features/admin/add_products/presentation/bloc/create_product/create_product_bloc.dart';
 import 'package:asroo_store/features/admin/add_products/presentation/widgets/create/create_product_images.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CreateProductBottomSheetWidget extends StatefulWidget {
@@ -21,11 +28,13 @@ class CreateProductBottomSheetWidget extends StatefulWidget {
 class _CreateProductBottomSheetWidgetState
     extends State<CreateProductBottomSheetWidget> {
   final _formKey = GlobalKey<FormState>();
+
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _priceController = TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
 
   String? categoryName;
+  double? categoryId;
 
   @override
   void dispose() {
@@ -151,27 +160,91 @@ class _CreateProductBottomSheetWidgetState
               ),
               SizedBox(height: 10.h),
               // Category Drop Down to Choose its Section.
-              CustomDropDown(
-                items: const [],
-                hintText: 'Select a Category',
-                onChanged: (value) {
-                  setState(() {
-                    categoryName = value;
-                  });
+              BlocBuilder<
+                GetAllAdminCategoriesBloc,
+                GetAllAdminCategoriesState
+              >(
+                builder: (context, state) {
+                  return state.maybeWhen(
+                    success: (categoryModel) {
+                      return CustomDropDown(
+                        items: categoryModel.categoryDropDownList,
+                        hintText: 'Select a Category',
+                        onChanged: (value) {
+                          setState(() {
+                            categoryName = value;
+                            // to get the 'id' of the category of the product.
+                            final categoryIdString =
+                                categoryModel.getAllCategoriesList
+                                    .firstWhere((e) => e.name == value)
+                                    .id!;
+                            // and convert it from String to double.
+                            categoryId = double.tryParse(categoryIdString);
+                          });
+                        },
+                        value: categoryName,
+                      );
+                    },
+                    orElse: () {
+                      return CustomDropDown(
+                        items: const [''],
+                        hintText: 'Select a Category',
+                        onChanged: (value) {},
+                        value: '',
+                      );
+                    },
+                  );
                 },
-                value: categoryName,
               ),
               SizedBox(height: 15.h),
               // Create Product Button.
-              CustomButton(
-                onPressed: () {},
-                text: 'Create Product',
-                width: MediaQuery.of(context).size.width,
-                height: 50.h,
-                lastRadius: 20.r,
-                threeRadius: 20.r,
-                backgroundColor: Colors.white,
-                textColor: DarkColors.blueDark,
+              BlocConsumer<CreateProductBloc, CreateProductState>(
+                listener: (context, state) {
+                  state.whenOrNull(
+                    success: () {
+                      context.pop();
+
+                      ShowToast.showToastSuccessTop(
+                        message: '${_titleController.text} Created.',
+                        seconds: 2,
+                      );
+                    },
+                    error: (error) {
+                      ShowToast.showToastErrorTop(message: error);
+                    },
+                  );
+                },
+                builder: (context, state) {
+                  return state.maybeWhen(
+                    loading: () {
+                      return Container(
+                        height: 50.h,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                          color: DarkColors.blueDark,
+                          borderRadius: BorderRadius.circular(20.r),
+                        ),
+                        child: const Center(
+                          child: CircularProgressIndicator(color: Colors.white),
+                        ),
+                      );
+                    },
+                    orElse: () {
+                      return CustomButton(
+                        onPressed: () {
+                          _validCreateProductButton(context);
+                        },
+                        text: 'Create Product',
+                        width: MediaQuery.of(context).size.width,
+                        height: 50.h,
+                        lastRadius: 20.r,
+                        threeRadius: 20.r,
+                        backgroundColor: Colors.white,
+                        textColor: DarkColors.blueDark,
+                      );
+                    },
+                  );
+                },
               ),
               SizedBox(height: 15.h),
             ],
@@ -179,5 +252,36 @@ class _CreateProductBottomSheetWidgetState
         ),
       ),
     );
+  }
+
+  void _validCreateProductButton(BuildContext context) {
+    final indexEmptyImage = context
+        .read<UploadImageCubit>()
+        .imageList
+        .indexWhere((e) => e.isNotEmpty);
+
+    if (_formKey.currentState!.validate() ||
+        indexEmptyImage == -1 ||
+        categoryName == null) {
+      if (indexEmptyImage == -1) {
+        ShowToast.showToastErrorTop(
+          message: context.translate(LangKeys.validPickImage),
+        );
+      } else if (categoryName == null) {
+        ShowToast.showToastErrorTop(message: 'Please Select Your Category.');
+      } else {
+        context.read<CreateProductBloc>().add(
+          CreateProductEvent.createNewProduct(
+            body: CreateProductRequestBody(
+              title: _titleController.text.trim(),
+              price: double.parse(_priceController.text.trim()),
+              description: _descriptionController.text.trim(),
+              categoryId: categoryId ?? 0,
+              imageList: context.read<UploadImageCubit>().imageList,
+            ),
+          ),
+        );
+      }
+    }
   }
 }

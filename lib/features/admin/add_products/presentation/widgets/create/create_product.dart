@@ -7,7 +7,9 @@ import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/style/colors/dark_colors.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
 import 'package:asroo_store/features/admin/add_products/presentation/bloc/create_product/create_product_bloc.dart';
+import 'package:asroo_store/features/admin/add_products/presentation/bloc/get_all_admin_products/get_all_admin_products_bloc.dart';
 import 'package:asroo_store/features/admin/add_products/presentation/widgets/create/create_product_bottom_sheet_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -37,9 +39,27 @@ class CreateProduct extends StatelessWidget {
                 providers: [
                   BlocProvider(create: (context) => sl<CreateProductBloc>()),
                   BlocProvider(create: (context) => sl<UploadImageCubit>()),
+                  BlocProvider(
+                    create:
+                        (context) =>
+                            sl<GetAllAdminCategoriesBloc>()..add(
+                              //
+                              // ignore: lines_longer_than_80_chars
+                              const GetAllAdminCategoriesEvent.fetchAdminAllCategories(
+                                isNotLoading: false,
+                              ),
+                            ),
+                  ),
                 ],
                 child: const CreateProductBottomSheetWidget(),
               ),
+              whenComplete: () {
+                context.read<GetAllAdminProductsBloc>().add(
+                  const GetAllAdminProductsEvent.fetchAdminAllProducts(
+                    isNotLoading: false,
+                  ),
+                );
+              },
             );
           },
           text: 'Add',

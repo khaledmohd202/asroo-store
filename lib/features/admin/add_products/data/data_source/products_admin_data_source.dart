@@ -26,4 +26,13 @@ class ProductsAdminDataSource {
 
     return response;
   }
+
+    // Delete an exist Product.
+  Future<void> deleteProduct({required String productId}) async {
+    final response = await _graphql.deleteProduct(
+      ProductQueries().deleteProductMapQuery(productId: productId),
+    );
+
+    return response;
+  }
 }

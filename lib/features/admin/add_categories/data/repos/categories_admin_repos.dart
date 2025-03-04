@@ -39,9 +39,9 @@ class CategoriesAdminRepos {
   }
 
   // Delete an exist Category.
-  Future<ApiResult<void>> deleteCategory({required String categoryIds}) async {
+  Future<ApiResult<void>> deleteCategory({required String categoryId}) async {
     try {
-      final response = await _dataSource.deleteCategory(categoryIds);
+      final response = await _dataSource.deleteCategory(categoryId: categoryId);
       return ApiResult.success(response);
     } catch (e) {
       return const ApiResult.failure(errorMessage);
