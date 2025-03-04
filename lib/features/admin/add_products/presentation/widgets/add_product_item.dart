@@ -5,6 +5,7 @@ import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/extensions/string_extension.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/add_products/presentation/widgets/delete/delete_product_widget.dart';
 import 'package:asroo_store/features/admin/add_products/presentation/widgets/update/update_product_bottom_sheet_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -16,13 +17,14 @@ class AddProductItem extends StatelessWidget {
     required this.title,
     required this.categoryName,
     required this.price,
-    super.key,
+    required this.productId, super.key,
   });
 
   final String imageUrl;
   final String title;
   final String categoryName;
   final String price;
+  final String productId;
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +39,7 @@ class AddProductItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               // Delete Button.
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.w),
-                child: const Icon(Icons.delete, size: 25, color: Colors.red),
-              ),
+              DeleteProductWidget(productId: productId,),
               // Update Button.
               IconButton(
                 onPressed: () {
