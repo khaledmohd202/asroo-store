@@ -12,6 +12,7 @@ import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_
 import 'package:asroo_store/features/admin/add_categories/presentation/bloc/update_category/update_category_bloc.dart';
 import 'package:asroo_store/features/admin/add_products/data/data_source/products_admin_data_source.dart';
 import 'package:asroo_store/features/admin/add_products/data/repos/product_admin_repo.dart';
+import 'package:asroo_store/features/admin/add_products/presentation/bloc/create_product/create_product_bloc.dart';
 import 'package:asroo_store/features/admin/add_products/presentation/bloc/get_all_admin_products/get_all_admin_products_bloc.dart';
 import 'package:asroo_store/features/admin/dashboard/data/data_source/dashboard_data_source.dart';
 import 'package:asroo_store/features/admin/dashboard/data/repos/dashboard_repo.dart';
@@ -76,5 +77,6 @@ Future<void> _initProductsAdmin() async {
   sl
     ..registerLazySingleton(() => ProductsAdminDataSource(sl()))
     ..registerLazySingleton(() => ProductAdminRepo(sl()))
-    ..registerFactory(() => GetAllAdminProductsBloc(sl()));
+    ..registerFactory(() => GetAllAdminProductsBloc(sl()))
+    ..registerFactory(() => CreateProductBloc(sl()));
 }
