@@ -33,7 +33,7 @@ class UpdateCategoryBottomSheetWidget extends StatefulWidget {
 
 class _UpdateCategoryBottomSheetWidgetState
     extends State<UpdateCategoryBottomSheetWidget> {
-  final formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
   TextEditingController nameCategoryController = TextEditingController();
 
   @override
@@ -53,7 +53,7 @@ class _UpdateCategoryBottomSheetWidgetState
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 20.h),
       child: Form(
-        key: formKey,
+        key: _formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -165,7 +165,7 @@ class _UpdateCategoryBottomSheetWidgetState
   }
 
   void _validUpdateCategory(BuildContext context) {
-    if (formKey.currentState!.validate()) {
+    if (_formKey.currentState!.validate()) {
       context.read<UpdateCategoryBloc>().add(
         UpdateCategoryEvent.updateCategory(
           body: UpdateCategoryRequestBody(

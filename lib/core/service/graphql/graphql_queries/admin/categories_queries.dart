@@ -67,7 +67,12 @@ class CategoriesQueries {
     return {
       'query': r'''
             mutation Update($id: ID!, $name: String!, $image: String!){
-              updateCategory(id: $id, changes: {name: $name, image: $image}) {
+              updateCategory(
+              id: $id,
+              changes: {
+              name: $name,
+              image: $image
+              }) {
                 id
               }
             }

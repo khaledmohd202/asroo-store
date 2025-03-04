@@ -10,6 +10,12 @@ import 'package:asroo_store/features/admin/add_categories/presentation/bloc/crea
 import 'package:asroo_store/features/admin/add_categories/presentation/bloc/delete_category/delete_category_bloc.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/bloc/update_category/update_category_bloc.dart';
+import 'package:asroo_store/features/admin/add_products/data/data_source/products_admin_data_source.dart';
+import 'package:asroo_store/features/admin/add_products/data/repos/product_admin_repo.dart';
+import 'package:asroo_store/features/admin/add_products/presentation/bloc/create_product/create_product_bloc.dart';
+import 'package:asroo_store/features/admin/add_products/presentation/bloc/delete_product/delete_product_bloc.dart';
+import 'package:asroo_store/features/admin/add_products/presentation/bloc/get_all_admin_products/get_all_admin_products_bloc.dart';
+import 'package:asroo_store/features/admin/add_products/presentation/bloc/update_product/update_product_bloc.dart';
 import 'package:asroo_store/features/admin/dashboard/data/data_source/dashboard_data_source.dart';
 import 'package:asroo_store/features/admin/dashboard/data/repos/dashboard_repo.dart';
 import 'package:asroo_store/features/admin/dashboard/presentation/bloc/categories_number/categories_number_bloc.dart';
@@ -28,6 +34,7 @@ Future<void> setupInjector() async {
   await _initAuth();
   await _initDashboard();
   await _initCategoriesAdmin();
+  await _initProductsAdmin();
 }
 
 Future<void> _initCore() async {
@@ -66,4 +73,14 @@ Future<void> _initCategoriesAdmin() async {
     ..registerFactory(() => CreateCategoryBloc(sl()))
     ..registerFactory(() => DeleteCategoryBloc(sl()))
     ..registerFactory(() => UpdateCategoryBloc(sl()));
+}
+
+Future<void> _initProductsAdmin() async {
+  sl
+    ..registerLazySingleton(() => ProductsAdminDataSource(sl()))
+    ..registerLazySingleton(() => ProductAdminRepo(sl()))
+    ..registerFactory(() => GetAllAdminProductsBloc(sl()))
+    ..registerFactory(() => CreateProductBloc(sl()))
+    ..registerFactory(() => DeleteProductBloc(sl()))
+    ..registerFactory(() => UpdateProductBloc(sl()));
 }
