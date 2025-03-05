@@ -3,12 +3,15 @@ import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/style/colors/dark_colors.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/users/data/models/get_all_users_response.dart';
 import 'package:asroo_store/features/admin/users/presentation/widgets/table_cell_title.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TableForUsers extends StatelessWidget {
-  const TableForUsers({super.key});
+  const TableForUsers({required this.usersList, super.key});
+
+  final List<GetAllUsersModel> usersList;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,7 @@ class TableForUsers extends StatelessWidget {
           decoration: BoxDecoration(
             color: DarkColors.blueLight.withValues(alpha: 0.7),
           ),
-          children:const [
+          children: const [
             // Name.
             TableCell(
               verticalAlignment: TableCellVerticalAlignment.middle,
@@ -54,7 +57,7 @@ class TableForUsers extends StatelessWidget {
           ],
         ),
         ...List.generate(
-          8,
+          usersList.length,
           (index) => TableRow(
             children: [
               // Name.
@@ -62,7 +65,7 @@ class TableForUsers extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.all(10.dg),
                   child: TextApp(
-                    text: 'Khaled',
+                    text: usersList[index].name ?? 'Khaled',
                     theme: context.textStyle.copyWith(
                       fontSize: 12.sp,
                       fontFamily: FontFamilyHelper.poppinsEnglish,
@@ -76,7 +79,7 @@ class TableForUsers extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.all(10.dg),
                   child: TextApp(
-                    text: 'khaledmohd@gmail.com',
+                    text: usersList[index].email ?? 'khaledmohd@gmail.com',
                     theme: context.textStyle.copyWith(
                       fontSize: 12.sp,
                       fontFamily: FontFamilyHelper.poppinsEnglish,
