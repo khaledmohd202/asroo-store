@@ -24,7 +24,7 @@ class _SearchForUsersState extends State<SearchForUsers> {
       builder: (context, state) {
         final bloc = context.read<GetAllUsersBloc>();
         return CustomTextField(
-          controller: TextEditingController(),
+          controller: bloc.searchController,
           keyboardType: TextInputType.emailAddress,
           hintText: 'Search For Users',
           onChanged: (searchValue) {
