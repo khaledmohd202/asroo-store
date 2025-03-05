@@ -10,7 +10,7 @@ class ProductsAdminDataSource {
   final ApiService _graphql;
 
   Future<GetAllProductResponse> getAllProductsAdmin() async {
-    final response = await _graphql.getAllProduct(
+    final response = await _graphql.getAllProducts(
       ProductQueries().getAllProductsMapQuery(),
     );
 

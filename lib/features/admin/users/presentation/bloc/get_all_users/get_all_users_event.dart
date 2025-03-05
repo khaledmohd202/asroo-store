@@ -1,0 +1,11 @@
+part of 'get_all_users_bloc.dart';
+
+@freezed
+class GetAllUsersEvent with _$GetAllUsersEvent {
+  const factory GetAllUsersEvent.started() = _Started;
+  const factory GetAllUsersEvent.getAdminAllUsers({
+    required bool isNotLoading,
+  }) = GetAdminAllUsersEvent;
+  const factory GetAllUsersEvent.searchForUser(String? searchName) =
+      SearchFroUserEvent;
+}
