@@ -6,4 +6,6 @@ class GetAllUsersEvent with _$GetAllUsersEvent {
   const factory GetAllUsersEvent.getAdminAllUsers({
     required bool isNotLoading,
   }) = GetAdminAllUsersEvent;
+  const factory GetAllUsersEvent.searchForUser(String? searchName) =
+      SearchFroUserEvent;
 }

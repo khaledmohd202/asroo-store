@@ -39,6 +39,9 @@ class UsersBody extends StatelessWidget {
                               ),
                             );
                           },
+                          search: (searchUserList) {
+                            return TableForUsers(usersList: searchUserList);
+                          },
                           success: (usersList) {
                             return TableForUsers(usersList: usersList);
                           },
