@@ -4,6 +4,7 @@ import 'package:asroo_store/core/style/colors/dark_colors.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
 import 'package:asroo_store/features/admin/users/data/models/get_all_users_response.dart';
+import 'package:asroo_store/features/admin/users/presentation/widgets/delete_user_icon.dart';
 import 'package:asroo_store/features/admin/users/presentation/widgets/table_cell_title.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -92,7 +93,9 @@ class TableForUsers extends StatelessWidget {
               TableCell(
                 child: Padding(
                   padding: EdgeInsets.all(10.dg),
-                  child: const Icon(Icons.delete, color: Colors.red, size: 25),
+                  child: DeleteUserIcon(
+                    userId: usersList[index].id ?? '',
+                  ),
                 ),
               ),
             ],

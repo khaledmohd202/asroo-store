@@ -82,4 +82,7 @@ abstract class ApiService {
 
   @POST(graphql)
   Future<GetAllUsersResponse> getAllUsers(@Body() Map<String, dynamic> query);
+
+  @POST(graphql)
+  Future<void> deleteUser(@Body() Map<String, dynamic> mutation);
 }

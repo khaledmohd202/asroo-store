@@ -23,6 +23,7 @@ import 'package:asroo_store/features/admin/dashboard/presentation/bloc/products_
 import 'package:asroo_store/features/admin/dashboard/presentation/bloc/users_number/users_number_bloc.dart';
 import 'package:asroo_store/features/admin/users/data/data_source/users_data_source.dart';
 import 'package:asroo_store/features/admin/users/data/repos/users_repo.dart';
+import 'package:asroo_store/features/admin/users/presentation/bloc/delete_user/delete_user_bloc.dart';
 import 'package:asroo_store/features/admin/users/presentation/bloc/get_all_users/get_all_users_bloc.dart';
 import 'package:asroo_store/features/auth/data/data_source/auth_data_source.dart';
 import 'package:asroo_store/features/auth/data/repos/auth_repo.dart';
@@ -93,5 +94,6 @@ Future<void> _initUsersAdmin() async {
   sl
     ..registerLazySingleton(() => UsersDataSource(sl()))
     ..registerLazySingleton(() => UsersRepo(sl()))
-    ..registerFactory(() => GetAllUsersBloc(sl()));
+    ..registerFactory(() => GetAllUsersBloc(sl()))
+    ..registerFactory(() => DeleteUserBloc(sl()));
 }

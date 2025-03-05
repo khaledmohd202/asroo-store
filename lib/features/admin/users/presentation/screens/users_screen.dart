@@ -1,6 +1,7 @@
 import 'package:asroo_store/core/common/widgets/admin_app_bar.dart';
 import 'package:asroo_store/core/di/injection_container.dart';
 import 'package:asroo_store/core/style/colors/dark_colors.dart';
+import 'package:asroo_store/features/admin/users/presentation/bloc/delete_user/delete_user_bloc.dart';
 import 'package:asroo_store/features/admin/users/presentation/bloc/get_all_users/get_all_users_bloc.dart';
 import 'package:asroo_store/features/admin/users/presentation/refactors/users_body.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ class UsersScreen extends StatelessWidget {
                     const GetAllUsersEvent.getAdminAllUsers(isNotLoading: true),
                   ),
         ),
+        BlocProvider(create: (context) => sl<DeleteUserBloc>()),
       ],
       child: const Scaffold(
         backgroundColor: DarkColors.mainColor,

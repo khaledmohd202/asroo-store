@@ -8,7 +8,7 @@ class UsersQueries {
   static const UsersQueries _instance = UsersQueries._();
 
   // Get All Users.
-  Map<String, dynamic> getAllUsers() {
+  Map<String, dynamic> getAllUsersMapQuery() {
     return {
       'query': '''
           {
@@ -19,6 +19,18 @@ class UsersQueries {
             }
           }
           ''',
+    };
+  }
+
+  // Delete Users.
+  Map<String, dynamic> deleteUsersMapQuery({required String userId}) {
+    return {
+      'query': r'''
+          mutation DeleteUser($userId: ID!){
+              deleteUser(id: $userId)
+            }
+      ''',
+      'variables': {'userId': userId},
     };
   }
 }

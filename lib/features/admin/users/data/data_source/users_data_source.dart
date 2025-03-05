@@ -9,7 +9,18 @@ class UsersDataSource {
 
   // Get All Users.
   Future<GetAllUsersResponse> getAllUsers() async {
-    final response = await _graphql.getAllUsers(UsersQueries().getAllUsers());
+    final response = await _graphql.getAllUsers(
+      UsersQueries().getAllUsersMapQuery(),
+    );
+
+    return response;
+  }
+
+  // Delete Users.
+  Future<void> deleteUser({required String userId}) async {
+    final response = await _graphql.deleteUser(
+      UsersQueries().deleteUsersMapQuery(userId: userId),
+    );
 
     return response;
   }
