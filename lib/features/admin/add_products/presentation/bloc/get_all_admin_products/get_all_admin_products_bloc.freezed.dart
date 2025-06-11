@@ -12,8 +12,7 @@ part of 'get_all_admin_products_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$GetAllAdminProductsEvent {
@@ -21,50 +20,53 @@ mixin _$GetAllAdminProductsEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(bool isNotLoading) fetchAdminAllProducts,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(bool isNotLoading)? fetchAdminAllProducts,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(bool isNotLoading)? fetchAdminAllProducts,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(FetchAdminAllProductsEvent value)
-    fetchAdminAllProducts,
-  }) => throw _privateConstructorUsedError;
+        fetchAdminAllProducts,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(FetchAdminAllProductsEvent value)? fetchAdminAllProducts,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(FetchAdminAllProductsEvent value)? fetchAdminAllProducts,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetAllAdminProductsEventCopyWith<$Res> {
-  factory $GetAllAdminProductsEventCopyWith(
-    GetAllAdminProductsEvent value,
-    $Res Function(GetAllAdminProductsEvent) then,
-  ) = _$GetAllAdminProductsEventCopyWithImpl<$Res, GetAllAdminProductsEvent>;
+  factory $GetAllAdminProductsEventCopyWith(GetAllAdminProductsEvent value,
+          $Res Function(GetAllAdminProductsEvent) then) =
+      _$GetAllAdminProductsEventCopyWithImpl<$Res, GetAllAdminProductsEvent>;
 }
 
 /// @nodoc
-class _$GetAllAdminProductsEventCopyWithImpl<
-  $Res,
-  $Val extends GetAllAdminProductsEvent
->
+class _$GetAllAdminProductsEventCopyWithImpl<$Res,
+        $Val extends GetAllAdminProductsEvent>
     implements $GetAllAdminProductsEventCopyWith<$Res> {
   _$GetAllAdminProductsEventCopyWithImpl(this._value, this._then);
 
@@ -80,9 +82,8 @@ class _$GetAllAdminProductsEventCopyWithImpl<
 /// @nodoc
 abstract class _$$StartedImplCopyWith<$Res> {
   factory _$$StartedImplCopyWith(
-    _$StartedImpl value,
-    $Res Function(_$StartedImpl) then,
-  ) = __$$StartedImplCopyWithImpl<$Res>;
+          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
+      __$$StartedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -90,9 +91,8 @@ class __$$StartedImplCopyWithImpl<$Res>
     extends _$GetAllAdminProductsEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
-    _$StartedImpl _value,
-    $Res Function(_$StartedImpl) _then,
-  ) : super(_value, _then);
+      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of GetAllAdminProductsEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -153,7 +153,7 @@ class _$StartedImpl implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(FetchAdminAllProductsEvent value)
-    fetchAdminAllProducts,
+        fetchAdminAllProducts,
   }) {
     return started(this);
   }
@@ -188,40 +188,36 @@ abstract class _Started implements GetAllAdminProductsEvent {
 /// @nodoc
 abstract class _$$FetchAdminAllProductsEventImplCopyWith<$Res> {
   factory _$$FetchAdminAllProductsEventImplCopyWith(
-    _$FetchAdminAllProductsEventImpl value,
-    $Res Function(_$FetchAdminAllProductsEventImpl) then,
-  ) = __$$FetchAdminAllProductsEventImplCopyWithImpl<$Res>;
+          _$FetchAdminAllProductsEventImpl value,
+          $Res Function(_$FetchAdminAllProductsEventImpl) then) =
+      __$$FetchAdminAllProductsEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool isNotLoading});
 }
 
 /// @nodoc
 class __$$FetchAdminAllProductsEventImplCopyWithImpl<$Res>
-    extends
-        _$GetAllAdminProductsEventCopyWithImpl<
-          $Res,
-          _$FetchAdminAllProductsEventImpl
-        >
+    extends _$GetAllAdminProductsEventCopyWithImpl<$Res,
+        _$FetchAdminAllProductsEventImpl>
     implements _$$FetchAdminAllProductsEventImplCopyWith<$Res> {
   __$$FetchAdminAllProductsEventImplCopyWithImpl(
-    _$FetchAdminAllProductsEventImpl _value,
-    $Res Function(_$FetchAdminAllProductsEventImpl) _then,
-  ) : super(_value, _then);
+      _$FetchAdminAllProductsEventImpl _value,
+      $Res Function(_$FetchAdminAllProductsEventImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of GetAllAdminProductsEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? isNotLoading = null}) {
-    return _then(
-      _$FetchAdminAllProductsEventImpl(
-        isNotLoading:
-            null == isNotLoading
-                ? _value.isNotLoading
-                : isNotLoading // ignore: cast_nullable_to_non_nullable
-                    as bool,
-      ),
-    );
+  $Res call({
+    Object? isNotLoading = null,
+  }) {
+    return _then(_$FetchAdminAllProductsEventImpl(
+      isNotLoading: null == isNotLoading
+          ? _value.isNotLoading
+          : isNotLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
   }
 }
 
@@ -256,9 +252,8 @@ class _$FetchAdminAllProductsEventImpl implements FetchAdminAllProductsEvent {
   @override
   @pragma('vm:prefer-inline')
   _$$FetchAdminAllProductsEventImplCopyWith<_$FetchAdminAllProductsEventImpl>
-  get copyWith => __$$FetchAdminAllProductsEventImplCopyWithImpl<
-    _$FetchAdminAllProductsEventImpl
-  >(this, _$identity);
+      get copyWith => __$$FetchAdminAllProductsEventImplCopyWithImpl<
+          _$FetchAdminAllProductsEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -296,7 +291,7 @@ class _$FetchAdminAllProductsEventImpl implements FetchAdminAllProductsEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(FetchAdminAllProductsEvent value)
-    fetchAdminAllProducts,
+        fetchAdminAllProducts,
   }) {
     return fetchAdminAllProducts(this);
   }
@@ -334,7 +329,7 @@ abstract class FetchAdminAllProductsEvent implements GetAllAdminProductsEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FetchAdminAllProductsEventImplCopyWith<_$FetchAdminAllProductsEventImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -345,14 +340,16 @@ mixin _$GetAllAdminProductsState {
     required TResult Function(List<GetAllProductModel> productList) success,
     required TResult Function() empty,
     required TResult Function(String error) error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(List<GetAllProductModel> productList)? success,
     TResult? Function()? empty,
     TResult? Function(String error)? error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
@@ -360,21 +357,24 @@ mixin _$GetAllAdminProductsState {
     TResult Function()? empty,
     TResult Function(String error)? error,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoadingState value) loading,
     required TResult Function(SuccessState value) success,
     required TResult Function(EmptyState value) empty,
     required TResult Function(ErrorState value) error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoadingState value)? loading,
     TResult? Function(SuccessState value)? success,
     TResult? Function(EmptyState value)? empty,
     TResult? Function(ErrorState value)? error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoadingState value)? loading,
@@ -382,22 +382,20 @@ mixin _$GetAllAdminProductsState {
     TResult Function(EmptyState value)? empty,
     TResult Function(ErrorState value)? error,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetAllAdminProductsStateCopyWith<$Res> {
-  factory $GetAllAdminProductsStateCopyWith(
-    GetAllAdminProductsState value,
-    $Res Function(GetAllAdminProductsState) then,
-  ) = _$GetAllAdminProductsStateCopyWithImpl<$Res, GetAllAdminProductsState>;
+  factory $GetAllAdminProductsStateCopyWith(GetAllAdminProductsState value,
+          $Res Function(GetAllAdminProductsState) then) =
+      _$GetAllAdminProductsStateCopyWithImpl<$Res, GetAllAdminProductsState>;
 }
 
 /// @nodoc
-class _$GetAllAdminProductsStateCopyWithImpl<
-  $Res,
-  $Val extends GetAllAdminProductsState
->
+class _$GetAllAdminProductsStateCopyWithImpl<$Res,
+        $Val extends GetAllAdminProductsState>
     implements $GetAllAdminProductsStateCopyWith<$Res> {
   _$GetAllAdminProductsStateCopyWithImpl(this._value, this._then);
 
@@ -413,9 +411,8 @@ class _$GetAllAdminProductsStateCopyWithImpl<
 /// @nodoc
 abstract class _$$LoadingStateImplCopyWith<$Res> {
   factory _$$LoadingStateImplCopyWith(
-    _$LoadingStateImpl value,
-    $Res Function(_$LoadingStateImpl) then,
-  ) = __$$LoadingStateImplCopyWithImpl<$Res>;
+          _$LoadingStateImpl value, $Res Function(_$LoadingStateImpl) then) =
+      __$$LoadingStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -423,9 +420,8 @@ class __$$LoadingStateImplCopyWithImpl<$Res>
     extends _$GetAllAdminProductsStateCopyWithImpl<$Res, _$LoadingStateImpl>
     implements _$$LoadingStateImplCopyWith<$Res> {
   __$$LoadingStateImplCopyWithImpl(
-    _$LoadingStateImpl _value,
-    $Res Function(_$LoadingStateImpl) _then,
-  ) : super(_value, _then);
+      _$LoadingStateImpl _value, $Res Function(_$LoadingStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of GetAllAdminProductsState
   /// with the given fields replaced by the non-null parameter values.
@@ -532,9 +528,8 @@ abstract class LoadingState implements GetAllAdminProductsState {
 /// @nodoc
 abstract class _$$SuccessStateImplCopyWith<$Res> {
   factory _$$SuccessStateImplCopyWith(
-    _$SuccessStateImpl value,
-    $Res Function(_$SuccessStateImpl) then,
-  ) = __$$SuccessStateImplCopyWithImpl<$Res>;
+          _$SuccessStateImpl value, $Res Function(_$SuccessStateImpl) then) =
+      __$$SuccessStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<GetAllProductModel> productList});
 }
@@ -544,33 +539,31 @@ class __$$SuccessStateImplCopyWithImpl<$Res>
     extends _$GetAllAdminProductsStateCopyWithImpl<$Res, _$SuccessStateImpl>
     implements _$$SuccessStateImplCopyWith<$Res> {
   __$$SuccessStateImplCopyWithImpl(
-    _$SuccessStateImpl _value,
-    $Res Function(_$SuccessStateImpl) _then,
-  ) : super(_value, _then);
+      _$SuccessStateImpl _value, $Res Function(_$SuccessStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of GetAllAdminProductsState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? productList = null}) {
-    return _then(
-      _$SuccessStateImpl(
-        productList:
-            null == productList
-                ? _value._productList
-                : productList // ignore: cast_nullable_to_non_nullable
-                    as List<GetAllProductModel>,
-      ),
-    );
+  $Res call({
+    Object? productList = null,
+  }) {
+    return _then(_$SuccessStateImpl(
+      productList: null == productList
+          ? _value._productList
+          : productList // ignore: cast_nullable_to_non_nullable
+              as List<GetAllProductModel>,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$SuccessStateImpl implements SuccessState {
-  const _$SuccessStateImpl({
-    required final List<GetAllProductModel> productList,
-  }) : _productList = productList;
+  const _$SuccessStateImpl(
+      {required final List<GetAllProductModel> productList})
+      : _productList = productList;
 
   final List<GetAllProductModel> _productList;
   @override
@@ -590,17 +583,13 @@ class _$SuccessStateImpl implements SuccessState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuccessStateImpl &&
-            const DeepCollectionEquality().equals(
-              other._productList,
-              _productList,
-            ));
+            const DeepCollectionEquality()
+                .equals(other._productList, _productList));
   }
 
   @override
   int get hashCode => Object.hash(
-    runtimeType,
-    const DeepCollectionEquality().hash(_productList),
-  );
+      runtimeType, const DeepCollectionEquality().hash(_productList));
 
   /// Create a copy of GetAllAdminProductsState
   /// with the given fields replaced by the non-null parameter values.
@@ -686,9 +675,9 @@ class _$SuccessStateImpl implements SuccessState {
 }
 
 abstract class SuccessState implements GetAllAdminProductsState {
-  const factory SuccessState({
-    required final List<GetAllProductModel> productList,
-  }) = _$SuccessStateImpl;
+  const factory SuccessState(
+          {required final List<GetAllProductModel> productList}) =
+      _$SuccessStateImpl;
 
   List<GetAllProductModel> get productList;
 
@@ -702,9 +691,8 @@ abstract class SuccessState implements GetAllAdminProductsState {
 /// @nodoc
 abstract class _$$EmptyStateImplCopyWith<$Res> {
   factory _$$EmptyStateImplCopyWith(
-    _$EmptyStateImpl value,
-    $Res Function(_$EmptyStateImpl) then,
-  ) = __$$EmptyStateImplCopyWithImpl<$Res>;
+          _$EmptyStateImpl value, $Res Function(_$EmptyStateImpl) then) =
+      __$$EmptyStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -712,9 +700,8 @@ class __$$EmptyStateImplCopyWithImpl<$Res>
     extends _$GetAllAdminProductsStateCopyWithImpl<$Res, _$EmptyStateImpl>
     implements _$$EmptyStateImplCopyWith<$Res> {
   __$$EmptyStateImplCopyWithImpl(
-    _$EmptyStateImpl _value,
-    $Res Function(_$EmptyStateImpl) _then,
-  ) : super(_value, _then);
+      _$EmptyStateImpl _value, $Res Function(_$EmptyStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of GetAllAdminProductsState
   /// with the given fields replaced by the non-null parameter values.
@@ -821,9 +808,8 @@ abstract class EmptyState implements GetAllAdminProductsState {
 /// @nodoc
 abstract class _$$ErrorStateImplCopyWith<$Res> {
   factory _$$ErrorStateImplCopyWith(
-    _$ErrorStateImpl value,
-    $Res Function(_$ErrorStateImpl) then,
-  ) = __$$ErrorStateImplCopyWithImpl<$Res>;
+          _$ErrorStateImpl value, $Res Function(_$ErrorStateImpl) then) =
+      __$$ErrorStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String error});
 }
@@ -833,24 +819,22 @@ class __$$ErrorStateImplCopyWithImpl<$Res>
     extends _$GetAllAdminProductsStateCopyWithImpl<$Res, _$ErrorStateImpl>
     implements _$$ErrorStateImplCopyWith<$Res> {
   __$$ErrorStateImplCopyWithImpl(
-    _$ErrorStateImpl _value,
-    $Res Function(_$ErrorStateImpl) _then,
-  ) : super(_value, _then);
+      _$ErrorStateImpl _value, $Res Function(_$ErrorStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of GetAllAdminProductsState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? error = null}) {
-    return _then(
-      _$ErrorStateImpl(
-        error:
-            null == error
-                ? _value.error
-                : error // ignore: cast_nullable_to_non_nullable
-                    as String,
-      ),
-    );
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$ErrorStateImpl(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 

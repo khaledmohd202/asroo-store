@@ -7,14 +7,16 @@ part of 'create_category_response.dart';
 // **************************************************************************
 
 CreateCategoryResponse _$CreateCategoryResponseFromJson(
-  Map<String, dynamic> json,
-) => CreateCategoryResponse(
-  CreateCategoryData.fromJson(json['data'] as Map<String, dynamic>),
-);
+        Map<String, dynamic> json) =>
+    CreateCategoryResponse(
+      CreateCategoryData.fromJson(json['data'] as Map<String, dynamic>),
+    );
 
 Map<String, dynamic> _$CreateCategoryResponseToJson(
-  CreateCategoryResponse instance,
-) => <String, dynamic>{'data': instance.data};
+        CreateCategoryResponse instance) =>
+    <String, dynamic>{
+      'data': instance.data,
+    };
 
 CreateCategoryData _$CreateCategoryDataFromJson(Map<String, dynamic> json) =>
     CreateCategoryData(
@@ -22,7 +24,9 @@ CreateCategoryData _$CreateCategoryDataFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$CreateCategoryDataToJson(CreateCategoryData instance) =>
-    <String, dynamic>{'addCategory': instance.categoryModel};
+    <String, dynamic>{
+      'addCategory': instance.categoryModel,
+    };
 
 CreateCategoryModel _$CreateCategoryModelFromJson(Map<String, dynamic> json) =>
     CreateCategoryModel(
@@ -32,9 +36,9 @@ CreateCategoryModel _$CreateCategoryModelFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$CreateCategoryModelToJson(
-  CreateCategoryModel instance,
-) => <String, dynamic>{
-  'id': instance.id,
-  'name': instance.name,
-  'image': instance.image,
-};
+        CreateCategoryModel instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'image': instance.image,
+    };

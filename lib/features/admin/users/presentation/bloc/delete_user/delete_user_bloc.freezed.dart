@@ -12,8 +12,7 @@ part of 'delete_user_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$DeleteUserEvent {
@@ -21,42 +20,47 @@ mixin _$DeleteUserEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String userId) deleteUser,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(String userId)? deleteUser,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String userId)? deleteUser,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(RemoveUserEvent value) deleteUser,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(RemoveUserEvent value)? deleteUser,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(RemoveUserEvent value)? deleteUser,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DeleteUserEventCopyWith<$Res> {
   factory $DeleteUserEventCopyWith(
-    DeleteUserEvent value,
-    $Res Function(DeleteUserEvent) then,
-  ) = _$DeleteUserEventCopyWithImpl<$Res, DeleteUserEvent>;
+          DeleteUserEvent value, $Res Function(DeleteUserEvent) then) =
+      _$DeleteUserEventCopyWithImpl<$Res, DeleteUserEvent>;
 }
 
 /// @nodoc
@@ -76,9 +80,8 @@ class _$DeleteUserEventCopyWithImpl<$Res, $Val extends DeleteUserEvent>
 /// @nodoc
 abstract class _$$StartedImplCopyWith<$Res> {
   factory _$$StartedImplCopyWith(
-    _$StartedImpl value,
-    $Res Function(_$StartedImpl) then,
-  ) = __$$StartedImplCopyWithImpl<$Res>;
+          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
+      __$$StartedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -86,9 +89,8 @@ class __$$StartedImplCopyWithImpl<$Res>
     extends _$DeleteUserEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
-    _$StartedImpl _value,
-    $Res Function(_$StartedImpl) _then,
-  ) : super(_value, _then);
+      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of DeleteUserEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -182,10 +184,9 @@ abstract class _Started implements DeleteUserEvent {
 
 /// @nodoc
 abstract class _$$RemoveUserEventImplCopyWith<$Res> {
-  factory _$$RemoveUserEventImplCopyWith(
-    _$RemoveUserEventImpl value,
-    $Res Function(_$RemoveUserEventImpl) then,
-  ) = __$$RemoveUserEventImplCopyWithImpl<$Res>;
+  factory _$$RemoveUserEventImplCopyWith(_$RemoveUserEventImpl value,
+          $Res Function(_$RemoveUserEventImpl) then) =
+      __$$RemoveUserEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String userId});
 }
@@ -195,24 +196,22 @@ class __$$RemoveUserEventImplCopyWithImpl<$Res>
     extends _$DeleteUserEventCopyWithImpl<$Res, _$RemoveUserEventImpl>
     implements _$$RemoveUserEventImplCopyWith<$Res> {
   __$$RemoveUserEventImplCopyWithImpl(
-    _$RemoveUserEventImpl _value,
-    $Res Function(_$RemoveUserEventImpl) _then,
-  ) : super(_value, _then);
+      _$RemoveUserEventImpl _value, $Res Function(_$RemoveUserEventImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of DeleteUserEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? userId = null}) {
-    return _then(
-      _$RemoveUserEventImpl(
-        userId:
-            null == userId
-                ? _value.userId
-                : userId // ignore: cast_nullable_to_non_nullable
-                    as String,
-      ),
-    );
+  $Res call({
+    Object? userId = null,
+  }) {
+    return _then(_$RemoveUserEventImpl(
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -247,9 +246,7 @@ class _$RemoveUserEventImpl implements RemoveUserEvent {
   @pragma('vm:prefer-inline')
   _$$RemoveUserEventImplCopyWith<_$RemoveUserEventImpl> get copyWith =>
       __$$RemoveUserEventImplCopyWithImpl<_$RemoveUserEventImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -335,14 +332,16 @@ mixin _$DeleteUserState {
     required TResult Function(String userId) loading,
     required TResult Function() success,
     required TResult Function(String error) error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(String userId)? loading,
     TResult? Function()? success,
     TResult? Function(String error)? error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -350,21 +349,24 @@ mixin _$DeleteUserState {
     TResult Function()? success,
     TResult Function(String error)? error,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(LoadingState value) loading,
     required TResult Function(SuccessState value) success,
     required TResult Function(ErrorState value) error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(LoadingState value)? loading,
     TResult? Function(SuccessState value)? success,
     TResult? Function(ErrorState value)? error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -372,15 +374,15 @@ mixin _$DeleteUserState {
     TResult Function(SuccessState value)? success,
     TResult Function(ErrorState value)? error,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DeleteUserStateCopyWith<$Res> {
   factory $DeleteUserStateCopyWith(
-    DeleteUserState value,
-    $Res Function(DeleteUserState) then,
-  ) = _$DeleteUserStateCopyWithImpl<$Res, DeleteUserState>;
+          DeleteUserState value, $Res Function(DeleteUserState) then) =
+      _$DeleteUserStateCopyWithImpl<$Res, DeleteUserState>;
 }
 
 /// @nodoc
@@ -400,9 +402,8 @@ class _$DeleteUserStateCopyWithImpl<$Res, $Val extends DeleteUserState>
 /// @nodoc
 abstract class _$$InitialImplCopyWith<$Res> {
   factory _$$InitialImplCopyWith(
-    _$InitialImpl value,
-    $Res Function(_$InitialImpl) then,
-  ) = __$$InitialImplCopyWithImpl<$Res>;
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -410,9 +411,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     extends _$DeleteUserStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
-    _$InitialImpl _value,
-    $Res Function(_$InitialImpl) _then,
-  ) : super(_value, _then);
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of DeleteUserState
   /// with the given fields replaced by the non-null parameter values.
@@ -519,9 +519,8 @@ abstract class _Initial implements DeleteUserState {
 /// @nodoc
 abstract class _$$LoadingStateImplCopyWith<$Res> {
   factory _$$LoadingStateImplCopyWith(
-    _$LoadingStateImpl value,
-    $Res Function(_$LoadingStateImpl) then,
-  ) = __$$LoadingStateImplCopyWithImpl<$Res>;
+          _$LoadingStateImpl value, $Res Function(_$LoadingStateImpl) then) =
+      __$$LoadingStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String userId});
 }
@@ -531,24 +530,22 @@ class __$$LoadingStateImplCopyWithImpl<$Res>
     extends _$DeleteUserStateCopyWithImpl<$Res, _$LoadingStateImpl>
     implements _$$LoadingStateImplCopyWith<$Res> {
   __$$LoadingStateImplCopyWithImpl(
-    _$LoadingStateImpl _value,
-    $Res Function(_$LoadingStateImpl) _then,
-  ) : super(_value, _then);
+      _$LoadingStateImpl _value, $Res Function(_$LoadingStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of DeleteUserState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? userId = null}) {
-    return _then(
-      _$LoadingStateImpl(
-        userId:
-            null == userId
-                ? _value.userId
-                : userId // ignore: cast_nullable_to_non_nullable
-                    as String,
-      ),
-    );
+  $Res call({
+    Object? userId = null,
+  }) {
+    return _then(_$LoadingStateImpl(
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -675,9 +672,8 @@ abstract class LoadingState implements DeleteUserState {
 /// @nodoc
 abstract class _$$SuccessStateImplCopyWith<$Res> {
   factory _$$SuccessStateImplCopyWith(
-    _$SuccessStateImpl value,
-    $Res Function(_$SuccessStateImpl) then,
-  ) = __$$SuccessStateImplCopyWithImpl<$Res>;
+          _$SuccessStateImpl value, $Res Function(_$SuccessStateImpl) then) =
+      __$$SuccessStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -685,9 +681,8 @@ class __$$SuccessStateImplCopyWithImpl<$Res>
     extends _$DeleteUserStateCopyWithImpl<$Res, _$SuccessStateImpl>
     implements _$$SuccessStateImplCopyWith<$Res> {
   __$$SuccessStateImplCopyWithImpl(
-    _$SuccessStateImpl _value,
-    $Res Function(_$SuccessStateImpl) _then,
-  ) : super(_value, _then);
+      _$SuccessStateImpl _value, $Res Function(_$SuccessStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of DeleteUserState
   /// with the given fields replaced by the non-null parameter values.
@@ -794,9 +789,8 @@ abstract class SuccessState implements DeleteUserState {
 /// @nodoc
 abstract class _$$ErrorStateImplCopyWith<$Res> {
   factory _$$ErrorStateImplCopyWith(
-    _$ErrorStateImpl value,
-    $Res Function(_$ErrorStateImpl) then,
-  ) = __$$ErrorStateImplCopyWithImpl<$Res>;
+          _$ErrorStateImpl value, $Res Function(_$ErrorStateImpl) then) =
+      __$$ErrorStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String error});
 }
@@ -806,24 +800,22 @@ class __$$ErrorStateImplCopyWithImpl<$Res>
     extends _$DeleteUserStateCopyWithImpl<$Res, _$ErrorStateImpl>
     implements _$$ErrorStateImplCopyWith<$Res> {
   __$$ErrorStateImplCopyWithImpl(
-    _$ErrorStateImpl _value,
-    $Res Function(_$ErrorStateImpl) _then,
-  ) : super(_value, _then);
+      _$ErrorStateImpl _value, $Res Function(_$ErrorStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of DeleteUserState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? error = null}) {
-    return _then(
-      _$ErrorStateImpl(
-        error:
-            null == error
-                ? _value.error
-                : error // ignore: cast_nullable_to_non_nullable
-                    as String,
-      ),
-    );
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$ErrorStateImpl(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 

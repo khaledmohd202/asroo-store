@@ -12,8 +12,7 @@ part of 'get_all_users_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$GetAllUsersEvent {
@@ -22,47 +21,52 @@ mixin _$GetAllUsersEvent {
     required TResult Function() started,
     required TResult Function(bool isNotLoading) getAdminAllUsers,
     required TResult Function(String? searchName) searchForUser,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(bool isNotLoading)? getAdminAllUsers,
     TResult? Function(String? searchName)? searchForUser,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(bool isNotLoading)? getAdminAllUsers,
     TResult Function(String? searchName)? searchForUser,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(GetAdminAllUsersEvent value) getAdminAllUsers,
     required TResult Function(SearchFroUserEvent value) searchForUser,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(GetAdminAllUsersEvent value)? getAdminAllUsers,
     TResult? Function(SearchFroUserEvent value)? searchForUser,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(GetAdminAllUsersEvent value)? getAdminAllUsers,
     TResult Function(SearchFroUserEvent value)? searchForUser,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetAllUsersEventCopyWith<$Res> {
   factory $GetAllUsersEventCopyWith(
-    GetAllUsersEvent value,
-    $Res Function(GetAllUsersEvent) then,
-  ) = _$GetAllUsersEventCopyWithImpl<$Res, GetAllUsersEvent>;
+          GetAllUsersEvent value, $Res Function(GetAllUsersEvent) then) =
+      _$GetAllUsersEventCopyWithImpl<$Res, GetAllUsersEvent>;
 }
 
 /// @nodoc
@@ -82,9 +86,8 @@ class _$GetAllUsersEventCopyWithImpl<$Res, $Val extends GetAllUsersEvent>
 /// @nodoc
 abstract class _$$StartedImplCopyWith<$Res> {
   factory _$$StartedImplCopyWith(
-    _$StartedImpl value,
-    $Res Function(_$StartedImpl) then,
-  ) = __$$StartedImplCopyWithImpl<$Res>;
+          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
+      __$$StartedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -92,9 +95,8 @@ class __$$StartedImplCopyWithImpl<$Res>
     extends _$GetAllUsersEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
-    _$StartedImpl _value,
-    $Res Function(_$StartedImpl) _then,
-  ) : super(_value, _then);
+      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of GetAllUsersEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -195,9 +197,9 @@ abstract class _Started implements GetAllUsersEvent {
 /// @nodoc
 abstract class _$$GetAdminAllUsersEventImplCopyWith<$Res> {
   factory _$$GetAdminAllUsersEventImplCopyWith(
-    _$GetAdminAllUsersEventImpl value,
-    $Res Function(_$GetAdminAllUsersEventImpl) then,
-  ) = __$$GetAdminAllUsersEventImplCopyWithImpl<$Res>;
+          _$GetAdminAllUsersEventImpl value,
+          $Res Function(_$GetAdminAllUsersEventImpl) then) =
+      __$$GetAdminAllUsersEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool isNotLoading});
 }
@@ -206,25 +208,23 @@ abstract class _$$GetAdminAllUsersEventImplCopyWith<$Res> {
 class __$$GetAdminAllUsersEventImplCopyWithImpl<$Res>
     extends _$GetAllUsersEventCopyWithImpl<$Res, _$GetAdminAllUsersEventImpl>
     implements _$$GetAdminAllUsersEventImplCopyWith<$Res> {
-  __$$GetAdminAllUsersEventImplCopyWithImpl(
-    _$GetAdminAllUsersEventImpl _value,
-    $Res Function(_$GetAdminAllUsersEventImpl) _then,
-  ) : super(_value, _then);
+  __$$GetAdminAllUsersEventImplCopyWithImpl(_$GetAdminAllUsersEventImpl _value,
+      $Res Function(_$GetAdminAllUsersEventImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of GetAllUsersEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? isNotLoading = null}) {
-    return _then(
-      _$GetAdminAllUsersEventImpl(
-        isNotLoading:
-            null == isNotLoading
-                ? _value.isNotLoading
-                : isNotLoading // ignore: cast_nullable_to_non_nullable
-                    as bool,
-      ),
-    );
+  $Res call({
+    Object? isNotLoading = null,
+  }) {
+    return _then(_$GetAdminAllUsersEventImpl(
+      isNotLoading: null == isNotLoading
+          ? _value.isNotLoading
+          : isNotLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
   }
 }
 
@@ -259,11 +259,8 @@ class _$GetAdminAllUsersEventImpl implements GetAdminAllUsersEvent {
   @override
   @pragma('vm:prefer-inline')
   _$$GetAdminAllUsersEventImplCopyWith<_$GetAdminAllUsersEventImpl>
-  get copyWith =>
-      __$$GetAdminAllUsersEventImplCopyWithImpl<_$GetAdminAllUsersEventImpl>(
-        this,
-        _$identity,
-      );
+      get copyWith => __$$GetAdminAllUsersEventImplCopyWithImpl<
+          _$GetAdminAllUsersEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -344,15 +341,14 @@ abstract class GetAdminAllUsersEvent implements GetAllUsersEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAdminAllUsersEventImplCopyWith<_$GetAdminAllUsersEventImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$SearchFroUserEventImplCopyWith<$Res> {
-  factory _$$SearchFroUserEventImplCopyWith(
-    _$SearchFroUserEventImpl value,
-    $Res Function(_$SearchFroUserEventImpl) then,
-  ) = __$$SearchFroUserEventImplCopyWithImpl<$Res>;
+  factory _$$SearchFroUserEventImplCopyWith(_$SearchFroUserEventImpl value,
+          $Res Function(_$SearchFroUserEventImpl) then) =
+      __$$SearchFroUserEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? searchName});
 }
@@ -361,24 +357,23 @@ abstract class _$$SearchFroUserEventImplCopyWith<$Res> {
 class __$$SearchFroUserEventImplCopyWithImpl<$Res>
     extends _$GetAllUsersEventCopyWithImpl<$Res, _$SearchFroUserEventImpl>
     implements _$$SearchFroUserEventImplCopyWith<$Res> {
-  __$$SearchFroUserEventImplCopyWithImpl(
-    _$SearchFroUserEventImpl _value,
-    $Res Function(_$SearchFroUserEventImpl) _then,
-  ) : super(_value, _then);
+  __$$SearchFroUserEventImplCopyWithImpl(_$SearchFroUserEventImpl _value,
+      $Res Function(_$SearchFroUserEventImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of GetAllUsersEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? searchName = freezed}) {
-    return _then(
-      _$SearchFroUserEventImpl(
-        freezed == searchName
-            ? _value.searchName
-            : searchName // ignore: cast_nullable_to_non_nullable
-                as String?,
-      ),
-    );
+  $Res call({
+    Object? searchName = freezed,
+  }) {
+    return _then(_$SearchFroUserEventImpl(
+      freezed == searchName
+          ? _value.searchName
+          : searchName // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
   }
 }
 
@@ -414,9 +409,7 @@ class _$SearchFroUserEventImpl implements SearchFroUserEvent {
   @pragma('vm:prefer-inline')
   _$$SearchFroUserEventImplCopyWith<_$SearchFroUserEventImpl> get copyWith =>
       __$$SearchFroUserEventImplCopyWithImpl<_$SearchFroUserEventImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -509,7 +502,8 @@ mixin _$GetAllUsersState {
     required TResult Function() empty,
     required TResult Function(String error) error,
     required TResult Function(List<GetAllUsersModel> userList) search,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
@@ -517,7 +511,8 @@ mixin _$GetAllUsersState {
     TResult? Function()? empty,
     TResult? Function(String error)? error,
     TResult? Function(List<GetAllUsersModel> userList)? search,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
@@ -526,7 +521,8 @@ mixin _$GetAllUsersState {
     TResult Function(String error)? error,
     TResult Function(List<GetAllUsersModel> userList)? search,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoadingState value) loading,
@@ -534,7 +530,8 @@ mixin _$GetAllUsersState {
     required TResult Function(EmptyState value) empty,
     required TResult Function(ErrorState value) error,
     required TResult Function(SearchState value) search,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoadingState value)? loading,
@@ -542,7 +539,8 @@ mixin _$GetAllUsersState {
     TResult? Function(EmptyState value)? empty,
     TResult? Function(ErrorState value)? error,
     TResult? Function(SearchState value)? search,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoadingState value)? loading,
@@ -551,15 +549,15 @@ mixin _$GetAllUsersState {
     TResult Function(ErrorState value)? error,
     TResult Function(SearchState value)? search,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetAllUsersStateCopyWith<$Res> {
   factory $GetAllUsersStateCopyWith(
-    GetAllUsersState value,
-    $Res Function(GetAllUsersState) then,
-  ) = _$GetAllUsersStateCopyWithImpl<$Res, GetAllUsersState>;
+          GetAllUsersState value, $Res Function(GetAllUsersState) then) =
+      _$GetAllUsersStateCopyWithImpl<$Res, GetAllUsersState>;
 }
 
 /// @nodoc
@@ -579,9 +577,8 @@ class _$GetAllUsersStateCopyWithImpl<$Res, $Val extends GetAllUsersState>
 /// @nodoc
 abstract class _$$LoadingStateImplCopyWith<$Res> {
   factory _$$LoadingStateImplCopyWith(
-    _$LoadingStateImpl value,
-    $Res Function(_$LoadingStateImpl) then,
-  ) = __$$LoadingStateImplCopyWithImpl<$Res>;
+          _$LoadingStateImpl value, $Res Function(_$LoadingStateImpl) then) =
+      __$$LoadingStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -589,9 +586,8 @@ class __$$LoadingStateImplCopyWithImpl<$Res>
     extends _$GetAllUsersStateCopyWithImpl<$Res, _$LoadingStateImpl>
     implements _$$LoadingStateImplCopyWith<$Res> {
   __$$LoadingStateImplCopyWithImpl(
-    _$LoadingStateImpl _value,
-    $Res Function(_$LoadingStateImpl) _then,
-  ) : super(_value, _then);
+      _$LoadingStateImpl _value, $Res Function(_$LoadingStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of GetAllUsersState
   /// with the given fields replaced by the non-null parameter values.
@@ -704,9 +700,8 @@ abstract class LoadingState implements GetAllUsersState {
 /// @nodoc
 abstract class _$$SuccessStateImplCopyWith<$Res> {
   factory _$$SuccessStateImplCopyWith(
-    _$SuccessStateImpl value,
-    $Res Function(_$SuccessStateImpl) then,
-  ) = __$$SuccessStateImplCopyWithImpl<$Res>;
+          _$SuccessStateImpl value, $Res Function(_$SuccessStateImpl) then) =
+      __$$SuccessStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<GetAllUsersModel> usersList});
 }
@@ -716,24 +711,22 @@ class __$$SuccessStateImplCopyWithImpl<$Res>
     extends _$GetAllUsersStateCopyWithImpl<$Res, _$SuccessStateImpl>
     implements _$$SuccessStateImplCopyWith<$Res> {
   __$$SuccessStateImplCopyWithImpl(
-    _$SuccessStateImpl _value,
-    $Res Function(_$SuccessStateImpl) _then,
-  ) : super(_value, _then);
+      _$SuccessStateImpl _value, $Res Function(_$SuccessStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of GetAllUsersState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? usersList = null}) {
-    return _then(
-      _$SuccessStateImpl(
-        usersList:
-            null == usersList
-                ? _value._usersList
-                : usersList // ignore: cast_nullable_to_non_nullable
-                    as List<GetAllUsersModel>,
-      ),
-    );
+  $Res call({
+    Object? usersList = null,
+  }) {
+    return _then(_$SuccessStateImpl(
+      usersList: null == usersList
+          ? _value._usersList
+          : usersList // ignore: cast_nullable_to_non_nullable
+              as List<GetAllUsersModel>,
+    ));
   }
 }
 
@@ -741,7 +734,7 @@ class __$$SuccessStateImplCopyWithImpl<$Res>
 
 class _$SuccessStateImpl implements SuccessState {
   const _$SuccessStateImpl({required final List<GetAllUsersModel> usersList})
-    : _usersList = usersList;
+      : _usersList = usersList;
 
   final List<GetAllUsersModel> _usersList;
   @override
@@ -761,10 +754,8 @@ class _$SuccessStateImpl implements SuccessState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuccessStateImpl &&
-            const DeepCollectionEquality().equals(
-              other._usersList,
-              _usersList,
-            ));
+            const DeepCollectionEquality()
+                .equals(other._usersList, _usersList));
   }
 
   @override
@@ -861,9 +852,8 @@ class _$SuccessStateImpl implements SuccessState {
 }
 
 abstract class SuccessState implements GetAllUsersState {
-  const factory SuccessState({
-    required final List<GetAllUsersModel> usersList,
-  }) = _$SuccessStateImpl;
+  const factory SuccessState(
+      {required final List<GetAllUsersModel> usersList}) = _$SuccessStateImpl;
 
   List<GetAllUsersModel> get usersList;
 
@@ -877,9 +867,8 @@ abstract class SuccessState implements GetAllUsersState {
 /// @nodoc
 abstract class _$$EmptyStateImplCopyWith<$Res> {
   factory _$$EmptyStateImplCopyWith(
-    _$EmptyStateImpl value,
-    $Res Function(_$EmptyStateImpl) then,
-  ) = __$$EmptyStateImplCopyWithImpl<$Res>;
+          _$EmptyStateImpl value, $Res Function(_$EmptyStateImpl) then) =
+      __$$EmptyStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -887,9 +876,8 @@ class __$$EmptyStateImplCopyWithImpl<$Res>
     extends _$GetAllUsersStateCopyWithImpl<$Res, _$EmptyStateImpl>
     implements _$$EmptyStateImplCopyWith<$Res> {
   __$$EmptyStateImplCopyWithImpl(
-    _$EmptyStateImpl _value,
-    $Res Function(_$EmptyStateImpl) _then,
-  ) : super(_value, _then);
+      _$EmptyStateImpl _value, $Res Function(_$EmptyStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of GetAllUsersState
   /// with the given fields replaced by the non-null parameter values.
@@ -1002,9 +990,8 @@ abstract class EmptyState implements GetAllUsersState {
 /// @nodoc
 abstract class _$$ErrorStateImplCopyWith<$Res> {
   factory _$$ErrorStateImplCopyWith(
-    _$ErrorStateImpl value,
-    $Res Function(_$ErrorStateImpl) then,
-  ) = __$$ErrorStateImplCopyWithImpl<$Res>;
+          _$ErrorStateImpl value, $Res Function(_$ErrorStateImpl) then) =
+      __$$ErrorStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String error});
 }
@@ -1014,24 +1001,22 @@ class __$$ErrorStateImplCopyWithImpl<$Res>
     extends _$GetAllUsersStateCopyWithImpl<$Res, _$ErrorStateImpl>
     implements _$$ErrorStateImplCopyWith<$Res> {
   __$$ErrorStateImplCopyWithImpl(
-    _$ErrorStateImpl _value,
-    $Res Function(_$ErrorStateImpl) _then,
-  ) : super(_value, _then);
+      _$ErrorStateImpl _value, $Res Function(_$ErrorStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of GetAllUsersState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? error = null}) {
-    return _then(
-      _$ErrorStateImpl(
-        error:
-            null == error
-                ? _value.error
-                : error // ignore: cast_nullable_to_non_nullable
-                    as String,
-      ),
-    );
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$ErrorStateImpl(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -1163,9 +1148,8 @@ abstract class ErrorState implements GetAllUsersState {
 /// @nodoc
 abstract class _$$SearchStateImplCopyWith<$Res> {
   factory _$$SearchStateImplCopyWith(
-    _$SearchStateImpl value,
-    $Res Function(_$SearchStateImpl) then,
-  ) = __$$SearchStateImplCopyWithImpl<$Res>;
+          _$SearchStateImpl value, $Res Function(_$SearchStateImpl) then) =
+      __$$SearchStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<GetAllUsersModel> userList});
 }
@@ -1175,24 +1159,22 @@ class __$$SearchStateImplCopyWithImpl<$Res>
     extends _$GetAllUsersStateCopyWithImpl<$Res, _$SearchStateImpl>
     implements _$$SearchStateImplCopyWith<$Res> {
   __$$SearchStateImplCopyWithImpl(
-    _$SearchStateImpl _value,
-    $Res Function(_$SearchStateImpl) _then,
-  ) : super(_value, _then);
+      _$SearchStateImpl _value, $Res Function(_$SearchStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of GetAllUsersState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? userList = null}) {
-    return _then(
-      _$SearchStateImpl(
-        userList:
-            null == userList
-                ? _value._userList
-                : userList // ignore: cast_nullable_to_non_nullable
-                    as List<GetAllUsersModel>,
-      ),
-    );
+  $Res call({
+    Object? userList = null,
+  }) {
+    return _then(_$SearchStateImpl(
+      userList: null == userList
+          ? _value._userList
+          : userList // ignore: cast_nullable_to_non_nullable
+              as List<GetAllUsersModel>,
+    ));
   }
 }
 
@@ -1200,7 +1182,7 @@ class __$$SearchStateImplCopyWithImpl<$Res>
 
 class _$SearchStateImpl implements SearchState {
   const _$SearchStateImpl({required final List<GetAllUsersModel> userList})
-    : _userList = userList;
+      : _userList = userList;
 
   final List<GetAllUsersModel> _userList;
   @override

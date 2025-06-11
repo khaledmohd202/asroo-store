@@ -12,8 +12,7 @@ part of 'auth_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$AuthEvent {
@@ -22,39 +21,45 @@ mixin _$AuthEvent {
     required TResult Function() started,
     required TResult Function() login,
     required TResult Function(String imageUrl) signUp,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? login,
     TResult? Function(String imageUrl)? signUp,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? login,
     TResult Function(String imageUrl)? signUp,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(LoginEvent value) login,
     required TResult Function(SignUpEvent value) signUp,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(LoginEvent value)? login,
     TResult? Function(SignUpEvent value)? signUp,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(LoginEvent value)? login,
     TResult Function(SignUpEvent value)? signUp,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -80,9 +85,8 @@ class _$AuthEventCopyWithImpl<$Res, $Val extends AuthEvent>
 /// @nodoc
 abstract class _$$StartedImplCopyWith<$Res> {
   factory _$$StartedImplCopyWith(
-    _$StartedImpl value,
-    $Res Function(_$StartedImpl) then,
-  ) = __$$StartedImplCopyWithImpl<$Res>;
+          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
+      __$$StartedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -90,9 +94,8 @@ class __$$StartedImplCopyWithImpl<$Res>
     extends _$AuthEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
-    _$StartedImpl _value,
-    $Res Function(_$StartedImpl) _then,
-  ) : super(_value, _then);
+      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AuthEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -193,9 +196,8 @@ abstract class _Started implements AuthEvent {
 /// @nodoc
 abstract class _$$LoginEventImplCopyWith<$Res> {
   factory _$$LoginEventImplCopyWith(
-    _$LoginEventImpl value,
-    $Res Function(_$LoginEventImpl) then,
-  ) = __$$LoginEventImplCopyWithImpl<$Res>;
+          _$LoginEventImpl value, $Res Function(_$LoginEventImpl) then) =
+      __$$LoginEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -203,9 +205,8 @@ class __$$LoginEventImplCopyWithImpl<$Res>
     extends _$AuthEventCopyWithImpl<$Res, _$LoginEventImpl>
     implements _$$LoginEventImplCopyWith<$Res> {
   __$$LoginEventImplCopyWithImpl(
-    _$LoginEventImpl _value,
-    $Res Function(_$LoginEventImpl) _then,
-  ) : super(_value, _then);
+      _$LoginEventImpl _value, $Res Function(_$LoginEventImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AuthEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -306,9 +307,8 @@ abstract class LoginEvent implements AuthEvent {
 /// @nodoc
 abstract class _$$SignUpEventImplCopyWith<$Res> {
   factory _$$SignUpEventImplCopyWith(
-    _$SignUpEventImpl value,
-    $Res Function(_$SignUpEventImpl) then,
-  ) = __$$SignUpEventImplCopyWithImpl<$Res>;
+          _$SignUpEventImpl value, $Res Function(_$SignUpEventImpl) then) =
+      __$$SignUpEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String imageUrl});
 }
@@ -318,24 +318,22 @@ class __$$SignUpEventImplCopyWithImpl<$Res>
     extends _$AuthEventCopyWithImpl<$Res, _$SignUpEventImpl>
     implements _$$SignUpEventImplCopyWith<$Res> {
   __$$SignUpEventImplCopyWithImpl(
-    _$SignUpEventImpl _value,
-    $Res Function(_$SignUpEventImpl) _then,
-  ) : super(_value, _then);
+      _$SignUpEventImpl _value, $Res Function(_$SignUpEventImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AuthEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? imageUrl = null}) {
-    return _then(
-      _$SignUpEventImpl(
-        imageUrl:
-            null == imageUrl
-                ? _value.imageUrl
-                : imageUrl // ignore: cast_nullable_to_non_nullable
-                    as String,
-      ),
-    );
+  $Res call({
+    Object? imageUrl = null,
+  }) {
+    return _then(_$SignUpEventImpl(
+      imageUrl: null == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -462,14 +460,16 @@ mixin _$AuthState {
     required TResult Function() loading,
     required TResult Function(String error) error,
     required TResult Function(String userRole) success,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String error)? error,
     TResult? Function(String userRole)? success,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -477,21 +477,24 @@ mixin _$AuthState {
     TResult Function(String error)? error,
     TResult Function(String userRole)? success,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(LoadingState value) loading,
     required TResult Function(ErrorState value) error,
     required TResult Function(SuccessState value) success,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(LoadingState value)? loading,
     TResult? Function(ErrorState value)? error,
     TResult? Function(SuccessState value)? success,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -499,7 +502,8 @@ mixin _$AuthState {
     TResult Function(ErrorState value)? error,
     TResult Function(SuccessState value)? success,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -525,9 +529,8 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
 /// @nodoc
 abstract class _$$InitialImplCopyWith<$Res> {
   factory _$$InitialImplCopyWith(
-    _$InitialImpl value,
-    $Res Function(_$InitialImpl) then,
-  ) = __$$InitialImplCopyWithImpl<$Res>;
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -535,9 +538,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     extends _$AuthStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
-    _$InitialImpl _value,
-    $Res Function(_$InitialImpl) _then,
-  ) : super(_value, _then);
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -644,9 +646,8 @@ abstract class _Initial implements AuthState {
 /// @nodoc
 abstract class _$$LoadingStateImplCopyWith<$Res> {
   factory _$$LoadingStateImplCopyWith(
-    _$LoadingStateImpl value,
-    $Res Function(_$LoadingStateImpl) then,
-  ) = __$$LoadingStateImplCopyWithImpl<$Res>;
+          _$LoadingStateImpl value, $Res Function(_$LoadingStateImpl) then) =
+      __$$LoadingStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -654,9 +655,8 @@ class __$$LoadingStateImplCopyWithImpl<$Res>
     extends _$AuthStateCopyWithImpl<$Res, _$LoadingStateImpl>
     implements _$$LoadingStateImplCopyWith<$Res> {
   __$$LoadingStateImplCopyWithImpl(
-    _$LoadingStateImpl _value,
-    $Res Function(_$LoadingStateImpl) _then,
-  ) : super(_value, _then);
+      _$LoadingStateImpl _value, $Res Function(_$LoadingStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -763,9 +763,8 @@ abstract class LoadingState implements AuthState {
 /// @nodoc
 abstract class _$$ErrorStateImplCopyWith<$Res> {
   factory _$$ErrorStateImplCopyWith(
-    _$ErrorStateImpl value,
-    $Res Function(_$ErrorStateImpl) then,
-  ) = __$$ErrorStateImplCopyWithImpl<$Res>;
+          _$ErrorStateImpl value, $Res Function(_$ErrorStateImpl) then) =
+      __$$ErrorStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String error});
 }
@@ -775,24 +774,22 @@ class __$$ErrorStateImplCopyWithImpl<$Res>
     extends _$AuthStateCopyWithImpl<$Res, _$ErrorStateImpl>
     implements _$$ErrorStateImplCopyWith<$Res> {
   __$$ErrorStateImplCopyWithImpl(
-    _$ErrorStateImpl _value,
-    $Res Function(_$ErrorStateImpl) _then,
-  ) : super(_value, _then);
+      _$ErrorStateImpl _value, $Res Function(_$ErrorStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? error = null}) {
-    return _then(
-      _$ErrorStateImpl(
-        error:
-            null == error
-                ? _value.error
-                : error // ignore: cast_nullable_to_non_nullable
-                    as String,
-      ),
-    );
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$ErrorStateImpl(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -918,9 +915,8 @@ abstract class ErrorState implements AuthState {
 /// @nodoc
 abstract class _$$SuccessStateImplCopyWith<$Res> {
   factory _$$SuccessStateImplCopyWith(
-    _$SuccessStateImpl value,
-    $Res Function(_$SuccessStateImpl) then,
-  ) = __$$SuccessStateImplCopyWithImpl<$Res>;
+          _$SuccessStateImpl value, $Res Function(_$SuccessStateImpl) then) =
+      __$$SuccessStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String userRole});
 }
@@ -930,24 +926,22 @@ class __$$SuccessStateImplCopyWithImpl<$Res>
     extends _$AuthStateCopyWithImpl<$Res, _$SuccessStateImpl>
     implements _$$SuccessStateImplCopyWith<$Res> {
   __$$SuccessStateImplCopyWithImpl(
-    _$SuccessStateImpl _value,
-    $Res Function(_$SuccessStateImpl) _then,
-  ) : super(_value, _then);
+      _$SuccessStateImpl _value, $Res Function(_$SuccessStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? userRole = null}) {
-    return _then(
-      _$SuccessStateImpl(
-        userRole:
-            null == userRole
-                ? _value.userRole
-                : userRole // ignore: cast_nullable_to_non_nullable
-                    as String,
-      ),
-    );
+  $Res call({
+    Object? userRole = null,
+  }) {
+    return _then(_$SuccessStateImpl(
+      userRole: null == userRole
+          ? _value.userRole
+          : userRole // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 

@@ -12,8 +12,7 @@ part of 'create_category_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$CreateCategoryEvent {
@@ -21,42 +20,47 @@ mixin _$CreateCategoryEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(CreateCategoryRequestBody body) createNewCategory,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(CreateCategoryRequestBody body)? createNewCategory,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(CreateCategoryRequestBody body)? createNewCategory,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(CreateNewCategoryEvent value) createNewCategory,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(CreateNewCategoryEvent value)? createNewCategory,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(CreateNewCategoryEvent value)? createNewCategory,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CreateCategoryEventCopyWith<$Res> {
   factory $CreateCategoryEventCopyWith(
-    CreateCategoryEvent value,
-    $Res Function(CreateCategoryEvent) then,
-  ) = _$CreateCategoryEventCopyWithImpl<$Res, CreateCategoryEvent>;
+          CreateCategoryEvent value, $Res Function(CreateCategoryEvent) then) =
+      _$CreateCategoryEventCopyWithImpl<$Res, CreateCategoryEvent>;
 }
 
 /// @nodoc
@@ -76,9 +80,8 @@ class _$CreateCategoryEventCopyWithImpl<$Res, $Val extends CreateCategoryEvent>
 /// @nodoc
 abstract class _$$StartedImplCopyWith<$Res> {
   factory _$$StartedImplCopyWith(
-    _$StartedImpl value,
-    $Res Function(_$StartedImpl) then,
-  ) = __$$StartedImplCopyWithImpl<$Res>;
+          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
+      __$$StartedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -86,9 +89,8 @@ class __$$StartedImplCopyWithImpl<$Res>
     extends _$CreateCategoryEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
-    _$StartedImpl _value,
-    $Res Function(_$StartedImpl) _then,
-  ) : super(_value, _then);
+      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of CreateCategoryEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -107,7 +109,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'CreateCategoryEvent.started'));
+    properties.add(DiagnosticsProperty('type', 'CreateCategoryEvent.started'));
   }
 
   @override
@@ -189,37 +191,36 @@ abstract class _Started implements CreateCategoryEvent {
 /// @nodoc
 abstract class _$$CreateNewCategoryEventImplCopyWith<$Res> {
   factory _$$CreateNewCategoryEventImplCopyWith(
-    _$CreateNewCategoryEventImpl value,
-    $Res Function(_$CreateNewCategoryEventImpl) then,
-  ) = __$$CreateNewCategoryEventImplCopyWithImpl<$Res>;
+          _$CreateNewCategoryEventImpl value,
+          $Res Function(_$CreateNewCategoryEventImpl) then) =
+      __$$CreateNewCategoryEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({CreateCategoryRequestBody body});
 }
 
 /// @nodoc
 class __$$CreateNewCategoryEventImplCopyWithImpl<$Res>
-    extends
-        _$CreateCategoryEventCopyWithImpl<$Res, _$CreateNewCategoryEventImpl>
+    extends _$CreateCategoryEventCopyWithImpl<$Res,
+        _$CreateNewCategoryEventImpl>
     implements _$$CreateNewCategoryEventImplCopyWith<$Res> {
   __$$CreateNewCategoryEventImplCopyWithImpl(
-    _$CreateNewCategoryEventImpl _value,
-    $Res Function(_$CreateNewCategoryEventImpl) _then,
-  ) : super(_value, _then);
+      _$CreateNewCategoryEventImpl _value,
+      $Res Function(_$CreateNewCategoryEventImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of CreateCategoryEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? body = null}) {
-    return _then(
-      _$CreateNewCategoryEventImpl(
-        body:
-            null == body
-                ? _value.body
-                : body // ignore: cast_nullable_to_non_nullable
-                    as CreateCategoryRequestBody,
-      ),
-    );
+  $Res call({
+    Object? body = null,
+  }) {
+    return _then(_$CreateNewCategoryEventImpl(
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as CreateCategoryRequestBody,
+    ));
   }
 }
 
@@ -243,8 +244,7 @@ class _$CreateNewCategoryEventImpl
     super.debugFillProperties(properties);
     properties
       ..add(
-        DiagnosticsProperty('type', 'CreateCategoryEvent.createNewCategory'),
-      )
+          DiagnosticsProperty('type', 'CreateCategoryEvent.createNewCategory'))
       ..add(DiagnosticsProperty('body', body));
   }
 
@@ -265,11 +265,8 @@ class _$CreateNewCategoryEventImpl
   @override
   @pragma('vm:prefer-inline')
   _$$CreateNewCategoryEventImplCopyWith<_$CreateNewCategoryEventImpl>
-  get copyWith =>
-      __$$CreateNewCategoryEventImplCopyWithImpl<_$CreateNewCategoryEventImpl>(
-        this,
-        _$identity,
-      );
+      get copyWith => __$$CreateNewCategoryEventImplCopyWithImpl<
+          _$CreateNewCategoryEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -335,9 +332,9 @@ class _$CreateNewCategoryEventImpl
 }
 
 abstract class CreateNewCategoryEvent implements CreateCategoryEvent {
-  const factory CreateNewCategoryEvent({
-    required final CreateCategoryRequestBody body,
-  }) = _$CreateNewCategoryEventImpl;
+  const factory CreateNewCategoryEvent(
+          {required final CreateCategoryRequestBody body}) =
+      _$CreateNewCategoryEventImpl;
 
   CreateCategoryRequestBody get body;
 
@@ -345,7 +342,7 @@ abstract class CreateNewCategoryEvent implements CreateCategoryEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CreateNewCategoryEventImplCopyWith<_$CreateNewCategoryEventImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -356,14 +353,16 @@ mixin _$CreateCategoryState {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String error) error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String error)? error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -371,21 +370,24 @@ mixin _$CreateCategoryState {
     TResult Function()? success,
     TResult Function(String error)? error,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(LoadingState value) loading,
     required TResult Function(SuccessState value) success,
     required TResult Function(ErrorState value) error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(LoadingState value)? loading,
     TResult? Function(SuccessState value)? success,
     TResult? Function(ErrorState value)? error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -393,15 +395,15 @@ mixin _$CreateCategoryState {
     TResult Function(SuccessState value)? success,
     TResult Function(ErrorState value)? error,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CreateCategoryStateCopyWith<$Res> {
   factory $CreateCategoryStateCopyWith(
-    CreateCategoryState value,
-    $Res Function(CreateCategoryState) then,
-  ) = _$CreateCategoryStateCopyWithImpl<$Res, CreateCategoryState>;
+          CreateCategoryState value, $Res Function(CreateCategoryState) then) =
+      _$CreateCategoryStateCopyWithImpl<$Res, CreateCategoryState>;
 }
 
 /// @nodoc
@@ -421,9 +423,8 @@ class _$CreateCategoryStateCopyWithImpl<$Res, $Val extends CreateCategoryState>
 /// @nodoc
 abstract class _$$InitialImplCopyWith<$Res> {
   factory _$$InitialImplCopyWith(
-    _$InitialImpl value,
-    $Res Function(_$InitialImpl) then,
-  ) = __$$InitialImplCopyWithImpl<$Res>;
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -431,9 +432,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     extends _$CreateCategoryStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
-    _$InitialImpl _value,
-    $Res Function(_$InitialImpl) _then,
-  ) : super(_value, _then);
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of CreateCategoryState
   /// with the given fields replaced by the non-null parameter values.
@@ -452,7 +452,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'CreateCategoryState.initial'));
+    properties.add(DiagnosticsProperty('type', 'CreateCategoryState.initial'));
   }
 
   @override
@@ -546,9 +546,8 @@ abstract class _Initial implements CreateCategoryState {
 /// @nodoc
 abstract class _$$LoadingStateImplCopyWith<$Res> {
   factory _$$LoadingStateImplCopyWith(
-    _$LoadingStateImpl value,
-    $Res Function(_$LoadingStateImpl) then,
-  ) = __$$LoadingStateImplCopyWithImpl<$Res>;
+          _$LoadingStateImpl value, $Res Function(_$LoadingStateImpl) then) =
+      __$$LoadingStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -556,9 +555,8 @@ class __$$LoadingStateImplCopyWithImpl<$Res>
     extends _$CreateCategoryStateCopyWithImpl<$Res, _$LoadingStateImpl>
     implements _$$LoadingStateImplCopyWith<$Res> {
   __$$LoadingStateImplCopyWithImpl(
-    _$LoadingStateImpl _value,
-    $Res Function(_$LoadingStateImpl) _then,
-  ) : super(_value, _then);
+      _$LoadingStateImpl _value, $Res Function(_$LoadingStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of CreateCategoryState
   /// with the given fields replaced by the non-null parameter values.
@@ -577,7 +575,7 @@ class _$LoadingStateImpl with DiagnosticableTreeMixin implements LoadingState {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'CreateCategoryState.loading'));
+    properties.add(DiagnosticsProperty('type', 'CreateCategoryState.loading'));
   }
 
   @override
@@ -671,9 +669,8 @@ abstract class LoadingState implements CreateCategoryState {
 /// @nodoc
 abstract class _$$SuccessStateImplCopyWith<$Res> {
   factory _$$SuccessStateImplCopyWith(
-    _$SuccessStateImpl value,
-    $Res Function(_$SuccessStateImpl) then,
-  ) = __$$SuccessStateImplCopyWithImpl<$Res>;
+          _$SuccessStateImpl value, $Res Function(_$SuccessStateImpl) then) =
+      __$$SuccessStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -681,9 +678,8 @@ class __$$SuccessStateImplCopyWithImpl<$Res>
     extends _$CreateCategoryStateCopyWithImpl<$Res, _$SuccessStateImpl>
     implements _$$SuccessStateImplCopyWith<$Res> {
   __$$SuccessStateImplCopyWithImpl(
-    _$SuccessStateImpl _value,
-    $Res Function(_$SuccessStateImpl) _then,
-  ) : super(_value, _then);
+      _$SuccessStateImpl _value, $Res Function(_$SuccessStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of CreateCategoryState
   /// with the given fields replaced by the non-null parameter values.
@@ -702,7 +698,7 @@ class _$SuccessStateImpl with DiagnosticableTreeMixin implements SuccessState {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'CreateCategoryState.success'));
+    properties.add(DiagnosticsProperty('type', 'CreateCategoryState.success'));
   }
 
   @override
@@ -796,9 +792,8 @@ abstract class SuccessState implements CreateCategoryState {
 /// @nodoc
 abstract class _$$ErrorStateImplCopyWith<$Res> {
   factory _$$ErrorStateImplCopyWith(
-    _$ErrorStateImpl value,
-    $Res Function(_$ErrorStateImpl) then,
-  ) = __$$ErrorStateImplCopyWithImpl<$Res>;
+          _$ErrorStateImpl value, $Res Function(_$ErrorStateImpl) then) =
+      __$$ErrorStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String error});
 }
@@ -808,24 +803,22 @@ class __$$ErrorStateImplCopyWithImpl<$Res>
     extends _$CreateCategoryStateCopyWithImpl<$Res, _$ErrorStateImpl>
     implements _$$ErrorStateImplCopyWith<$Res> {
   __$$ErrorStateImplCopyWithImpl(
-    _$ErrorStateImpl _value,
-    $Res Function(_$ErrorStateImpl) _then,
-  ) : super(_value, _then);
+      _$ErrorStateImpl _value, $Res Function(_$ErrorStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of CreateCategoryState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? error = null}) {
-    return _then(
-      _$ErrorStateImpl(
-        error:
-            null == error
-                ? _value.error
-                : error // ignore: cast_nullable_to_non_nullable
-                    as String,
-      ),
-    );
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$ErrorStateImpl(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
