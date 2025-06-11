@@ -5,11 +5,17 @@ import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/style/colors/dark_colors.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/add_notification/data/models/add_notification_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EditNotificationBottomSheet extends StatefulWidget {
-  const EditNotificationBottomSheet({super.key});
+  const EditNotificationBottomSheet({
+    required this.notificationModel,
+    super.key,
+  });
+
+  final AddNotificationModel notificationModel;
 
   @override
   State<EditNotificationBottomSheet> createState() =>
@@ -21,6 +27,14 @@ class _EditNotificationBottomSheetState
   TextEditingController titleController = TextEditingController();
   TextEditingController bodyController = TextEditingController();
   TextEditingController productIdController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    titleController.text = widget.notificationModel.title;
+    bodyController.text = widget.notificationModel.body;
+    productIdController.text = widget.notificationModel.productId.toString();
+  }
 
   final formKey = GlobalKey<FormState>();
 
@@ -129,5 +143,26 @@ class _EditNotificationBottomSheetState
     );
   }
 
-  void _validNotification(BuildContext context) {}
+  void _validNotification(BuildContext context) {
+    if (formKey.currentState!.validate()) {
+      // Title Controller can be empty, so we don't check it.
+      widget.notificationModel.title =
+          titleController.text.isEmpty
+              ? widget.notificationModel.title
+              : titleController.text.trim();
+      // Body Controller can be empty, so we don't check it.
+      widget.notificationModel.body =
+          bodyController.text.isEmpty
+              ? widget.notificationModel.body
+              : bodyController.text.trim();
+      // Product ID Controller can be empty, so we don't check it.
+      widget.notificationModel.productId =
+          productIdController.text.isEmpty
+              ? widget.notificationModel.productId
+              : int.parse(productIdController.text.trim());
+
+      widget.notificationModel.save();
+      context.pop();
+    }
+  }
 }

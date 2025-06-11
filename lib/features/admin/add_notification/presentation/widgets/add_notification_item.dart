@@ -45,7 +45,9 @@ class AddNotificationItem extends StatelessWidget {
                 const Icon(Icons.delete, color: Colors.red),
                 SizedBox(width: 40.w),
                 // edit button
-                const EditNotification(),
+                EditNotification(
+                  notificationModel: notificationModel,
+                ),
                 SizedBox(width: 40.w),
                 // Send Button
                 const Icon(Icons.send, color: DarkColors.blueLight),
