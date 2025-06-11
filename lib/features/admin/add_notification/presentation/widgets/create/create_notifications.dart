@@ -7,6 +7,7 @@ import 'package:asroo_store/core/style/colors/dark_colors.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
 import 'package:asroo_store/features/admin/add_notification/presentation/bloc/add_notification/add_notification_bloc.dart';
+import 'package:asroo_store/features/admin/add_notification/presentation/bloc/get_all_notification_admin/get_all_notification_admin_bloc.dart';
 import 'package:asroo_store/features/admin/add_notification/presentation/widgets/create/create_notification_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -36,6 +37,11 @@ class CreateNotifications extends StatelessWidget {
                 create: (context) => sl<AddNotificationBloc>(),
                 child: const CreateNotificationBottomSheet(),
               ),
+              whenComplete: () {
+                context.read<GetAllNotificationAdminBloc>().add(
+                  const GetAllNotificationAdminEvent.getAllNotification(),
+                );
+              },
               backgroundColor: DarkColors.blueDark,
             );
           },
