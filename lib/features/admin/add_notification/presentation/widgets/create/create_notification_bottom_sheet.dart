@@ -1,3 +1,4 @@
+import 'package:asroo_store/core/common/toast/show_toast.dart';
 import 'package:asroo_store/core/common/widgets/custom_button.dart';
 import 'package:asroo_store/core/common/widgets/custom_text_field.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
@@ -5,7 +6,10 @@ import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/style/colors/dark_colors.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/add_notification/data/models/add_notification_model.dart';
+import 'package:asroo_store/features/admin/add_notification/presentation/bloc/add_notification/add_notification_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CreateNotificationBottomSheet extends StatefulWidget {
@@ -106,22 +110,61 @@ class _CreateNotificationBottomSheetState
               hintText: 'Product ID',
               keyboardType: TextInputType.number,
               validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter a valid Product ID';
+                }
                 return null;
               },
             ),
             SizedBox(height: 20.h),
             // Add a button to submit the notification.
-            CustomButton(
-              onPressed: () {
-                _validNotification(context);
+            BlocConsumer<AddNotificationBloc, AddNotificationState>(
+              listener: (context, state) {
+                state.whenOrNull(
+                  success: () {
+                    context.pop();
+                    ShowToast.showToastSuccessTop(
+                      message: 'Notification created successfully',
+                    );
+                  },
+                  error: (message) {
+                    ShowToast.showToastErrorTop(message: message);
+                  },
+                );
               },
-              backgroundColor: DarkColors.white,
-              textColor: DarkColors.blueDark,
-              text: 'Add Notification',
-              width: MediaQuery.of(context).size.width,
-              height: 50.h,
-              lastRadius: 15.r,
-              threeRadius: 15.r,
+              builder: (context, state) {
+                return state.maybeWhen(
+                  orElse: () {
+                    return CustomButton(
+                      onPressed: () {
+                        _validNotification(context);
+                      },
+                      backgroundColor: DarkColors.white,
+                      textColor: DarkColors.blueDark,
+                      text: 'Add Notification',
+                      width: MediaQuery.of(context).size.width,
+                      height: 50.h,
+                      lastRadius: 15.r,
+                      threeRadius: 15.r,
+                    );
+                  },
+                  loading: () {
+                    return Container(
+                      height: 50.h,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                        color: DarkColors.white,
+                        borderRadius: BorderRadius.circular(20.r),
+                      ),
+                      child: const Center(
+                        child: CircularProgressIndicator(
+                          color: DarkColors.blueDark,
+                        ),
+                      ),
+                    );
+                  },
+                );
+              },
             ),
           ],
         ),
@@ -129,5 +172,18 @@ class _CreateNotificationBottomSheetState
     );
   }
 
-  void _validNotification(BuildContext context) {}
+  void _validNotification(BuildContext context) {
+    if (formKey.currentState!.validate()) {
+      context.read<AddNotificationBloc>().add(
+        AddNotificationEvent.createNotification(
+          notificationModel: AddNotificationModel(
+            title: titleController.text.trim(),
+            body: bodyController.text.trim(),
+            productId: int.parse(productIdController.text.trim()),
+            createdAt: DateTime.now(),
+          ),
+        ),
+      );
+    }
+  }
 }

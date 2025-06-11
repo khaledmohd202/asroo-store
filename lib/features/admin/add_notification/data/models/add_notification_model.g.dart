@@ -19,7 +19,7 @@ class AddNotificationModelAdapter extends TypeAdapter<AddNotificationModel> {
     return AddNotificationModel(
       title: fields[0] as String,
       body: fields[1] as String,
-      productId: fields[2] as String,
+      productId: fields[2] as int,
       createdAt: fields[3] as DateTime,
     );
   }
