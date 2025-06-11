@@ -30,7 +30,7 @@ dependencies:
   cached_network_image: ^3.4.1
 
   #Bloc
-  flutter_bloc: ^9.0.0
+  flutter_bloc: ^9.1.1
 
   #Shared Preference
   shared_preferences: ^2.5.1
@@ -53,6 +53,10 @@ dependencies:
   flutter:
     sdk: flutter
 
+
+  #Notification
+  firebase_messaging: ^15.2.6
+  googleapis_auth: ^2.0.0
 
 dev_dependencies:
   flutter_test:

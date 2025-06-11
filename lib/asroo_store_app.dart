@@ -20,7 +20,7 @@ class AsrooStoreApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
       valueListenable: ConnectivityController.instance.isConnected,
-      builder: (_, value, _) {
+      builder: (_, value, __) {
         if (value) {
           return BlocProvider(
             create:
