@@ -1,5 +1,7 @@
 import 'package:asroo_store/core/common/widgets/admin_app_bar.dart';
+import 'package:asroo_store/core/di/injection_container.dart';
 import 'package:asroo_store/core/style/colors/dark_colors.dart';
+import 'package:asroo_store/features/admin/add_notification/presentation/bloc/add_notification/add_notification_bloc.dart';
 import 'package:asroo_store/features/admin/add_notification/presentation/bloc/get_all_notification_admin/get_all_notification_admin_bloc.dart';
 import 'package:asroo_store/features/admin/add_notification/presentation/factors/add_notification_body.dart';
 import 'package:flutter/material.dart';
@@ -15,10 +17,11 @@ class AddNotificationScreen extends StatelessWidget {
         BlocProvider(
           create:
               (context) =>
-                  GetAllNotificationAdminBloc()..add(
+                  sl<GetAllNotificationAdminBloc>()..add(
                     const GetAllNotificationAdminEvent.getAllNotification(),
                   ),
         ),
+        BlocProvider(create: (context) => sl<AddNotificationBloc>()),
       ],
       child: const Scaffold(
         backgroundColor: DarkColors.mainColor,
