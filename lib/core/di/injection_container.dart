@@ -10,8 +10,11 @@ import 'package:asroo_store/features/admin/add_categories/presentation/bloc/crea
 import 'package:asroo_store/features/admin/add_categories/presentation/bloc/delete_category/delete_category_bloc.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/bloc/update_category/update_category_bloc.dart';
+import 'package:asroo_store/features/admin/add_notification/data/data_source/add_notification_data_source.dart';
+import 'package:asroo_store/features/admin/add_notification/data/repo/add_notification_repo.dart';
 import 'package:asroo_store/features/admin/add_notification/presentation/bloc/add_notification/add_notification_bloc.dart';
 import 'package:asroo_store/features/admin/add_notification/presentation/bloc/get_all_notification_admin/get_all_notification_admin_bloc.dart';
+import 'package:asroo_store/features/admin/add_notification/presentation/bloc/send_notification/send_notification_bloc.dart';
 import 'package:asroo_store/features/admin/add_products/data/data_source/products_admin_data_source.dart';
 import 'package:asroo_store/features/admin/add_products/data/repos/product_admin_repo.dart';
 import 'package:asroo_store/features/admin/add_products/presentation/bloc/create_product/create_product_bloc.dart';
@@ -104,5 +107,8 @@ Future<void> _initUsersAdmin() async {
 Future<void> _initAddNotification() async {
   sl
     ..registerFactory(AddNotificationBloc.new)
-    ..registerFactory(GetAllNotificationAdminBloc.new);
+    ..registerFactory(GetAllNotificationAdminBloc.new)
+    ..registerFactory(() => SendNotificationBloc(sl()))
+    ..registerLazySingleton(() => AddNotificationRepo(sl()))
+    ..registerLazySingleton(AddNotificationDataSource.new);
 }

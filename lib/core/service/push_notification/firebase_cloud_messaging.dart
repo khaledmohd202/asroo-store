@@ -175,13 +175,13 @@ class FirebaseCloudMessaging {
     required String title,
     required String body,
     String? type,
-    String? productId,
+    int? productId,
   }) {
     final data = <String, dynamic>{
       'type': type ?? 'message',
       'click_action': 'FLUTTER_NOTIFICATION_CLICK',
     };
-    // if (productId != null) data['productId'] = productId;
+    if (productId != null) data['productId'] = productId;
 
     return {
       'message': {
@@ -207,7 +207,7 @@ class FirebaseCloudMessaging {
     required String title,
     required String body,
     String? type,
-    String? productId,
+    int? productId,
   }) async {
     try {
       // Get OAuth2 access token
