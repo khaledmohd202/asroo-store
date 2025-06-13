@@ -41,6 +41,7 @@ class AddNotificationBody extends StatelessWidget {
                             itemBuilder: (context, index) {
                               return AddNotificationItem(
                                 notificationModel: notificationList[index],
+                                indexId: index,
                               );
                             },
                             separatorBuilder: (context, index) {

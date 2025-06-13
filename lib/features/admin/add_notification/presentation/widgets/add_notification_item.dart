@@ -8,13 +8,19 @@ import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
 import 'package:asroo_store/features/admin/add_notification/data/models/add_notification_model.dart';
 import 'package:asroo_store/features/admin/add_notification/presentation/widgets/delete/delete_notification.dart';
 import 'package:asroo_store/features/admin/add_notification/presentation/widgets/edit/edit_notification.dart';
+import 'package:asroo_store/features/admin/add_notification/presentation/widgets/send/send_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddNotificationItem extends StatelessWidget {
-  const AddNotificationItem({required this.notificationModel, super.key});
+  const AddNotificationItem({
+    required this.notificationModel,
+    required this.indexId,
+    super.key,
+  });
 
   final AddNotificationModel notificationModel;
+  final int indexId;
 
   @override
   Widget build(BuildContext context) {
@@ -43,17 +49,16 @@ class AddNotificationItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 // delete button
-                DeleteNotification(
-                  notificationModel: notificationModel,
-                ),
+                DeleteNotification(notificationModel: notificationModel),
                 SizedBox(width: 40.w),
                 // edit button
-                EditNotification(
-                  notificationModel: notificationModel,
-                ),
+                EditNotification(notificationModel: notificationModel),
                 SizedBox(width: 40.w),
                 // Send Button
-                const Icon(Icons.send, color: DarkColors.blueLight),
+                SendNotification(
+                  notificationModel: notificationModel,
+                  indexId: indexId,
+                ),
               ],
             ),
           ],

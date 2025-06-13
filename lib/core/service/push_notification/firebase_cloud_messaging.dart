@@ -181,7 +181,9 @@ class FirebaseCloudMessaging {
       'type': type ?? 'message',
       'click_action': 'FLUTTER_NOTIFICATION_CLICK',
     };
-    if (productId != null) data['productId'] = productId;
+    // If you want to send productId, uncomment the line below.
+    // and make sure to pass productId when calling this method.
+    // if (productId != null) data['productId'] = productId;
 
     return {
       'message': {
