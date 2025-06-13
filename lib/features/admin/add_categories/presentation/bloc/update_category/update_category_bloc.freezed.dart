@@ -12,8 +12,7 @@ part of 'update_category_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UpdateCategoryEvent {
@@ -21,42 +20,47 @@ mixin _$UpdateCategoryEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(UpdateCategoryRequestBody body) updateCategory,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(UpdateCategoryRequestBody body)? updateCategory,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(UpdateCategoryRequestBody body)? updateCategory,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(UpdateCategoriesEvent value) updateCategory,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(UpdateCategoriesEvent value)? updateCategory,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(UpdateCategoriesEvent value)? updateCategory,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UpdateCategoryEventCopyWith<$Res> {
   factory $UpdateCategoryEventCopyWith(
-    UpdateCategoryEvent value,
-    $Res Function(UpdateCategoryEvent) then,
-  ) = _$UpdateCategoryEventCopyWithImpl<$Res, UpdateCategoryEvent>;
+          UpdateCategoryEvent value, $Res Function(UpdateCategoryEvent) then) =
+      _$UpdateCategoryEventCopyWithImpl<$Res, UpdateCategoryEvent>;
 }
 
 /// @nodoc
@@ -76,9 +80,8 @@ class _$UpdateCategoryEventCopyWithImpl<$Res, $Val extends UpdateCategoryEvent>
 /// @nodoc
 abstract class _$$StartedImplCopyWith<$Res> {
   factory _$$StartedImplCopyWith(
-    _$StartedImpl value,
-    $Res Function(_$StartedImpl) then,
-  ) = __$$StartedImplCopyWithImpl<$Res>;
+          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
+      __$$StartedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -86,9 +89,8 @@ class __$$StartedImplCopyWithImpl<$Res>
     extends _$UpdateCategoryEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
-    _$StartedImpl _value,
-    $Res Function(_$StartedImpl) _then,
-  ) : super(_value, _then);
+      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of UpdateCategoryEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -183,9 +185,9 @@ abstract class _Started implements UpdateCategoryEvent {
 /// @nodoc
 abstract class _$$UpdateCategoriesEventImplCopyWith<$Res> {
   factory _$$UpdateCategoriesEventImplCopyWith(
-    _$UpdateCategoriesEventImpl value,
-    $Res Function(_$UpdateCategoriesEventImpl) then,
-  ) = __$$UpdateCategoriesEventImplCopyWithImpl<$Res>;
+          _$UpdateCategoriesEventImpl value,
+          $Res Function(_$UpdateCategoriesEventImpl) then) =
+      __$$UpdateCategoriesEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({UpdateCategoryRequestBody body});
 }
@@ -194,25 +196,23 @@ abstract class _$$UpdateCategoriesEventImplCopyWith<$Res> {
 class __$$UpdateCategoriesEventImplCopyWithImpl<$Res>
     extends _$UpdateCategoryEventCopyWithImpl<$Res, _$UpdateCategoriesEventImpl>
     implements _$$UpdateCategoriesEventImplCopyWith<$Res> {
-  __$$UpdateCategoriesEventImplCopyWithImpl(
-    _$UpdateCategoriesEventImpl _value,
-    $Res Function(_$UpdateCategoriesEventImpl) _then,
-  ) : super(_value, _then);
+  __$$UpdateCategoriesEventImplCopyWithImpl(_$UpdateCategoriesEventImpl _value,
+      $Res Function(_$UpdateCategoriesEventImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of UpdateCategoryEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? body = null}) {
-    return _then(
-      _$UpdateCategoriesEventImpl(
-        body:
-            null == body
-                ? _value.body
-                : body // ignore: cast_nullable_to_non_nullable
-                    as UpdateCategoryRequestBody,
-      ),
-    );
+  $Res call({
+    Object? body = null,
+  }) {
+    return _then(_$UpdateCategoriesEventImpl(
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as UpdateCategoryRequestBody,
+    ));
   }
 }
 
@@ -246,11 +246,8 @@ class _$UpdateCategoriesEventImpl implements UpdateCategoriesEvent {
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateCategoriesEventImplCopyWith<_$UpdateCategoriesEventImpl>
-  get copyWith =>
-      __$$UpdateCategoriesEventImplCopyWithImpl<_$UpdateCategoriesEventImpl>(
-        this,
-        _$identity,
-      );
+      get copyWith => __$$UpdateCategoriesEventImplCopyWithImpl<
+          _$UpdateCategoriesEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -316,9 +313,9 @@ class _$UpdateCategoriesEventImpl implements UpdateCategoriesEvent {
 }
 
 abstract class UpdateCategoriesEvent implements UpdateCategoryEvent {
-  const factory UpdateCategoriesEvent({
-    required final UpdateCategoryRequestBody body,
-  }) = _$UpdateCategoriesEventImpl;
+  const factory UpdateCategoriesEvent(
+          {required final UpdateCategoryRequestBody body}) =
+      _$UpdateCategoriesEventImpl;
 
   UpdateCategoryRequestBody get body;
 
@@ -326,7 +323,7 @@ abstract class UpdateCategoriesEvent implements UpdateCategoryEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateCategoriesEventImplCopyWith<_$UpdateCategoriesEventImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -337,14 +334,16 @@ mixin _$UpdateCategoryState {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String error) error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String error)? error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -352,21 +351,24 @@ mixin _$UpdateCategoryState {
     TResult Function()? success,
     TResult Function(String error)? error,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(LoadingState value) loading,
     required TResult Function(SuccessState value) success,
     required TResult Function(ErrorState value) error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(LoadingState value)? loading,
     TResult? Function(SuccessState value)? success,
     TResult? Function(ErrorState value)? error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -374,15 +376,15 @@ mixin _$UpdateCategoryState {
     TResult Function(SuccessState value)? success,
     TResult Function(ErrorState value)? error,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UpdateCategoryStateCopyWith<$Res> {
   factory $UpdateCategoryStateCopyWith(
-    UpdateCategoryState value,
-    $Res Function(UpdateCategoryState) then,
-  ) = _$UpdateCategoryStateCopyWithImpl<$Res, UpdateCategoryState>;
+          UpdateCategoryState value, $Res Function(UpdateCategoryState) then) =
+      _$UpdateCategoryStateCopyWithImpl<$Res, UpdateCategoryState>;
 }
 
 /// @nodoc
@@ -402,9 +404,8 @@ class _$UpdateCategoryStateCopyWithImpl<$Res, $Val extends UpdateCategoryState>
 /// @nodoc
 abstract class _$$InitialImplCopyWith<$Res> {
   factory _$$InitialImplCopyWith(
-    _$InitialImpl value,
-    $Res Function(_$InitialImpl) then,
-  ) = __$$InitialImplCopyWithImpl<$Res>;
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -412,9 +413,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     extends _$UpdateCategoryStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
-    _$InitialImpl _value,
-    $Res Function(_$InitialImpl) _then,
-  ) : super(_value, _then);
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of UpdateCategoryState
   /// with the given fields replaced by the non-null parameter values.
@@ -521,9 +521,8 @@ abstract class _Initial implements UpdateCategoryState {
 /// @nodoc
 abstract class _$$LoadingStateImplCopyWith<$Res> {
   factory _$$LoadingStateImplCopyWith(
-    _$LoadingStateImpl value,
-    $Res Function(_$LoadingStateImpl) then,
-  ) = __$$LoadingStateImplCopyWithImpl<$Res>;
+          _$LoadingStateImpl value, $Res Function(_$LoadingStateImpl) then) =
+      __$$LoadingStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -531,9 +530,8 @@ class __$$LoadingStateImplCopyWithImpl<$Res>
     extends _$UpdateCategoryStateCopyWithImpl<$Res, _$LoadingStateImpl>
     implements _$$LoadingStateImplCopyWith<$Res> {
   __$$LoadingStateImplCopyWithImpl(
-    _$LoadingStateImpl _value,
-    $Res Function(_$LoadingStateImpl) _then,
-  ) : super(_value, _then);
+      _$LoadingStateImpl _value, $Res Function(_$LoadingStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of UpdateCategoryState
   /// with the given fields replaced by the non-null parameter values.
@@ -640,9 +638,8 @@ abstract class LoadingState implements UpdateCategoryState {
 /// @nodoc
 abstract class _$$SuccessStateImplCopyWith<$Res> {
   factory _$$SuccessStateImplCopyWith(
-    _$SuccessStateImpl value,
-    $Res Function(_$SuccessStateImpl) then,
-  ) = __$$SuccessStateImplCopyWithImpl<$Res>;
+          _$SuccessStateImpl value, $Res Function(_$SuccessStateImpl) then) =
+      __$$SuccessStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -650,9 +647,8 @@ class __$$SuccessStateImplCopyWithImpl<$Res>
     extends _$UpdateCategoryStateCopyWithImpl<$Res, _$SuccessStateImpl>
     implements _$$SuccessStateImplCopyWith<$Res> {
   __$$SuccessStateImplCopyWithImpl(
-    _$SuccessStateImpl _value,
-    $Res Function(_$SuccessStateImpl) _then,
-  ) : super(_value, _then);
+      _$SuccessStateImpl _value, $Res Function(_$SuccessStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of UpdateCategoryState
   /// with the given fields replaced by the non-null parameter values.
@@ -759,9 +755,8 @@ abstract class SuccessState implements UpdateCategoryState {
 /// @nodoc
 abstract class _$$ErrorStateImplCopyWith<$Res> {
   factory _$$ErrorStateImplCopyWith(
-    _$ErrorStateImpl value,
-    $Res Function(_$ErrorStateImpl) then,
-  ) = __$$ErrorStateImplCopyWithImpl<$Res>;
+          _$ErrorStateImpl value, $Res Function(_$ErrorStateImpl) then) =
+      __$$ErrorStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String error});
 }
@@ -771,24 +766,22 @@ class __$$ErrorStateImplCopyWithImpl<$Res>
     extends _$UpdateCategoryStateCopyWithImpl<$Res, _$ErrorStateImpl>
     implements _$$ErrorStateImplCopyWith<$Res> {
   __$$ErrorStateImplCopyWithImpl(
-    _$ErrorStateImpl _value,
-    $Res Function(_$ErrorStateImpl) _then,
-  ) : super(_value, _then);
+      _$ErrorStateImpl _value, $Res Function(_$ErrorStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of UpdateCategoryState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? error = null}) {
-    return _then(
-      _$ErrorStateImpl(
-        error:
-            null == error
-                ? _value.error
-                : error // ignore: cast_nullable_to_non_nullable
-                    as String,
-      ),
-    );
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$ErrorStateImpl(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 

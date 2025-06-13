@@ -12,8 +12,10 @@ UsersNumberResponse _$UsersNumberResponseFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$UsersNumberResponseToJson(
-  UsersNumberResponse instance,
-) => <String, dynamic>{'data': instance.data};
+        UsersNumberResponse instance) =>
+    <String, dynamic>{
+      'data': instance.data,
+    };
 
 UsersNumberData _$UsersNumberDataFromJson(Map<String, dynamic> json) =>
     UsersNumberData(
@@ -23,10 +25,16 @@ UsersNumberData _$UsersNumberDataFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$UsersNumberDataToJson(UsersNumberData instance) =>
-    <String, dynamic>{'users': instance.usersList};
+    <String, dynamic>{
+      'users': instance.usersList,
+    };
 
 UsersNumberModel _$UsersNumberModelFromJson(Map<String, dynamic> json) =>
-    UsersNumberModel(json['name'] as String?);
+    UsersNumberModel(
+      json['name'] as String?,
+    );
 
 Map<String, dynamic> _$UsersNumberModelToJson(UsersNumberModel instance) =>
-    <String, dynamic>{'name': instance.name};
+    <String, dynamic>{
+      'name': instance.name,
+    };

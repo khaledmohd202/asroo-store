@@ -12,7 +12,9 @@ SignUpResponse _$SignUpResponseFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$SignUpResponseToJson(SignUpResponse instance) =>
-    <String, dynamic>{'data': instance.data};
+    <String, dynamic>{
+      'data': instance.data,
+    };
 
 SignUpDataModel _$SignUpDataModelFromJson(Map<String, dynamic> json) =>
     SignUpDataModel(
@@ -20,10 +22,17 @@ SignUpDataModel _$SignUpDataModelFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$SignUpDataModelToJson(SignUpDataModel instance) =>
-    <String, dynamic>{'addUser': instance.addUser};
+    <String, dynamic>{
+      'addUser': instance.addUser,
+    };
 
-AddUserModel _$AddUserModelFromJson(Map<String, dynamic> json) =>
-    AddUserModel(json['id'] as String?, json['email'] as String?);
+AddUserModel _$AddUserModelFromJson(Map<String, dynamic> json) => AddUserModel(
+      json['id'] as String?,
+      json['email'] as String?,
+    );
 
 Map<String, dynamic> _$AddUserModelToJson(AddUserModel instance) =>
-    <String, dynamic>{'id': instance.id, 'email': instance.email};
+    <String, dynamic>{
+      'id': instance.id,
+      'email': instance.email,
+    };

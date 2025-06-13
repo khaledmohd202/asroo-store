@@ -12,8 +12,7 @@ part of 'upload_image_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UploadImageState {
@@ -25,7 +24,8 @@ mixin _$UploadImageState {
     required TResult Function() success,
     required TResult Function(String imageUrl) removeImage,
     required TResult Function(String error) error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
@@ -34,7 +34,8 @@ mixin _$UploadImageState {
     TResult? Function()? success,
     TResult? Function(String imageUrl)? removeImage,
     TResult? Function(String error)? error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -44,7 +45,8 @@ mixin _$UploadImageState {
     TResult Function(String imageUrl)? removeImage,
     TResult Function(String error)? error,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -53,7 +55,8 @@ mixin _$UploadImageState {
     required TResult Function(SuccessState value) success,
     required TResult Function(RemoveImageState value) removeImage,
     required TResult Function(ErrorState value) error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
@@ -62,7 +65,8 @@ mixin _$UploadImageState {
     TResult? Function(SuccessState value)? success,
     TResult? Function(RemoveImageState value)? removeImage,
     TResult? Function(ErrorState value)? error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -72,15 +76,15 @@ mixin _$UploadImageState {
     TResult Function(RemoveImageState value)? removeImage,
     TResult Function(ErrorState value)? error,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UploadImageStateCopyWith<$Res> {
   factory $UploadImageStateCopyWith(
-    UploadImageState value,
-    $Res Function(UploadImageState) then,
-  ) = _$UploadImageStateCopyWithImpl<$Res, UploadImageState>;
+          UploadImageState value, $Res Function(UploadImageState) then) =
+      _$UploadImageStateCopyWithImpl<$Res, UploadImageState>;
 }
 
 /// @nodoc
@@ -100,9 +104,8 @@ class _$UploadImageStateCopyWithImpl<$Res, $Val extends UploadImageState>
 /// @nodoc
 abstract class _$$InitialImplCopyWith<$Res> {
   factory _$$InitialImplCopyWith(
-    _$InitialImpl value,
-    $Res Function(_$InitialImpl) then,
-  ) = __$$InitialImplCopyWithImpl<$Res>;
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -110,9 +113,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     extends _$UploadImageStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
-    _$InitialImpl _value,
-    $Res Function(_$InitialImpl) _then,
-  ) : super(_value, _then);
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of UploadImageState
   /// with the given fields replaced by the non-null parameter values.
@@ -131,7 +133,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'UploadImageState.initial'));
+    properties.add(DiagnosticsProperty('type', 'UploadImageState.initial'));
   }
 
   @override
@@ -237,9 +239,8 @@ abstract class _Initial implements UploadImageState {
 /// @nodoc
 abstract class _$$LoadingStateImplCopyWith<$Res> {
   factory _$$LoadingStateImplCopyWith(
-    _$LoadingStateImpl value,
-    $Res Function(_$LoadingStateImpl) then,
-  ) = __$$LoadingStateImplCopyWithImpl<$Res>;
+          _$LoadingStateImpl value, $Res Function(_$LoadingStateImpl) then) =
+      __$$LoadingStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -247,9 +248,8 @@ class __$$LoadingStateImplCopyWithImpl<$Res>
     extends _$UploadImageStateCopyWithImpl<$Res, _$LoadingStateImpl>
     implements _$$LoadingStateImplCopyWith<$Res> {
   __$$LoadingStateImplCopyWithImpl(
-    _$LoadingStateImpl _value,
-    $Res Function(_$LoadingStateImpl) _then,
-  ) : super(_value, _then);
+      _$LoadingStateImpl _value, $Res Function(_$LoadingStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of UploadImageState
   /// with the given fields replaced by the non-null parameter values.
@@ -268,7 +268,7 @@ class _$LoadingStateImpl with DiagnosticableTreeMixin implements LoadingState {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'UploadImageState.loading'));
+    properties.add(DiagnosticsProperty('type', 'UploadImageState.loading'));
   }
 
   @override
@@ -373,10 +373,9 @@ abstract class LoadingState implements UploadImageState {
 
 /// @nodoc
 abstract class _$$LoadingListStateImplCopyWith<$Res> {
-  factory _$$LoadingListStateImplCopyWith(
-    _$LoadingListStateImpl value,
-    $Res Function(_$LoadingListStateImpl) then,
-  ) = __$$LoadingListStateImplCopyWithImpl<$Res>;
+  factory _$$LoadingListStateImplCopyWith(_$LoadingListStateImpl value,
+          $Res Function(_$LoadingListStateImpl) then) =
+      __$$LoadingListStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int index});
 }
@@ -385,24 +384,23 @@ abstract class _$$LoadingListStateImplCopyWith<$Res> {
 class __$$LoadingListStateImplCopyWithImpl<$Res>
     extends _$UploadImageStateCopyWithImpl<$Res, _$LoadingListStateImpl>
     implements _$$LoadingListStateImplCopyWith<$Res> {
-  __$$LoadingListStateImplCopyWithImpl(
-    _$LoadingListStateImpl _value,
-    $Res Function(_$LoadingListStateImpl) _then,
-  ) : super(_value, _then);
+  __$$LoadingListStateImplCopyWithImpl(_$LoadingListStateImpl _value,
+      $Res Function(_$LoadingListStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of UploadImageState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? index = null}) {
-    return _then(
-      _$LoadingListStateImpl(
-        null == index
-            ? _value.index
-            : index // ignore: cast_nullable_to_non_nullable
-                as int,
-      ),
-    );
+  $Res call({
+    Object? index = null,
+  }) {
+    return _then(_$LoadingListStateImpl(
+      null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
   }
 }
 
@@ -447,9 +445,7 @@ class _$LoadingListStateImpl
   @pragma('vm:prefer-inline')
   _$$LoadingListStateImplCopyWith<_$LoadingListStateImpl> get copyWith =>
       __$$LoadingListStateImplCopyWithImpl<_$LoadingListStateImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -553,9 +549,8 @@ abstract class LoadingListState implements UploadImageState {
 /// @nodoc
 abstract class _$$SuccessStateImplCopyWith<$Res> {
   factory _$$SuccessStateImplCopyWith(
-    _$SuccessStateImpl value,
-    $Res Function(_$SuccessStateImpl) then,
-  ) = __$$SuccessStateImplCopyWithImpl<$Res>;
+          _$SuccessStateImpl value, $Res Function(_$SuccessStateImpl) then) =
+      __$$SuccessStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -563,9 +558,8 @@ class __$$SuccessStateImplCopyWithImpl<$Res>
     extends _$UploadImageStateCopyWithImpl<$Res, _$SuccessStateImpl>
     implements _$$SuccessStateImplCopyWith<$Res> {
   __$$SuccessStateImplCopyWithImpl(
-    _$SuccessStateImpl _value,
-    $Res Function(_$SuccessStateImpl) _then,
-  ) : super(_value, _then);
+      _$SuccessStateImpl _value, $Res Function(_$SuccessStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of UploadImageState
   /// with the given fields replaced by the non-null parameter values.
@@ -584,7 +578,7 @@ class _$SuccessStateImpl with DiagnosticableTreeMixin implements SuccessState {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'UploadImageState.success'));
+    properties.add(DiagnosticsProperty('type', 'UploadImageState.success'));
   }
 
   @override
@@ -689,10 +683,9 @@ abstract class SuccessState implements UploadImageState {
 
 /// @nodoc
 abstract class _$$RemoveImageStateImplCopyWith<$Res> {
-  factory _$$RemoveImageStateImplCopyWith(
-    _$RemoveImageStateImpl value,
-    $Res Function(_$RemoveImageStateImpl) then,
-  ) = __$$RemoveImageStateImplCopyWithImpl<$Res>;
+  factory _$$RemoveImageStateImplCopyWith(_$RemoveImageStateImpl value,
+          $Res Function(_$RemoveImageStateImpl) then) =
+      __$$RemoveImageStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String imageUrl});
 }
@@ -701,25 +694,23 @@ abstract class _$$RemoveImageStateImplCopyWith<$Res> {
 class __$$RemoveImageStateImplCopyWithImpl<$Res>
     extends _$UploadImageStateCopyWithImpl<$Res, _$RemoveImageStateImpl>
     implements _$$RemoveImageStateImplCopyWith<$Res> {
-  __$$RemoveImageStateImplCopyWithImpl(
-    _$RemoveImageStateImpl _value,
-    $Res Function(_$RemoveImageStateImpl) _then,
-  ) : super(_value, _then);
+  __$$RemoveImageStateImplCopyWithImpl(_$RemoveImageStateImpl _value,
+      $Res Function(_$RemoveImageStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of UploadImageState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? imageUrl = null}) {
-    return _then(
-      _$RemoveImageStateImpl(
-        imageUrl:
-            null == imageUrl
-                ? _value.imageUrl
-                : imageUrl // ignore: cast_nullable_to_non_nullable
-                    as String,
-      ),
-    );
+  $Res call({
+    Object? imageUrl = null,
+  }) {
+    return _then(_$RemoveImageStateImpl(
+      imageUrl: null == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -765,9 +756,7 @@ class _$RemoveImageStateImpl
   @pragma('vm:prefer-inline')
   _$$RemoveImageStateImplCopyWith<_$RemoveImageStateImpl> get copyWith =>
       __$$RemoveImageStateImplCopyWithImpl<_$RemoveImageStateImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -872,9 +861,8 @@ abstract class RemoveImageState implements UploadImageState {
 /// @nodoc
 abstract class _$$ErrorStateImplCopyWith<$Res> {
   factory _$$ErrorStateImplCopyWith(
-    _$ErrorStateImpl value,
-    $Res Function(_$ErrorStateImpl) then,
-  ) = __$$ErrorStateImplCopyWithImpl<$Res>;
+          _$ErrorStateImpl value, $Res Function(_$ErrorStateImpl) then) =
+      __$$ErrorStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String error});
 }
@@ -884,24 +872,22 @@ class __$$ErrorStateImplCopyWithImpl<$Res>
     extends _$UploadImageStateCopyWithImpl<$Res, _$ErrorStateImpl>
     implements _$$ErrorStateImplCopyWith<$Res> {
   __$$ErrorStateImplCopyWithImpl(
-    _$ErrorStateImpl _value,
-    $Res Function(_$ErrorStateImpl) _then,
-  ) : super(_value, _then);
+      _$ErrorStateImpl _value, $Res Function(_$ErrorStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of UploadImageState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? error = null}) {
-    return _then(
-      _$ErrorStateImpl(
-        error:
-            null == error
-                ? _value.error
-                : error // ignore: cast_nullable_to_non_nullable
-                    as String,
-      ),
-    );
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$ErrorStateImpl(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 

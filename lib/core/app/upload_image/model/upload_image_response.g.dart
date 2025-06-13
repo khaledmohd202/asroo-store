@@ -7,8 +7,12 @@ part of 'upload_image_response.dart';
 // **************************************************************************
 
 UploadImageResponse _$UploadImageResponseFromJson(Map<String, dynamic> json) =>
-    UploadImageResponse(json['location'] as String?);
+    UploadImageResponse(
+      json['location'] as String?,
+    );
 
 Map<String, dynamic> _$UploadImageResponseToJson(
-  UploadImageResponse instance,
-) => <String, dynamic>{'location': instance.location};
+        UploadImageResponse instance) =>
+    <String, dynamic>{
+      'location': instance.location,
+    };

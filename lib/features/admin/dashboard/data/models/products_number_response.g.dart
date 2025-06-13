@@ -7,14 +7,16 @@ part of 'products_number_response.dart';
 // **************************************************************************
 
 ProductsNumberResponse _$ProductsNumberResponseFromJson(
-  Map<String, dynamic> json,
-) => ProductsNumberResponse(
-  ProductsNumberData.fromJson(json['data'] as Map<String, dynamic>),
-);
+        Map<String, dynamic> json) =>
+    ProductsNumberResponse(
+      ProductsNumberData.fromJson(json['data'] as Map<String, dynamic>),
+    );
 
 Map<String, dynamic> _$ProductsNumberResponseToJson(
-  ProductsNumberResponse instance,
-) => <String, dynamic>{'data': instance.data};
+        ProductsNumberResponse instance) =>
+    <String, dynamic>{
+      'data': instance.data,
+    };
 
 ProductsNumberData _$ProductsNumberDataFromJson(Map<String, dynamic> json) =>
     ProductsNumberData(
@@ -24,11 +26,17 @@ ProductsNumberData _$ProductsNumberDataFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ProductsNumberDataToJson(ProductsNumberData instance) =>
-    <String, dynamic>{'products': instance.productsList};
+    <String, dynamic>{
+      'products': instance.productsList,
+    };
 
 ProductsNumberModel _$ProductsNumberModelFromJson(Map<String, dynamic> json) =>
-    ProductsNumberModel(json['title'] as String?);
+    ProductsNumberModel(
+      json['title'] as String?,
+    );
 
 Map<String, dynamic> _$ProductsNumberModelToJson(
-  ProductsNumberModel instance,
-) => <String, dynamic>{'title': instance.title};
+        ProductsNumberModel instance) =>
+    <String, dynamic>{
+      'title': instance.title,
+    };

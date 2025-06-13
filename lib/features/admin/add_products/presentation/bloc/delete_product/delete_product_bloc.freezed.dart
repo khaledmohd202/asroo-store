@@ -12,8 +12,7 @@ part of 'delete_product_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$DeleteProductEvent {
@@ -21,42 +20,47 @@ mixin _$DeleteProductEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String productId) deleteProduct,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(String productId)? deleteProduct,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String productId)? deleteProduct,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(RemoveProductEvent value) deleteProduct,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(RemoveProductEvent value)? deleteProduct,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(RemoveProductEvent value)? deleteProduct,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DeleteProductEventCopyWith<$Res> {
   factory $DeleteProductEventCopyWith(
-    DeleteProductEvent value,
-    $Res Function(DeleteProductEvent) then,
-  ) = _$DeleteProductEventCopyWithImpl<$Res, DeleteProductEvent>;
+          DeleteProductEvent value, $Res Function(DeleteProductEvent) then) =
+      _$DeleteProductEventCopyWithImpl<$Res, DeleteProductEvent>;
 }
 
 /// @nodoc
@@ -76,9 +80,8 @@ class _$DeleteProductEventCopyWithImpl<$Res, $Val extends DeleteProductEvent>
 /// @nodoc
 abstract class _$$StartedImplCopyWith<$Res> {
   factory _$$StartedImplCopyWith(
-    _$StartedImpl value,
-    $Res Function(_$StartedImpl) then,
-  ) = __$$StartedImplCopyWithImpl<$Res>;
+          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
+      __$$StartedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -86,9 +89,8 @@ class __$$StartedImplCopyWithImpl<$Res>
     extends _$DeleteProductEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
-    _$StartedImpl _value,
-    $Res Function(_$StartedImpl) _then,
-  ) : super(_value, _then);
+      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of DeleteProductEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -182,10 +184,9 @@ abstract class _Started implements DeleteProductEvent {
 
 /// @nodoc
 abstract class _$$RemoveProductEventImplCopyWith<$Res> {
-  factory _$$RemoveProductEventImplCopyWith(
-    _$RemoveProductEventImpl value,
-    $Res Function(_$RemoveProductEventImpl) then,
-  ) = __$$RemoveProductEventImplCopyWithImpl<$Res>;
+  factory _$$RemoveProductEventImplCopyWith(_$RemoveProductEventImpl value,
+          $Res Function(_$RemoveProductEventImpl) then) =
+      __$$RemoveProductEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String productId});
 }
@@ -194,25 +195,23 @@ abstract class _$$RemoveProductEventImplCopyWith<$Res> {
 class __$$RemoveProductEventImplCopyWithImpl<$Res>
     extends _$DeleteProductEventCopyWithImpl<$Res, _$RemoveProductEventImpl>
     implements _$$RemoveProductEventImplCopyWith<$Res> {
-  __$$RemoveProductEventImplCopyWithImpl(
-    _$RemoveProductEventImpl _value,
-    $Res Function(_$RemoveProductEventImpl) _then,
-  ) : super(_value, _then);
+  __$$RemoveProductEventImplCopyWithImpl(_$RemoveProductEventImpl _value,
+      $Res Function(_$RemoveProductEventImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of DeleteProductEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? productId = null}) {
-    return _then(
-      _$RemoveProductEventImpl(
-        productId:
-            null == productId
-                ? _value.productId
-                : productId // ignore: cast_nullable_to_non_nullable
-                    as String,
-      ),
-    );
+  $Res call({
+    Object? productId = null,
+  }) {
+    return _then(_$RemoveProductEventImpl(
+      productId: null == productId
+          ? _value.productId
+          : productId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -248,9 +247,7 @@ class _$RemoveProductEventImpl implements RemoveProductEvent {
   @pragma('vm:prefer-inline')
   _$$RemoveProductEventImplCopyWith<_$RemoveProductEventImpl> get copyWith =>
       __$$RemoveProductEventImplCopyWithImpl<_$RemoveProductEventImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -336,14 +333,16 @@ mixin _$DeleteProductState {
     required TResult Function(String productId) loading,
     required TResult Function() success,
     required TResult Function(String error) error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(String productId)? loading,
     TResult? Function()? success,
     TResult? Function(String error)? error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -351,21 +350,24 @@ mixin _$DeleteProductState {
     TResult Function()? success,
     TResult Function(String error)? error,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(LoadingState value) loading,
     required TResult Function(SuccessState value) success,
     required TResult Function(ErrorState value) error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(LoadingState value)? loading,
     TResult? Function(SuccessState value)? success,
     TResult? Function(ErrorState value)? error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -373,15 +375,15 @@ mixin _$DeleteProductState {
     TResult Function(SuccessState value)? success,
     TResult Function(ErrorState value)? error,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DeleteProductStateCopyWith<$Res> {
   factory $DeleteProductStateCopyWith(
-    DeleteProductState value,
-    $Res Function(DeleteProductState) then,
-  ) = _$DeleteProductStateCopyWithImpl<$Res, DeleteProductState>;
+          DeleteProductState value, $Res Function(DeleteProductState) then) =
+      _$DeleteProductStateCopyWithImpl<$Res, DeleteProductState>;
 }
 
 /// @nodoc
@@ -401,9 +403,8 @@ class _$DeleteProductStateCopyWithImpl<$Res, $Val extends DeleteProductState>
 /// @nodoc
 abstract class _$$InitialImplCopyWith<$Res> {
   factory _$$InitialImplCopyWith(
-    _$InitialImpl value,
-    $Res Function(_$InitialImpl) then,
-  ) = __$$InitialImplCopyWithImpl<$Res>;
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -411,9 +412,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     extends _$DeleteProductStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
-    _$InitialImpl _value,
-    $Res Function(_$InitialImpl) _then,
-  ) : super(_value, _then);
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of DeleteProductState
   /// with the given fields replaced by the non-null parameter values.
@@ -520,9 +520,8 @@ abstract class _Initial implements DeleteProductState {
 /// @nodoc
 abstract class _$$LoadingStateImplCopyWith<$Res> {
   factory _$$LoadingStateImplCopyWith(
-    _$LoadingStateImpl value,
-    $Res Function(_$LoadingStateImpl) then,
-  ) = __$$LoadingStateImplCopyWithImpl<$Res>;
+          _$LoadingStateImpl value, $Res Function(_$LoadingStateImpl) then) =
+      __$$LoadingStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String productId});
 }
@@ -532,24 +531,22 @@ class __$$LoadingStateImplCopyWithImpl<$Res>
     extends _$DeleteProductStateCopyWithImpl<$Res, _$LoadingStateImpl>
     implements _$$LoadingStateImplCopyWith<$Res> {
   __$$LoadingStateImplCopyWithImpl(
-    _$LoadingStateImpl _value,
-    $Res Function(_$LoadingStateImpl) _then,
-  ) : super(_value, _then);
+      _$LoadingStateImpl _value, $Res Function(_$LoadingStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of DeleteProductState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? productId = null}) {
-    return _then(
-      _$LoadingStateImpl(
-        productId:
-            null == productId
-                ? _value.productId
-                : productId // ignore: cast_nullable_to_non_nullable
-                    as String,
-      ),
-    );
+  $Res call({
+    Object? productId = null,
+  }) {
+    return _then(_$LoadingStateImpl(
+      productId: null == productId
+          ? _value.productId
+          : productId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -677,9 +674,8 @@ abstract class LoadingState implements DeleteProductState {
 /// @nodoc
 abstract class _$$SuccessStateImplCopyWith<$Res> {
   factory _$$SuccessStateImplCopyWith(
-    _$SuccessStateImpl value,
-    $Res Function(_$SuccessStateImpl) then,
-  ) = __$$SuccessStateImplCopyWithImpl<$Res>;
+          _$SuccessStateImpl value, $Res Function(_$SuccessStateImpl) then) =
+      __$$SuccessStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -687,9 +683,8 @@ class __$$SuccessStateImplCopyWithImpl<$Res>
     extends _$DeleteProductStateCopyWithImpl<$Res, _$SuccessStateImpl>
     implements _$$SuccessStateImplCopyWith<$Res> {
   __$$SuccessStateImplCopyWithImpl(
-    _$SuccessStateImpl _value,
-    $Res Function(_$SuccessStateImpl) _then,
-  ) : super(_value, _then);
+      _$SuccessStateImpl _value, $Res Function(_$SuccessStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of DeleteProductState
   /// with the given fields replaced by the non-null parameter values.
@@ -796,9 +791,8 @@ abstract class SuccessState implements DeleteProductState {
 /// @nodoc
 abstract class _$$ErrorStateImplCopyWith<$Res> {
   factory _$$ErrorStateImplCopyWith(
-    _$ErrorStateImpl value,
-    $Res Function(_$ErrorStateImpl) then,
-  ) = __$$ErrorStateImplCopyWithImpl<$Res>;
+          _$ErrorStateImpl value, $Res Function(_$ErrorStateImpl) then) =
+      __$$ErrorStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String error});
 }
@@ -808,24 +802,22 @@ class __$$ErrorStateImplCopyWithImpl<$Res>
     extends _$DeleteProductStateCopyWithImpl<$Res, _$ErrorStateImpl>
     implements _$$ErrorStateImplCopyWith<$Res> {
   __$$ErrorStateImplCopyWithImpl(
-    _$ErrorStateImpl _value,
-    $Res Function(_$ErrorStateImpl) _then,
-  ) : super(_value, _then);
+      _$ErrorStateImpl _value, $Res Function(_$ErrorStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of DeleteProductState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? error = null}) {
-    return _then(
-      _$ErrorStateImpl(
-        error:
-            null == error
-                ? _value.error
-                : error // ignore: cast_nullable_to_non_nullable
-                    as String,
-      ),
-    );
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$ErrorStateImpl(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 

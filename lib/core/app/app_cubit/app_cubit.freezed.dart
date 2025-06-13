@@ -12,8 +12,7 @@ part of 'app_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$AppState {
@@ -22,39 +21,45 @@ mixin _$AppState {
     required TResult Function() initial,
     required TResult Function(bool isDark) themeChangeMode,
     required TResult Function(Locale locale) languageChange,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(bool isDark)? themeChangeMode,
     TResult? Function(Locale locale)? languageChange,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isDark)? themeChangeMode,
     TResult Function(Locale locale)? languageChange,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(ThemeChangeModeState value) themeChangeMode,
     required TResult Function(LanguageChangeState value) languageChange,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(ThemeChangeModeState value)? themeChangeMode,
     TResult? Function(LanguageChangeState value)? languageChange,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(ThemeChangeModeState value)? themeChangeMode,
     TResult Function(LanguageChangeState value)? languageChange,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -80,9 +85,8 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
 /// @nodoc
 abstract class _$$InitialImplCopyWith<$Res> {
   factory _$$InitialImplCopyWith(
-    _$InitialImpl value,
-    $Res Function(_$InitialImpl) then,
-  ) = __$$InitialImplCopyWithImpl<$Res>;
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -90,9 +94,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     extends _$AppStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
-    _$InitialImpl _value,
-    $Res Function(_$InitialImpl) _then,
-  ) : super(_value, _then);
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AppState
   /// with the given fields replaced by the non-null parameter values.
@@ -192,10 +195,9 @@ abstract class _Initial implements AppState {
 
 /// @nodoc
 abstract class _$$ThemeChangeModeStateImplCopyWith<$Res> {
-  factory _$$ThemeChangeModeStateImplCopyWith(
-    _$ThemeChangeModeStateImpl value,
-    $Res Function(_$ThemeChangeModeStateImpl) then,
-  ) = __$$ThemeChangeModeStateImplCopyWithImpl<$Res>;
+  factory _$$ThemeChangeModeStateImplCopyWith(_$ThemeChangeModeStateImpl value,
+          $Res Function(_$ThemeChangeModeStateImpl) then) =
+      __$$ThemeChangeModeStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool isDark});
 }
@@ -204,25 +206,23 @@ abstract class _$$ThemeChangeModeStateImplCopyWith<$Res> {
 class __$$ThemeChangeModeStateImplCopyWithImpl<$Res>
     extends _$AppStateCopyWithImpl<$Res, _$ThemeChangeModeStateImpl>
     implements _$$ThemeChangeModeStateImplCopyWith<$Res> {
-  __$$ThemeChangeModeStateImplCopyWithImpl(
-    _$ThemeChangeModeStateImpl _value,
-    $Res Function(_$ThemeChangeModeStateImpl) _then,
-  ) : super(_value, _then);
+  __$$ThemeChangeModeStateImplCopyWithImpl(_$ThemeChangeModeStateImpl _value,
+      $Res Function(_$ThemeChangeModeStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AppState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? isDark = null}) {
-    return _then(
-      _$ThemeChangeModeStateImpl(
-        isDark:
-            null == isDark
-                ? _value.isDark
-                : isDark // ignore: cast_nullable_to_non_nullable
-                    as bool,
-      ),
-    );
+  $Res call({
+    Object? isDark = null,
+  }) {
+    return _then(_$ThemeChangeModeStateImpl(
+      isDark: null == isDark
+          ? _value.isDark
+          : isDark // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
   }
 }
 
@@ -256,11 +256,9 @@ class _$ThemeChangeModeStateImpl implements ThemeChangeModeState {
   @override
   @pragma('vm:prefer-inline')
   _$$ThemeChangeModeStateImplCopyWith<_$ThemeChangeModeStateImpl>
-  get copyWith =>
-      __$$ThemeChangeModeStateImplCopyWithImpl<_$ThemeChangeModeStateImpl>(
-        this,
-        _$identity,
-      );
+      get copyWith =>
+          __$$ThemeChangeModeStateImplCopyWithImpl<_$ThemeChangeModeStateImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -341,15 +339,14 @@ abstract class ThemeChangeModeState implements AppState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ThemeChangeModeStateImplCopyWith<_$ThemeChangeModeStateImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$LanguageChangeStateImplCopyWith<$Res> {
-  factory _$$LanguageChangeStateImplCopyWith(
-    _$LanguageChangeStateImpl value,
-    $Res Function(_$LanguageChangeStateImpl) then,
-  ) = __$$LanguageChangeStateImplCopyWithImpl<$Res>;
+  factory _$$LanguageChangeStateImplCopyWith(_$LanguageChangeStateImpl value,
+          $Res Function(_$LanguageChangeStateImpl) then) =
+      __$$LanguageChangeStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Locale locale});
 }
@@ -358,25 +355,23 @@ abstract class _$$LanguageChangeStateImplCopyWith<$Res> {
 class __$$LanguageChangeStateImplCopyWithImpl<$Res>
     extends _$AppStateCopyWithImpl<$Res, _$LanguageChangeStateImpl>
     implements _$$LanguageChangeStateImplCopyWith<$Res> {
-  __$$LanguageChangeStateImplCopyWithImpl(
-    _$LanguageChangeStateImpl _value,
-    $Res Function(_$LanguageChangeStateImpl) _then,
-  ) : super(_value, _then);
+  __$$LanguageChangeStateImplCopyWithImpl(_$LanguageChangeStateImpl _value,
+      $Res Function(_$LanguageChangeStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AppState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? locale = null}) {
-    return _then(
-      _$LanguageChangeStateImpl(
-        locale:
-            null == locale
-                ? _value.locale
-                : locale // ignore: cast_nullable_to_non_nullable
-                    as Locale,
-      ),
-    );
+  $Res call({
+    Object? locale = null,
+  }) {
+    return _then(_$LanguageChangeStateImpl(
+      locale: null == locale
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as Locale,
+    ));
   }
 }
 
@@ -411,9 +406,7 @@ class _$LanguageChangeStateImpl implements LanguageChangeState {
   @pragma('vm:prefer-inline')
   _$$LanguageChangeStateImplCopyWith<_$LanguageChangeStateImpl> get copyWith =>
       __$$LanguageChangeStateImplCopyWithImpl<_$LanguageChangeStateImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs

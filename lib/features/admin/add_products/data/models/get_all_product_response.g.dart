@@ -7,14 +7,16 @@ part of 'get_all_product_response.dart';
 // **************************************************************************
 
 GetAllProductResponse _$GetAllProductResponseFromJson(
-  Map<String, dynamic> json,
-) => GetAllProductResponse(
-  GetAllProductData.fromJson(json['data'] as Map<String, dynamic>),
-);
+        Map<String, dynamic> json) =>
+    GetAllProductResponse(
+      GetAllProductData.fromJson(json['data'] as Map<String, dynamic>),
+    );
 
 Map<String, dynamic> _$GetAllProductResponseToJson(
-  GetAllProductResponse instance,
-) => <String, dynamic>{'data': instance.data};
+        GetAllProductResponse instance) =>
+    <String, dynamic>{
+      'data': instance.data,
+    };
 
 GetAllProductData _$GetAllProductDataFromJson(Map<String, dynamic> json) =>
     GetAllProductData(
@@ -24,7 +26,9 @@ GetAllProductData _$GetAllProductDataFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$GetAllProductDataToJson(GetAllProductData instance) =>
-    <String, dynamic>{'products': instance.productList};
+    <String, dynamic>{
+      'products': instance.productList,
+    };
 
 GetAllProductModel _$GetAllProductModelFromJson(Map<String, dynamic> json) =>
     GetAllProductModel(
@@ -36,8 +40,7 @@ GetAllProductModel _$GetAllProductModelFromJson(Map<String, dynamic> json) =>
       json['category'] == null
           ? null
           : CategoryProductModel.fromJson(
-            json['category'] as Map<String, dynamic>,
-          ),
+              json['category'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$GetAllProductModelToJson(GetAllProductModel instance) =>
@@ -51,9 +54,15 @@ Map<String, dynamic> _$GetAllProductModelToJson(GetAllProductModel instance) =>
     };
 
 CategoryProductModel _$CategoryProductModelFromJson(
-  Map<String, dynamic> json,
-) => CategoryProductModel(json['id'] as String?, json['name'] as String?);
+        Map<String, dynamic> json) =>
+    CategoryProductModel(
+      json['id'] as String?,
+      json['name'] as String?,
+    );
 
 Map<String, dynamic> _$CategoryProductModelToJson(
-  CategoryProductModel instance,
-) => <String, dynamic>{'id': instance.id, 'name': instance.name};
+        CategoryProductModel instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+    };
