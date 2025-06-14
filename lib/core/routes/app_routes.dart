@@ -6,7 +6,7 @@ import 'package:asroo_store/features/admin/home_admin/presentation/screens/home_
 import 'package:asroo_store/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:asroo_store/features/auth/presentation/screens/login_screen.dart';
 import 'package:asroo_store/features/auth/presentation/screens/sign_up_screen.dart';
-import 'package:asroo_store/features/customer/home_customer.dart';
+import 'package:asroo_store/features/customer/main/presentation/screen/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,7 +14,7 @@ class AppRoutes {
   static const login = 'login';
   static const signUp = 'signUp';
   static const homeAdmin = 'homeAdmin';
-  static const homeCustomer = 'homeCustomer';
+  static const mainCustomerScreen = 'mainScreen';
 
   static Route<void> onGenerateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -38,8 +38,8 @@ class AppRoutes {
         );
       case homeAdmin:
         return BaseRoutes(page: const HomeAdminScreen());
-      case homeCustomer:
-        return BaseRoutes(page: const HomeCustomer());
+      case mainCustomerScreen:
+        return BaseRoutes(page: const MainScreen());
       default:
         return BaseRoutes(page: const PageUnderBuildScreen());
     }

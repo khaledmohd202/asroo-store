@@ -70,7 +70,7 @@ class AsrooStoreApp extends StatelessWidget {
                         SharedPref().getString(PrefKeys.accessToken) != null
                             ? SharedPref().getString(PrefKeys.userRole) !=
                                     'admin'
-                                ? AppRoutes.homeCustomer
+                                ? AppRoutes.mainCustomerScreen
                                 : AppRoutes.homeAdmin
                             : AppRoutes.login,
                   );
