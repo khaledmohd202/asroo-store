@@ -29,6 +29,7 @@ dependencies:
   shimmer: ^3.0.0
   cached_network_image: ^3.4.1
   flutter_svg: ^2.1.0
+  flutter_animate: ^4.5.2
 
   #Bloc
   flutter_bloc: ^9.1.1
