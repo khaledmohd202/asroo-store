@@ -1,4 +1,3 @@
-import 'package:asroo_store/core/common/animations/animate_do.dart';
 import 'package:asroo_store/core/common/toast/show_toast.dart';
 import 'package:asroo_store/core/common/widgets/custom_linear_button.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
@@ -28,8 +27,7 @@ class LoginButton extends StatelessWidget {
             if (userRole == 'admin') {
               context.pushNamedAndRemoveUntil(AppRoutes.homeAdmin);
             } else {
-              context.pushNamedAndRemoveUntil(AppRoutes.homeCustomer);
-
+              context.pushNamedAndRemoveUntil(AppRoutes.mainCustomerScreen);
             }
           },
           error: (error) {
