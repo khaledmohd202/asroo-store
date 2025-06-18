@@ -12,6 +12,7 @@ class EnvVariable {
   String _envType = '';
   String _deviceToken = '';
   String _urlEndpoint = '';
+  String _buildDeveloper = '';
 
   // Add Google service account variables
   String _googleType = '';
@@ -37,6 +38,7 @@ class EnvVariable {
     _envType = dotenv.get('ENV_TYPE');
     _deviceToken = dotenv.get('DEVICE_TOKEN');
     _urlEndpoint = dotenv.get('URL_ENDPOINT');
+    _buildDeveloper = dotenv.get('BUILD_DEVELOPER');
 
     _googleType = dotenv.get('GOOGLE_TYPE');
     _googleProjectId = dotenv.get('GOOGLE_PROJECT_ID');
@@ -56,6 +58,7 @@ class EnvVariable {
   bool get debugMode => _envType == 'dev';
   String get deviceToken => _deviceToken;
   String get urlEndpoint => _urlEndpoint;
+  String get buildDeveloper => _buildDeveloper; // My GitHub Link.
   String get googleType => _googleType;
   String get googleProjectId => _googleProjectId;
   String get googlePrivateKeyId => _googlePrivateKeyId;
