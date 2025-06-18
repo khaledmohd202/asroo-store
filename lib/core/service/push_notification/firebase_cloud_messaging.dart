@@ -1,6 +1,9 @@
 //
 // ignore_for_file: avoid_catches_without_on_clauses
 import 'package:asroo_store/core/app/env.variables.dart';
+import 'package:asroo_store/core/common/toast/show_toast.dart';
+import 'package:asroo_store/core/extensions/context_extension.dart';
+import 'package:asroo_store/core/languages/lang_keys.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -57,14 +60,24 @@ class FirebaseCloudMessaging {
   }
 
   // controller for user subscription to notifications.
-  Future<void> controllerForUserSubscribe() async {
+  Future<void> controllerForUserSubscribe(BuildContext context) async {
     if (isNotificationPermissionGranted == false) {
       await _requestPermissionNotification();
     } else {
       if (isNotificationSubscribed.value == false) {
         await _subscribeToTopic();
+        if (!context.mounted) return;
+        ShowToast.showToastSuccessTop(
+          message: context.translate(LangKeys.subscribedToNotifications),
+          seconds: 1,
+        );
       } else {
         await _unsubscribeFromTopic();
+        if (!context.mounted) return;
+        ShowToast.showToastSuccessTop(
+          message: context.translate(LangKeys.unsubscribedToNotifications),
+          seconds: 1,
+        );
       }
     }
   }

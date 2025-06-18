@@ -4,6 +4,7 @@ import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/languages/lang_keys.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
 import 'package:asroo_store/core/style/images/app_images.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,6 +32,7 @@ class DarkModeChange extends StatelessWidget {
         Transform.scale(
           scale: 0.80,
           child: Switch.adaptive(
+            dragStartBehavior: DragStartBehavior.down,
             value: cubit.isDark,
             inactiveTrackColor: Colors.green,
             activeColor: const Color(0xff262626),
