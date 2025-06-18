@@ -1,11 +1,9 @@
 import 'package:asroo_store/core/common/dialogs/custom_dialog.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
-import 'package:asroo_store/core/routes/app_routes.dart';
-import 'package:asroo_store/core/service/shared_pref/pref_keys.dart';
-import 'package:asroo_store/core/service/shared_pref/shared_pref.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/core/utils/app_logout.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/screens/add_categories_screen.dart';
 import 'package:asroo_store/features/admin/add_notification/presentation/screens/add_notification_screen.dart';
 import 'package:asroo_store/features/admin/add_products/presentation/screens/add_products_screens.dart';
@@ -99,14 +97,7 @@ List<DrawerItemModel> adminDrawerList(BuildContext context) {
             textButton1: 'Yes',
             textButton2: 'No',
             onPressed: () async {
-              final navigator = Navigator.of(context);
-              await SharedPref().removePreference(PrefKeys.accessToken);
-              await SharedPref().removePreference(PrefKeys.userId);
-              await SharedPref().removePreference(PrefKeys.userRole);
-              await navigator.pushNamedAndRemoveUntil(
-                AppRoutes.login,
-                (route) => false,
-              );
+              await AppLogout().logout();
             },
             isLoading: false,
           );
