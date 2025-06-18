@@ -8,6 +8,7 @@ import 'package:asroo_store/features/customer/profile/presentation/widgets/build
 import 'package:asroo_store/features/customer/profile/presentation/widgets/build_version.dart';
 import 'package:asroo_store/features/customer/profile/presentation/widgets/dark_mode_change.dart';
 import 'package:asroo_store/features/customer/profile/presentation/widgets/language_change.dart';
+import 'package:asroo_store/features/customer/profile/presentation/widgets/logout_widget.dart';
 import 'package:asroo_store/features/customer/profile/presentation/widgets/notifications_change.dart';
 import 'package:asroo_store/features/customer/profile/presentation/widgets/user_profile_info.dart';
 import 'package:asroo_store/features/customer/profile/presentation/widgets/user_profile_shimmer.dart';
@@ -41,7 +42,7 @@ class ProfileBody extends StatelessWidget {
               ),
             ),
             // Title.
-            SizedBox(height: 20.h),
+            SizedBox(height: 60.h),
             CustomFadeInRight(
               duration: 400,
               child: TextApp(
@@ -73,6 +74,9 @@ class ProfileBody extends StatelessWidget {
               duration: 400,
               child: BuildVersion(),
             ),
+            SizedBox(height: 30.h),
+            // Logout.
+            const CustomFadeInRight(duration: 400, child: LogoutWidget()),
           ],
         ),
       ),
