@@ -1,3 +1,4 @@
+import 'package:asroo_store/features/customer/home/presentation/widgets/banner/banner_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -12,24 +13,10 @@ class HomeBody extends StatelessWidget {
       onRefresh: () async {},
       child: CustomScrollView(
         controller: scrollController,
-        slivers: [
+        slivers: const [
           // Banners.
           SliverToBoxAdapter(
-            child: ListView.separated(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) {
-                return Container(
-                  color: Colors.amber,
-                  height: 50.h,
-                  width: 400.w,
-                );
-              },
-              separatorBuilder: (context, index) {
-                return SizedBox(height: 15.h);
-              },
-              itemCount: 33,
-            ),
+            child: BannerSlider(),
           ),
           // Categories.
 
