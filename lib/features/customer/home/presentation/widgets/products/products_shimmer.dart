@@ -1,12 +1,9 @@
-import 'package:asroo_store/features/admin/add_products/data/models/get_all_product_response.dart';
-import 'package:asroo_store/features/customer/home/presentation/widgets/products/product_item.dart';
+import 'package:asroo_store/core/common/loading/loading_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ProductsList extends StatelessWidget {
-  const ProductsList({required this.productsList, super.key});
-
-  final List<GetAllProductModel> productsList;
+class ProductsShimmer extends StatelessWidget {
+  const ProductsShimmer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +21,9 @@ class ProductsList extends StatelessWidget {
           childAspectRatio: 165 / 250,
         ),
         itemBuilder: (context, index) {
-          return ProductItem(
-            categoryName: productsList[index].category!.name ?? '',
-            title: productsList[index].title ?? '',
-            price: productsList[index].price ?? 0,
-            imageUrl: productsList[index].images!.first,
+          return LoadingShimmer(
+            height: 250.h,
+            width: 165.w,
           );
         },
       ),

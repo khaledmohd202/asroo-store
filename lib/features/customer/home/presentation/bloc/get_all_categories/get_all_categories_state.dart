@@ -7,5 +7,6 @@ class GetAllCategoriesState with _$GetAllCategoriesState {
     required List<GetAllCategoriesModel> categoriesList,
   }) = SuccessState;
   const factory GetAllCategoriesState.empty() = EmptyState;
-  const factory GetAllCategoriesState.error({required String error}) = ErrorState;
+  const factory GetAllCategoriesState.error({required String error}) =
+      ErrorState;
 }

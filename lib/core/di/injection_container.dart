@@ -35,7 +35,8 @@ import 'package:asroo_store/features/auth/data/repos/auth_repo.dart';
 import 'package:asroo_store/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:asroo_store/features/customer/home/data/data_source/home_data_source.dart';
 import 'package:asroo_store/features/customer/home/data/repos/home_repo.dart';
-import 'package:asroo_store/features/customer/home/presentation/bloc/bloc/get_all_categories_bloc.dart';
+import 'package:asroo_store/features/customer/home/presentation/bloc/get_all_categories/get_all_categories_bloc.dart';
+import 'package:asroo_store/features/customer/home/presentation/bloc/get_all_products/get_all_products_bloc.dart';
 import 'package:asroo_store/features/customer/home/presentation/bloc/get_banners/get_banners_bloc.dart';
 import 'package:asroo_store/features/customer/main/presentation/cubit/main/main_cubit.dart';
 import 'package:asroo_store/features/customer/profile/data/data_source/profile_data_source.dart';
@@ -140,5 +141,6 @@ Future<void> _initHome() async {
     ..registerLazySingleton(() => HomeDataSource(sl()))
     ..registerLazySingleton(() => HomeRepo(sl()))
     ..registerFactory(() => GetBannersBloc(sl()))
-    ..registerFactory(() => GetAllCategoriesBloc(sl()));
+    ..registerFactory(() => GetAllCategoriesBloc(sl()))
+    ..registerFactory(() => GetAllProductsBloc(sl()));
 }

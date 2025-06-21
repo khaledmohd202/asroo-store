@@ -1,7 +1,8 @@
 import 'package:asroo_store/core/common/animations/animate_do.dart';
 import 'package:asroo_store/core/di/injection_container.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
-import 'package:asroo_store/features/customer/home/presentation/bloc/bloc/get_all_categories_bloc.dart';
+import 'package:asroo_store/features/customer/home/presentation/bloc/get_all_categories/get_all_categories_bloc.dart';
+import 'package:asroo_store/features/customer/home/presentation/bloc/get_all_products/get_all_products_bloc.dart';
 import 'package:asroo_store/features/customer/home/presentation/bloc/get_banners/get_banners_bloc.dart';
 import 'package:asroo_store/features/customer/home/presentation/refactors/home_body.dart';
 import 'package:flutter/material.dart';
@@ -49,6 +50,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   sl<GetAllCategoriesBloc>()..add(
                     const GetAllCategoriesEvent.getCategories(),
                   ),
+        ),
+        BlocProvider(
+          create:
+              (context) =>
+                  sl<GetAllProductsBloc>()
+                    ..add(const GetAllProductsEvent.getAllProducts()),
         ),
       ],
       child: Stack(

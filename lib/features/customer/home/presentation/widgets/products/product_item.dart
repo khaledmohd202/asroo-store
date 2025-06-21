@@ -2,7 +2,6 @@ import 'package:asroo_store/core/common/widgets/custom_container_linear_customer
 import 'package:asroo_store/core/common/widgets/text_app.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/extensions/string_extension.dart';
-import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +49,7 @@ class ProductItem extends StatelessWidget {
                   onPressed: () {},
                   padding: EdgeInsets.zero,
                   icon: Icon(
-                    Icons.favorite,
+                    Icons.favorite_border,
                     color: context.color.textColor,
                   ),
                 ),

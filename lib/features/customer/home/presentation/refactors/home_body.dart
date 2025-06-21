@@ -3,12 +3,14 @@ import 'package:asroo_store/core/common/loading/loading_shimmer.dart';
 import 'package:asroo_store/core/common/widgets/custom_button.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/languages/lang_keys.dart';
-import 'package:asroo_store/features/customer/home/presentation/bloc/bloc/get_all_categories_bloc.dart';
+import 'package:asroo_store/features/customer/home/presentation/bloc/get_all_categories/get_all_categories_bloc.dart';
+import 'package:asroo_store/features/customer/home/presentation/bloc/get_all_products/get_all_products_bloc.dart';
 import 'package:asroo_store/features/customer/home/presentation/bloc/get_banners/get_banners_bloc.dart';
 import 'package:asroo_store/features/customer/home/presentation/widgets/banner/banner_slider.dart';
 import 'package:asroo_store/features/customer/home/presentation/widgets/categories/categories_list.dart';
 import 'package:asroo_store/features/customer/home/presentation/widgets/categories/categories_shimmer.dart';
 import 'package:asroo_store/features/customer/home/presentation/widgets/products/products_list.dart';
+import 'package:asroo_store/features/customer/home/presentation/widgets/products/products_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,6 +27,9 @@ class HomeBody extends StatelessWidget {
         context.read<GetBannersBloc>().add(const GetBannersEvent.getBanners());
         context.read<GetAllCategoriesBloc>().add(
           const GetAllCategoriesEvent.getCategories(),
+        );
+        context.read<GetAllProductsBloc>().add(
+          const GetAllProductsEvent.getAllProducts(),
         );
       },
       child: CustomScrollView(
@@ -73,25 +78,47 @@ class HomeBody extends StatelessWidget {
             ),
           ),
           // Products.
-          const SliverToBoxAdapter(
-            child: ProductsList(),
+          SliverToBoxAdapter(
+            child: BlocBuilder<GetAllProductsBloc, GetAllProductsState>(
+              builder: (context, state) {
+                return state.when(
+                  loading: () {
+                    return const ProductsShimmer();
+                  },
+                  success: (productsList) {
+                    return ProductsList(productsList: productsList);
+                  },
+                  empty: SizedBox.shrink,
+                  error: Text.new,
+                );
+              },
+            ),
           ),
 
           SliverToBoxAdapter(child: SizedBox(height: 20.h)),
           // Get All Products.
           SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15.w),
-              child: CustomButton(
-                onPressed: () {},
-                text: context.translate(LangKeys.viewAll),
-                width: MediaQuery.of(context).size.width,
-                height: 50.h,
-                lastRadius: 10.r,
-                threeRadius: 10.r,
-                backgroundColor: context.color.bluePinkLight,
-                textColor: Colors.black,
-              ),
+            child: BlocBuilder<GetAllProductsBloc, GetAllProductsState>(
+              builder: (context, state) {
+                if (context
+                    .read<GetAllProductsBloc>()
+                    .isProductListSmallerThan10) {
+                  return Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 15.w),
+                    child: CustomButton(
+                      onPressed: () {},
+                      text: context.translate(LangKeys.viewAll),
+                      width: MediaQuery.of(context).size.width,
+                      height: 50.h,
+                      lastRadius: 10.r,
+                      threeRadius: 10.r,
+                      backgroundColor: context.color.bluePinkLight,
+                      textColor: Colors.black,
+                    ),
+                  );
+                }
+                return const SizedBox.shrink();
+              },
             ),
           ),
           SliverToBoxAdapter(child: SizedBox(height: 10.h)),
