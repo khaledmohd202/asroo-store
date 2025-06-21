@@ -33,6 +33,11 @@ import 'package:asroo_store/features/admin/users/presentation/bloc/get_all_users
 import 'package:asroo_store/features/auth/data/data_source/auth_data_source.dart';
 import 'package:asroo_store/features/auth/data/repos/auth_repo.dart';
 import 'package:asroo_store/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:asroo_store/features/customer/home/data/data_source/home_data_source.dart';
+import 'package:asroo_store/features/customer/home/data/repos/home_repo.dart';
+import 'package:asroo_store/features/customer/home/presentation/bloc/get_all_categories/get_all_categories_bloc.dart';
+import 'package:asroo_store/features/customer/home/presentation/bloc/get_all_products/get_all_products_bloc.dart';
+import 'package:asroo_store/features/customer/home/presentation/bloc/get_banners/get_banners_bloc.dart';
 import 'package:asroo_store/features/customer/main/presentation/cubit/main/main_cubit.dart';
 import 'package:asroo_store/features/customer/profile/data/data_source/profile_data_source.dart';
 import 'package:asroo_store/features/customer/profile/data/repos/profile_repo.dart';
@@ -40,7 +45,7 @@ import 'package:asroo_store/features/customer/profile/presentation/bloc/bloc/pro
 import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
 
-final sl = GetIt.instance;
+final GetIt sl = GetIt.instance;
 
 Future<void> setupInjector() async {
   await _initCore();
@@ -52,6 +57,7 @@ Future<void> setupInjector() async {
   await _initAddNotification();
   await _initMain();
   await _initProfile();
+  await _initHome();
 }
 
 Future<void> _initCore() async {
@@ -128,4 +134,13 @@ Future<void> _initProfile() async {
     ..registerFactory(() => ProfileBloc(sl()))
     ..registerLazySingleton(() => ProfileRepo(sl()))
     ..registerLazySingleton(() => ProfileDataSource(sl()));
+}
+
+Future<void> _initHome() async {
+  sl
+    ..registerLazySingleton(() => HomeDataSource(sl()))
+    ..registerLazySingleton(() => HomeRepo(sl()))
+    ..registerFactory(() => GetBannersBloc(sl()))
+    ..registerFactory(() => GetAllCategoriesBloc(sl()))
+    ..registerFactory(() => GetAllProductsBloc(sl()));
 }

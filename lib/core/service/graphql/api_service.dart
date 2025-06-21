@@ -9,6 +9,7 @@ import 'package:asroo_store/features/admin/users/data/models/get_all_users_respo
 import 'package:asroo_store/features/auth/data/models/login_response.dart';
 import 'package:asroo_store/features/auth/data/models/sign_up_response.dart';
 import 'package:asroo_store/features/auth/data/models/user_role_response.dart';
+import 'package:asroo_store/features/customer/home/data/models/banners_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
@@ -85,4 +86,7 @@ abstract class ApiService {
 
   @POST(graphql)
   Future<void> deleteUser(@Body() Map<String, dynamic> mutation);
+
+  @POST(graphql)
+  Future<BannersResponse> getBanner(@Body() Map<String, dynamic> query);
 }

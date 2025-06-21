@@ -19,7 +19,7 @@ class MainCustomerBottomNavBar extends StatelessWidget {
       child: Align(
         alignment: Alignment.bottomCenter,
         child: SizedBox(
-          height: 103.h,
+          height: 85.h,
           width: MediaQuery.of(context).size.width,
           child: Stack(
             children: [
@@ -103,7 +103,7 @@ class MainCustomerBottomNavBar extends StatelessWidget {
               ),
               // Background Icon.
               Positioned(
-                top: 10.h,
+                top: -5.h,
                 left: -8.w,
                 child: Container(
                   height: 100.h,
@@ -118,7 +118,7 @@ class MainCustomerBottomNavBar extends StatelessWidget {
               // Car Icon.
               Positioned(
                 left: 30.w,
-                top: 32.h,
+                top: 18.h,
                 child: SvgPicture.asset(
                   AppImages.carShop,
                   height: 22.h,
