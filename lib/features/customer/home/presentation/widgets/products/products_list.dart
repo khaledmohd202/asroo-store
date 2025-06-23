@@ -1,5 +1,5 @@
+import 'package:asroo_store/core/common/widgets/custom_product_item.dart';
 import 'package:asroo_store/features/admin/add_products/data/models/get_all_product_response.dart';
-import 'package:asroo_store/features/customer/home/presentation/widgets/products/product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -24,11 +24,12 @@ class ProductsList extends StatelessWidget {
           childAspectRatio: 165 / 250,
         ),
         itemBuilder: (context, index) {
-          return ProductItem(
+          return CustomProductItem(
             categoryName: productsList[index].category!.name ?? '',
             title: productsList[index].title ?? '',
             price: productsList[index].price ?? 0,
             imageUrl: productsList[index].images!.first,
+            productId: int.parse(productsList[index].id ?? '0'),
           );
         },
       ),
