@@ -1,7 +1,8 @@
 import 'package:asroo_store/core/common/widgets/customer_app_bar.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/features/customer/product_details/presentation/refactors/add_to_cart_button.dart';
-import 'package:asroo_store/features/customer/product_details/presentation/widgets/product_details_custom_painter.dart';
+import 'package:asroo_store/features/customer/product_details/presentation/refactors/product_details_body.dart';
+import 'package:asroo_store/features/customer/product_details/presentation/refactors/product_details_custom_painter.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
@@ -12,26 +13,27 @@ class ProductDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomerAppBar(title: 'Product Details'),
-      bottomNavigationBar: AddToCartButton(
-        price: 150,
-      ),
+      appBar: const CustomerAppBar(title: 'Product Details'),
+      bottomNavigationBar: const AddToCartButton(price: 150),
       body: Stack(
         children: [
           CustomPaint(
-            size: Size(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height,
+            size: Size(
+              MediaQuery.of(context).size.width,
+              MediaQuery.of(context).size.height,
             ),
             painter: ProductDetailsCustomPainter(
               gradient: LinearGradient(
-              colors: [
-              context.color.bluePinkLight!,
-              context.color.bluePinkDark!,
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            ),
+                colors: [
+                  context.color.bluePinkLight!,
+                  context.color.bluePinkDark!,
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
             ),
           ),
+          const ProductDetailsBody(),
         ],
       ),
     );
