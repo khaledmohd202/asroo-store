@@ -4,7 +4,7 @@ extension StringFormat on String {
     return replaceAll(RegExp(r'^\["?|"\]?|"$'), '');
   }
 
-    String toCapitalized() {
+  String toCapitalized() {
     return '${this[0].toUpperCase()}${substring(1)}';
   }
 
@@ -18,5 +18,4 @@ extension StringFormat on String {
 
   //   return DateFormat('d MMM, y - h:mm a').format(now);
   // }
-
 }

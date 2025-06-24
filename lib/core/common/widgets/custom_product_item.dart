@@ -1,18 +1,22 @@
 import 'package:asroo_store/core/common/widgets/custom_container_linear_customer.dart';
+import 'package:asroo_store/core/common/widgets/custom_favorite_button.dart';
+import 'package:asroo_store/core/common/widgets/custom_share_button.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/extensions/string_extension.dart';
+import 'package:asroo_store/core/routes/app_routes.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ProductItem extends StatelessWidget {
-  const ProductItem({
+class CustomProductItem extends StatelessWidget {
+  const CustomProductItem({
     required this.imageUrl,
     required this.title,
     required this.categoryName,
     required this.price,
+    required this.productId,
     super.key,
   });
 
@@ -20,11 +24,14 @@ class ProductItem extends StatelessWidget {
   final String title;
   final String categoryName;
   final double price;
+  final int productId;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        context.pushNamed(AppRoutes.productDetails, arguments: productId);
+      },
       child: CustomContainerLinearCustomer(
         height: 250.h,
         width: 165.w,
@@ -36,23 +43,9 @@ class ProductItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 // Share Button.
-                IconButton(
-                  onPressed: () {},
-                  padding: EdgeInsets.zero,
-                  icon: Icon(
-                    Icons.share,
-                    color: context.color.textColor,
-                  ),
-                ),
+                CustomShareButton(onPressed: () {}, size: 25.sp),
                 // Favorite Button.
-                IconButton(
-                  onPressed: () {},
-                  padding: EdgeInsets.zero,
-                  icon: Icon(
-                    Icons.favorite_border,
-                    color: context.color.textColor,
-                  ),
-                ),
+                CustomFavoriteButton(onPressed: () {}, size: 25.sp),
               ],
             ),
             // Image.
