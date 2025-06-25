@@ -16,7 +16,7 @@ class ProductsList extends StatelessWidget {
         shrinkWrap: true,
         padding: EdgeInsets.zero,
         physics: const NeverScrollableScrollPhysics(),
-        itemCount: 10,
+        itemCount: productsList.length > 10 ? 10 : productsList.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, // number of Cols.
           crossAxisSpacing: 13.h, // spacing between cols.

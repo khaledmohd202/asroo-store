@@ -21,6 +21,8 @@ class DioFactory {
             'Bearer ${SharedPref().getString(PrefKeys.accessToken)}';
 
       debugPrint(
+        //
+        // ignore: lines_longer_than_80_chars
         "[USER Token] ====> ${SharedPref().getString(PrefKeys.accessToken) ?? 'NULL TOKEN'}",
       );
 
@@ -44,8 +46,10 @@ class DioFactory {
           return handler.next(options);
         },
         onError: (error, handler) async {
-          if (error.response?.statusCode == 400 ||
-              error.response?.statusCode == 401) {
+          // if (error.response?.statusCode == 400 ||
+          // we delete this condition because we don't want to logout the user
+          //if the error is 400
+          if (error.response?.statusCode == 401) {
             await AppLogout().logout();
           }
         },

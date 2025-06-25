@@ -16,7 +16,8 @@ class FirebaseCloudMessaging {
 
   static final FirebaseCloudMessaging _instance = FirebaseCloudMessaging._();
 
-  static final _firebaseMessaging = FirebaseMessaging.instance;
+  static final FirebaseMessaging _firebaseMessaging =
+      FirebaseMessaging.instance;
   bool isNotificationPermissionGranted = false;
   ValueNotifier<bool> isNotificationSubscribed = ValueNotifier(true);
 
@@ -274,8 +275,7 @@ class FirebaseCloudMessaging {
   //         },
   //       ),
   //       data: {
-  //         'to':
-  //             'esTyu__UTjW3v1rCCBMCEk:APA91bEtlk1QVg_dxq4YrPFscOwfpR-HyffFOqy_58pqI1kNC0N0A84K0HCd4WdGOp-WBmuS_GwtXfTqejQnSMPxpBkGmLpqISAOwSB59oDI_cHkVBBxzAY',
+  //         'to':,
   //         'notification': {
   //           'title': 'Check this Mobile (title)',
   //           'body': 'Rich Notification testing (body)',

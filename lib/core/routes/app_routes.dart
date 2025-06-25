@@ -7,6 +7,7 @@ import 'package:asroo_store/features/admin/home_admin/presentation/screens/home_
 import 'package:asroo_store/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:asroo_store/features/auth/presentation/screens/login_screen.dart';
 import 'package:asroo_store/features/auth/presentation/screens/sign_up_screen.dart';
+import 'package:asroo_store/features/customer/category/presentation/screen/category_screen.dart';
 import 'package:asroo_store/features/customer/main/presentation/cubit/main/main_cubit.dart';
 import 'package:asroo_store/features/customer/main/presentation/screen/main_screen.dart';
 import 'package:asroo_store/features/customer/product_details/presentation/screens/product_details_screen.dart';
@@ -20,6 +21,7 @@ class AppRoutes {
   static const mainCustomerScreen = 'mainScreen';
   static const webView = 'webView';
   static const productDetails = 'productDetails';
+  static const category = 'category';
 
   static Route<void> onGenerateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -54,6 +56,12 @@ class AppRoutes {
         return BaseRoutes(page: CustomWebView(url: args! as String));
       case productDetails:
         return BaseRoutes(page: ProductDetailsScreen(productId: args! as int));
+      case category:
+        return BaseRoutes(
+          page: CategoryScreen(
+            categoryInfo: args! as ({String categoryName, int categoryId}),
+          ),
+        );
       default:
         return BaseRoutes(page: const PageUnderBuildScreen());
     }
