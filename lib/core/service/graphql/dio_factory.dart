@@ -21,6 +21,8 @@ class DioFactory {
             'Bearer ${SharedPref().getString(PrefKeys.accessToken)}';
 
       debugPrint(
+        //
+        // ignore: lines_longer_than_80_chars
         "[USER Token] ====> ${SharedPref().getString(PrefKeys.accessToken) ?? 'NULL TOKEN'}",
       );
 

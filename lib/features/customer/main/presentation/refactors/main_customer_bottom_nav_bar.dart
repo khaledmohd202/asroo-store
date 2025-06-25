@@ -122,6 +122,8 @@ class MainCustomerBottomNavBar extends StatelessWidget {
                 child: SvgPicture.asset(
                   AppImages.carShop,
                   height: 22.h,
+                  //
+                  // ignore: deprecated_member_use
                   color: Colors.white,
                 ),
               ),

@@ -20,7 +20,7 @@ class PickImageUtils {
         return XFile(image.path);
       }
       return null;
-    } catch (e) {
+    }on Exception catch (e) {
       final permissionStatus = await Permission.photos.status;
 
       if (permissionStatus.isDenied) {

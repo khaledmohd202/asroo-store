@@ -18,6 +18,8 @@ class BuildDeveloper extends StatelessWidget {
       children: [
         SvgPicture.asset(
           AppImages.buildDeveloper,
+          //
+          // ignore: deprecated_member_use
           color: context.color.textColor,
         ),
         SizedBox(width: 10.w),

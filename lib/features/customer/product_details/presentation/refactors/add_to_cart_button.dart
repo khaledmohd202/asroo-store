@@ -16,11 +16,16 @@ class AddToCartButton extends StatelessWidget {
     return CustomFadeInUp(
       duration: 500,
       child: Container(
+        margin: EdgeInsets.only(
+          left: 5.w,
+          right: 5.w,
+          bottom: 10.h,
+        ),
         height: 90.h,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           color: context.color.containerShadow1,
-          borderRadius: BorderRadius.circular(30.r),
+          borderRadius: BorderRadius.circular(20.r),
         ),
         child: Padding(
           padding: EdgeInsetsGeometry.symmetric(horizontal: 20.w),

@@ -17,6 +17,8 @@ class BuildVersion extends StatelessWidget {
       children: [
         SvgPicture.asset(
           AppImages.buildVersion,
+          //
+          // ignore: deprecated_member_use
           color: context.color.textColor,
         ),
         SizedBox(width: 10.w),

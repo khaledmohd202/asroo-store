@@ -18,7 +18,12 @@ class DarkModeChange extends StatelessWidget {
     final cubit = context.read<AppCubit>();
     return Row(
       children: [
-        SvgPicture.asset(AppImages.darkMode, color: context.color.textColor),
+        SvgPicture.asset(
+          AppImages.darkMode,
+          //
+          // ignore: deprecated_member_use
+          color: context.color.textColor,
+        ),
         SizedBox(width: 10.w),
         TextApp(
           text: context.translate(LangKeys.darkMode),
