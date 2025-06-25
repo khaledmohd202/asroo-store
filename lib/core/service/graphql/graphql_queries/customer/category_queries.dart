@@ -10,7 +10,8 @@ class CategoryQueries {
   Map<String, dynamic> getCategoriesMapQuery({required int categoryId}) {
     return {
       'query': '''
-      products(categoryId: $categoryId) {
+      {
+        products(categoryId: $categoryId) {
             id
             title
             price
@@ -21,6 +22,7 @@ class CategoryQueries {
                 name
             }
         }
+      }
       ''',
     };
   }

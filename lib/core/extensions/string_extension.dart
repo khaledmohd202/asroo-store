@@ -9,8 +9,15 @@ extension StringFormat on String {
   }
 
   String convertLongString() {
-    final shortString = split(' ').sublist(0, split(' ').length - 2).join(' ');
+    final words = split(' ');
+    if (words.length <= 2) return this;
+    final shortString = words.sublist(0, words.length - 2).join(' ');
     return shortString;
+
+  // we remove this line because
+  // final shortString = split(' ').sublist(0, split(' ').length - 2).join(' ');
+  // If your string has fewer than 2 words, split(' ').length - 2
+  //becomes negative, causing sublist to throw a RangeError.
   }
 
   // String convertDataFormate() {
