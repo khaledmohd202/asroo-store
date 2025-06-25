@@ -1,3 +1,5 @@
+import 'package:asroo_store/core/common/widgets/customer_app_bar.dart';
+import 'package:asroo_store/features/customer/category/presentation/refactors/category_body.dart';
 import 'package:flutter/material.dart';
 
 class CategoryScreen extends StatelessWidget {
@@ -8,12 +10,8 @@ class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(categoryInfo.categoryName),
-      ),
-      body: Center(
-        child: Text('Category ID: ${categoryInfo.categoryId}'),
-      ),
+      appBar: CustomerAppBar(title: categoryInfo.categoryName),
+      body: const CategoryBody(),
     );
   }
 }
