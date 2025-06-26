@@ -45,6 +45,9 @@ import 'package:asroo_store/features/customer/main/presentation/cubit/main/main_
 import 'package:asroo_store/features/customer/product_details/data/data_source/product_details_data_source.dart';
 import 'package:asroo_store/features/customer/product_details/data/repos/product_details_repo.dart';
 import 'package:asroo_store/features/customer/product_details/presentation/bloc/product_details/product_details_bloc.dart';
+import 'package:asroo_store/features/customer/products_view_all/data/data_source/products_view_all_data_source.dart';
+import 'package:asroo_store/features/customer/products_view_all/data/repo/products_view_all_repo.dart';
+import 'package:asroo_store/features/customer/products_view_all/presentation/bloc/products_view_all/products_view_all_bloc.dart';
 import 'package:asroo_store/features/customer/profile/data/data_source/profile_data_source.dart';
 import 'package:asroo_store/features/customer/profile/data/repos/profile_repo.dart';
 import 'package:asroo_store/features/customer/profile/presentation/bloc/bloc/profile_bloc.dart';
@@ -66,6 +69,7 @@ Future<void> setupInjector() async {
   await _initHome();
   await _initProductDetails();
   await _initCategoryProducts();
+  await _initGetAllProductsViewAll();
 }
 
 Future<void> _initCore() async {
@@ -165,4 +169,10 @@ Future<void> _initCategoryProducts() async {
     ..registerLazySingleton(() => CategoryDataSource(sl()))
     ..registerLazySingleton(() => CategoryRepo(sl()))
     ..registerFactory(() => GetCategoryProductsBloc(sl()));
+}
+
+Future<void> _initGetAllProductsViewAll() async {
+  sl..registerLazySingleton(() => ProductsViewAllDataSource(sl()))
+  ..registerLazySingleton(() => ProductsViewAllRepo(sl()))
+  ..registerFactory(() => ProductsViewAllBloc(sl()));
 }
