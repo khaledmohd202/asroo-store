@@ -67,9 +67,14 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
 
+  #Pagination
+  equatable: ^2.0.7
+  bloc_concurrency: ^0.3.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  analyzer: ^6.11.0
   very_good_analysis: ^9.0.0
   flutter_launcher_icons: ^0.14.3
   flutter_lints: ^5.0.0
