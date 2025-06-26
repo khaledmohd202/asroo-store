@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:asroo_store/features/customer/products_view_all/data/repo/products_view_all_repo.dart';
 import 'package:asroo_store/features/customer/products_view_all/presentation/bloc/products_view_all/products_view_all_event.dart';
 import 'package:asroo_store/features/customer/products_view_all/presentation/bloc/products_view_all/products_view_all_state.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProductsViewAllBloc
@@ -14,7 +16,7 @@ class ProductsViewAllBloc
         ),
       ) {
     on<GetProductsViewAllEvent>(_getProductsViewAll);
-    on<LoadMoreProductsEvent>(_loadMoreProducts);
+    on<LoadMoreProductsEvent>(_loadMoreProducts, transformer: droppable());
   }
 
   final ProductsViewAllRepo _repo;
@@ -94,5 +96,20 @@ class ProductsViewAllBloc
         );
       },
     );
+  }
+
+  // handle pagination.
+  void handlerPagination({
+    required ScrollController scrollController,
+    required double loadMorePosition,
+  }) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      final offset = scrollController.offset;
+      final maxExtent = scrollController.position.maxScrollExtent;
+
+      if (offset >= maxExtent - loadMorePosition) {
+        add(const LoadMoreProductsEvent());
+      }
+    });
   }
 }
