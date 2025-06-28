@@ -23,7 +23,7 @@ class FavoritesCubit extends Cubit<FavoritesState> {
         .indexWhere((e) => e.id == productId);
 
     if (existingIndex >= 0) {
-      await HiveDatabase().favoritesBox!.delete(existingIndex);
+      await HiveDatabase().favoritesBox!.deleteAt(existingIndex);
     } else {
       await HiveDatabase().favoritesBox!.add(
         FavoritesModel(
@@ -48,6 +48,7 @@ class FavoritesCubit extends Cubit<FavoritesState> {
   List<FavoritesModel> get favoritesList {
     return HiveDatabase().favoritesBox!.values.toList();
   }
+
   // void clearFavorites() {
   //   HiveDatabase().favoritesBox!.clear();
   //   emit(const FavoritesState.initial());

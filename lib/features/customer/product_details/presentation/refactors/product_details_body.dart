@@ -31,6 +31,7 @@ class ProductDetailsBody extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                CustomShareButton(size: 30.sp, onPressed: () {}),
                 BlocBuilder<FavoritesCubit, FavoritesState>(
                   builder: (context, state) {
                     return CustomFavoriteButton(
@@ -50,7 +51,6 @@ class ProductDetailsBody extends StatelessWidget {
                     );
                   },
                 ),
-                CustomShareButton(size: 30.sp, onPressed: () {}),
               ],
             ),
             SizedBox(height: 10.h),
