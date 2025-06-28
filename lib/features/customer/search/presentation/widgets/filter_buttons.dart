@@ -1,10 +1,13 @@
 import 'package:asroo_store/core/common/animations/animate_do.dart';
 import 'package:asroo_store/core/common/widgets/custom_text_field.dart';
 import 'package:asroo_store/core/enum/filter_button_enum.dart';
+import 'package:asroo_store/features/customer/search/data/model/search_request_body.dart';
+import 'package:asroo_store/features/customer/search/presentation/bloc/search/search_bloc.dart';
 import 'package:asroo_store/features/customer/search/presentation/widgets/save_filter_button.dart';
 import 'package:asroo_store/features/customer/search/presentation/widgets/search_for_data_icon.dart';
 import 'package:asroo_store/features/customer/search/presentation/widgets/search_name_price_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FilterButtons extends StatefulWidget {
@@ -15,6 +18,19 @@ class FilterButtons extends StatefulWidget {
 }
 
 class _FilterButtonsState extends State<FilterButtons> {
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController priceMinController = TextEditingController();
+  final TextEditingController priceMaxController = TextEditingController();
+
+  @override
+  void dispose() {
+    nameController.dispose();
+    priceMinController.dispose();
+    priceMaxController.dispose();
+    // Dispose of the controllers to free up resources
+    super.dispose();
+  }
+
   FilterButtonEnum searchEnum = FilterButtonEnum.none;
 
   final formKey = GlobalKey<FormState>();
@@ -51,7 +67,7 @@ class _FilterButtonsState extends State<FilterButtons> {
             CustomFadeInDown(
               duration: 200,
               child: CustomTextField(
-                controller: TextEditingController(),
+                controller: nameController,
                 hintText: 'Search for products name',
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -61,7 +77,23 @@ class _FilterButtonsState extends State<FilterButtons> {
                 },
               ),
             ),
-            SaveFilterButton(onPressed: () {}),
+            SaveFilterButton(
+              onPressed: () {
+                if (formKey.currentState!.validate()) {
+                  context.read<SearchBloc>().add(
+                    SearchEvent.searchForProduct(
+                      body: SearchRequestBody(
+                        searchName: nameController.text.trim(),
+                      ),
+                    ),
+                  );
+
+                  setState(() {
+                    searchEnum = FilterButtonEnum.saved;
+                  });
+                }
+              },
+            ),
           ] else if (searchEnum == FilterButtonEnum.price) ...[
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -71,7 +103,7 @@ class _FilterButtonsState extends State<FilterButtons> {
                   child: SizedBox(
                     width: 160.w,
                     child: CustomTextField(
-                      controller: TextEditingController(),
+                      controller: priceMinController,
                       hintText: 'Price Min',
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -87,7 +119,7 @@ class _FilterButtonsState extends State<FilterButtons> {
                   child: SizedBox(
                     width: 160.w,
                     child: CustomTextField(
-                      controller: TextEditingController(),
+                      controller: priceMaxController,
                       hintText: 'Price Max',
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -100,10 +132,27 @@ class _FilterButtonsState extends State<FilterButtons> {
                 ),
               ],
             ),
-            SaveFilterButton(onPressed: () {}),
+            SaveFilterButton(
+              onPressed: () {
+                if (formKey.currentState!.validate()) {
+                  // Call API for price search
+                  context.read<SearchBloc>().add(
+                    SearchEvent.searchForProduct(
+                      body: SearchRequestBody(
+                        priceMin: int.parse(priceMinController.text.trim()),
+                        priceMax: int.parse(priceMaxController.text.trim()),
+                      ),
+                    ),
+                  );
+                  setState(() {
+                    searchEnum = FilterButtonEnum.saved;
+                  });
+                }
+              },
+            ),
           ],
           if (searchEnum == FilterButtonEnum.none) ...[
-            SizedBox(height: 200.h),
+            SizedBox(height: 180.h),
             const SearchForDataIcon(),
           ],
         ],
@@ -114,26 +163,28 @@ class _FilterButtonsState extends State<FilterButtons> {
   void priceSearchTap() {
     if (searchEnum == FilterButtonEnum.price) {
       setState(() {
-        searchEnum = FilterButtonEnum.none;
-        // Call API
+        searchEnum = FilterButtonEnum.saved;
       });
     } else {
       setState(() {
         searchEnum = FilterButtonEnum.price;
       });
     }
+
+    priceMaxController.clear();
+    priceMinController.clear();
   }
 
   void nameSearchTap() {
     if (searchEnum == FilterButtonEnum.name) {
       setState(() {
-        searchEnum = FilterButtonEnum.none;
-        // Call API
+        searchEnum = FilterButtonEnum.saved;
       });
     } else {
       setState(() {
         searchEnum = FilterButtonEnum.name;
       });
     }
+    nameController.clear();
   }
 }

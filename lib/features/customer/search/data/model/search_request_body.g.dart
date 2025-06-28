@@ -8,9 +8,9 @@ part of 'search_request_body.dart';
 
 SearchRequestBody _$SearchRequestBodyFromJson(Map<String, dynamic> json) =>
     SearchRequestBody(
-      json['searchName'] as String?,
-      (json['priceMin'] as num?)?.toInt(),
-      (json['priceMax'] as num?)?.toInt(),
+      searchName: json['searchName'] as String?,
+      priceMin: (json['priceMin'] as num?)?.toInt(),
+      priceMax: (json['priceMax'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$SearchRequestBodyToJson(SearchRequestBody instance) =>

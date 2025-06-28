@@ -13,33 +13,26 @@ class SearchQueries {
     required SearchRequestBody body,
   }) {
     return {
-      'query': '''
-        {
-        products(price_min: 100, price_max: 200, title: null) {
-          id
-          title
-          price
-          images
-          description
-          category {
+      'query': r'''
+        query SearchProducts($searchName: String , $priceMax: Int , $priceMin: Int){
+             products(title: $searchName, price_max: $priceMax, price_min:$priceMin){
             id
-            name
+            title
+            images
+            description
+            price
+            category{
+                name
+                id
+            }
           }
         }
-        }
-      ''',
+        ''',
       'variables': {
-        'priceMin': body.priceMin,
+        'searchName': body.searchName,
         'priceMax': body.priceMax,
-        'title': body.searchName,
+        'priceMin': body.priceMin,
       },
     };
   }
 }
-
-/**{
-	products(price_min: 100, price_max: 200, title: null) {
-		title
-		price
-	}
-} */

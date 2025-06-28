@@ -21,7 +21,7 @@ class SaveFilterButton extends StatelessWidget {
           height: 40.h,
           width: 100.w,
           child: TextApp(
-            text: 'Save',
+            text: 'Search',
             theme: context.textStyle.copyWith(fontSize: 13.sp),
           ),
         ),

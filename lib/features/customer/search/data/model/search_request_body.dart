@@ -4,9 +4,9 @@ part 'search_request_body.g.dart';
 @JsonSerializable()
 class SearchRequestBody {
   SearchRequestBody(
-    this.searchName,
+    {this.searchName,
     this.priceMin,
-    this.priceMax,
+    this.priceMax,}
   );
 
   final String? searchName;
