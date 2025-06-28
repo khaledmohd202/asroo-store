@@ -19,9 +19,9 @@ class SearchNamePriceButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
-        height: 40.h,
+        height: 50.h,
         width: 150.w,
         decoration: BoxDecoration(
           color:
