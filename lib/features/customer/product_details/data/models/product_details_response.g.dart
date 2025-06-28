@@ -34,13 +34,32 @@ ProductDetailsModel _$ProductDetailsModelFromJson(Map<String, dynamic> json) =>
       (json['price'] as num?)?.toDouble(),
       (json['images'] as List<dynamic>).map((e) => e as String).toList(),
       json['description'] as String?,
+      json['id'] as String?,
+      json['category'] == null
+          ? null
+          : CategoryDetailsModel.fromJson(
+              json['category'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductDetailsModelToJson(
         ProductDetailsModel instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'title': instance.title,
       'price': instance.price,
       'images': instance.images,
       'description': instance.description,
+      'category': instance.category,
+    };
+
+CategoryDetailsModel _$CategoryDetailsModelFromJson(
+        Map<String, dynamic> json) =>
+    CategoryDetailsModel(
+      json['name'] as String,
+    );
+
+Map<String, dynamic> _$CategoryDetailsModelToJson(
+        CategoryDetailsModel instance) =>
+    <String, dynamic>{
+      'name': instance.name,
     };

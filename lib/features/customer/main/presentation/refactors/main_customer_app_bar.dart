@@ -24,6 +24,7 @@ class MainCustomerAppBar extends StatelessWidget
     return AppBar(
       automaticallyImplyLeading: false,
       backgroundColor: context.color.mainColor,
+      centerTitle: true,
       elevation: 0,
       title: BlocBuilder(
         bloc: cubit,
@@ -55,6 +56,19 @@ class MainCustomerAppBar extends StatelessWidget
                   ),
                 ),
               ],
+            );
+          } else if (cubit.navBarEnum == NavBarEnum.favorites) {
+            return CustomFadeInRight(
+              duration: 500,
+              child: TextApp(
+                text: 'Your Favorites',
+                theme: context.textStyle.copyWith(
+                  fontSize: 20.sp,
+                  fontWeight: FontWeightHelper.bold,
+                  color: context.color.textColor,
+                  fontFamily: FontFamilyHelper.poppinsEnglish,
+                ),
+              ),
             );
           }
           return const SizedBox.shrink();

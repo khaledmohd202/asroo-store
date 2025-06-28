@@ -5,10 +5,12 @@ class CustomFavoriteButton extends StatelessWidget {
   const CustomFavoriteButton({
     required this.size,
     required this.onPressed,
+    required this.isFavorite,
     super.key,
   });
 
   final double size;
+  final bool isFavorite;
   final VoidCallback onPressed;
 
   @override
@@ -17,8 +19,9 @@ class CustomFavoriteButton extends StatelessWidget {
       onPressed: onPressed,
       padding: EdgeInsets.zero,
       icon: Icon(
-        Icons.favorite_border,
-        color: context.color.textColor,
+        isFavorite ? Icons.favorite : Icons.favorite_outline,
+        color:
+            isFavorite ? context.color.bluePinkLight : context.color.textColor,
         size: size,
       ),
     );
