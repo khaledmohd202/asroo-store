@@ -1,7 +1,7 @@
 import 'package:asroo_store/core/enum/nav_bar_enum.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/features/customer/categories/presentation/screen/categories_screen.dart';
-import 'package:asroo_store/features/customer/favorites/favorites_screen.dart';
+import 'package:asroo_store/features/customer/favorites/presentation/screen/favorites_screen.dart';
 import 'package:asroo_store/features/customer/home/presentation/screen/home_screen.dart';
 import 'package:asroo_store/features/customer/main/presentation/cubit/main/main_cubit.dart';
 import 'package:asroo_store/features/customer/main/presentation/refactors/main_customer_app_bar.dart';
