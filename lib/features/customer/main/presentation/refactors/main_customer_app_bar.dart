@@ -4,6 +4,7 @@ import 'package:asroo_store/core/common/widgets/text_app.dart';
 import 'package:asroo_store/core/enum/nav_bar_enum.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/languages/lang_keys.dart';
+import 'package:asroo_store/core/routes/app_routes.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
 import 'package:asroo_store/core/style/images/app_images.dart';
@@ -47,7 +48,9 @@ class MainCustomerAppBar extends StatelessWidget
                 CustomFadeInLeft(
                   duration: 500,
                   child: CustomLinearButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.pushNamed(AppRoutes.searchScreen);
+                    },
                     child: Center(child: SvgPicture.asset(AppImages.search)),
                   ),
                 ),

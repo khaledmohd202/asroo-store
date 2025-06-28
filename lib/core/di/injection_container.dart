@@ -51,6 +51,9 @@ import 'package:asroo_store/features/customer/products_view_all/presentation/blo
 import 'package:asroo_store/features/customer/profile/data/data_source/profile_data_source.dart';
 import 'package:asroo_store/features/customer/profile/data/repos/profile_repo.dart';
 import 'package:asroo_store/features/customer/profile/presentation/bloc/bloc/profile_bloc.dart';
+import 'package:asroo_store/features/customer/search/data/data_source/search_data_source.dart';
+import 'package:asroo_store/features/customer/search/data/repos/search_repo.dart';
+import 'package:asroo_store/features/customer/search/presentation/bloc/search/search_bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
 
@@ -70,6 +73,7 @@ Future<void> setupInjector() async {
   await _initProductDetails();
   await _initCategoryProducts();
   await _initGetAllProductsViewAll();
+  await _initSearch();
 }
 
 Future<void> _initCore() async {
@@ -172,7 +176,15 @@ Future<void> _initCategoryProducts() async {
 }
 
 Future<void> _initGetAllProductsViewAll() async {
-  sl..registerLazySingleton(() => ProductsViewAllDataSource(sl()))
-  ..registerLazySingleton(() => ProductsViewAllRepo(sl()))
-  ..registerFactory(() => ProductsViewAllBloc(sl()));
+  sl
+    ..registerLazySingleton(() => ProductsViewAllDataSource(sl()))
+    ..registerLazySingleton(() => ProductsViewAllRepo(sl()))
+    ..registerFactory(() => ProductsViewAllBloc(sl()));
+}
+
+Future<void> _initSearch() async {
+  sl
+    ..registerLazySingleton(() => SearchDataSource(sl()))
+    ..registerLazySingleton(() => SearchRepo(sl()))
+    ..registerFactory(() => SearchBloc(sl()));
 }
