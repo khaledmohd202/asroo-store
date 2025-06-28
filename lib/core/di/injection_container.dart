@@ -36,6 +36,7 @@ import 'package:asroo_store/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:asroo_store/features/customer/category/data/data_source/category_data_source.dart';
 import 'package:asroo_store/features/customer/category/data/repos/category_repo.dart';
 import 'package:asroo_store/features/customer/category/presentation/bloc/get_category_products/get_category_products_bloc.dart';
+import 'package:asroo_store/features/customer/favorites/presentation/cubit/favorites_cubit.dart';
 import 'package:asroo_store/features/customer/home/data/data_source/home_data_source.dart';
 import 'package:asroo_store/features/customer/home/data/repos/home_repo.dart';
 import 'package:asroo_store/features/customer/home/presentation/bloc/get_all_categories/get_all_categories_bloc.dart';
@@ -74,6 +75,7 @@ Future<void> setupInjector() async {
   await _initCategoryProducts();
   await _initGetAllProductsViewAll();
   await _initSearch();
+  await _initFavorites();
 }
 
 Future<void> _initCore() async {
@@ -187,4 +189,8 @@ Future<void> _initSearch() async {
     ..registerLazySingleton(() => SearchDataSource(sl()))
     ..registerLazySingleton(() => SearchRepo(sl()))
     ..registerFactory(() => SearchBloc(sl()));
+}
+
+Future<void> _initFavorites() async {
+  sl.registerFactory(FavoritesCubit.new);
 }
