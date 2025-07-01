@@ -1,3 +1,4 @@
+import 'package:asroo_store/core/common/dialogs/custom_dialog_one_button.dart';
 import 'package:asroo_store/core/common/widgets/custom_favorite_button.dart';
 import 'package:asroo_store/core/common/widgets/custom_share_button.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
@@ -32,7 +33,21 @@ class ProductDetailsBody extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 // Share Button.
-                CustomShareButton(size: 30.sp, onPressed: () {}),
+                CustomShareButton(
+                  size: 30.sp,
+                  onPressed: () {
+                    CustomDialogOneButton.oneButtonDialog(
+                      context: context,
+                      textBody:
+                          '''The  "Firebase Dynamic Links"  Was Deprecated and the domain of our app is not working, and we working to handle this error and get the share button working again.''',
+                      textButton1: 'OK',
+                      onPressed: () {
+                        context.pop();
+                      },
+                      isLoading: false,
+                    );
+                  },
+                ),
                 /*//Share Button
                 BlocBuilder<ShareCubit, ShareState>(
                   builder: (context, state) {
