@@ -26,6 +26,7 @@ class AsrooStoreApp extends StatelessWidget {
           return MultiBlocProvider(
               providers: [
                 BlocProvider(create: (context) => sl<FavoritesCubit>()),
+                // BlocProvider(create: (context) => sl<ShareCubit>()),
                 BlocProvider(
                   create:
                       (context) =>

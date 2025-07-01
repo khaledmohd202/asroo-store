@@ -1,3 +1,4 @@
+import 'package:asroo_store/core/common/dialogs/custom_dialog_one_button.dart';
 import 'package:asroo_store/core/common/widgets/custom_favorite_button.dart';
 import 'package:asroo_store/core/common/widgets/custom_share_button.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
@@ -31,7 +32,72 @@ class ProductDetailsBody extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                CustomShareButton(size: 30.sp, onPressed: () {}),
+                // Share Button.
+                CustomShareButton(
+                  size: 30.sp,
+                  onPressed: () {
+                    CustomDialogOneButton.oneButtonDialog(
+                      context: context,
+                      textBody:
+                          '''The  "Firebase Dynamic Links"  Was Deprecated and the domain of our app is not working, and we working to handle this error and get the share button working again.''',
+                      textButton1: 'OK',
+                      onPressed: () {
+                        context.pop();
+                      },
+                      isLoading: false,
+                    );
+                  },
+                ),
+                /*//Share Button
+                BlocBuilder<ShareCubit, ShareState>(
+                  builder: (context, state) {
+                    return state.when(
+                      initial: () {
+                        return CustomShareButton(
+                          size: 25,
+                          onTap: () {
+                            context.read<ShareCubit>().sendDynamicLinkProduct(
+                                  imageUrl: imageUrl,
+                                  productId: productId,
+                                  title: title,
+                                );
+                          },
+                        );
+                      },
+                      loading: (id) {
+                        if (id == productId) {
+                          return Padding(
+                            padding: EdgeInsets.only(left: 10.w),
+                            child: SizedBox(
+                              height: 25.h,
+                              width: 25.w,
+                              child: CircularProgressIndicator(
+                                color: context.color.bluePinkLight,
+                              ),
+                            ),
+                          );
+                        }
+                        return CustomShareButton(
+                          size: 25,
+                          onTap: () {},
+                        );
+                      },
+                      success: () {
+                        return CustomShareButton(
+                          size: 25,
+                          onTap: () {
+                            context.read<ShareCubit>().sendDynamicLinkProduct(
+                                  imageUrl: imageUrl,
+                                  productId: productId,
+                                  title: title,
+                                );
+                          },
+                        );
+                      },
+                    );
+                  },
+                ), */
+                // Favorite Button.
                 BlocBuilder<FavoritesCubit, FavoritesState>(
                   builder: (context, state) {
                     return CustomFavoriteButton(
