@@ -31,7 +31,58 @@ class ProductDetailsBody extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                // Share Button.
                 CustomShareButton(size: 30.sp, onPressed: () {}),
+                /*//Share Button
+                BlocBuilder<ShareCubit, ShareState>(
+                  builder: (context, state) {
+                    return state.when(
+                      initial: () {
+                        return CustomShareButton(
+                          size: 25,
+                          onTap: () {
+                            context.read<ShareCubit>().sendDynamicLinkProduct(
+                                  imageUrl: imageUrl,
+                                  productId: productId,
+                                  title: title,
+                                );
+                          },
+                        );
+                      },
+                      loading: (id) {
+                        if (id == productId) {
+                          return Padding(
+                            padding: EdgeInsets.only(left: 10.w),
+                            child: SizedBox(
+                              height: 25.h,
+                              width: 25.w,
+                              child: CircularProgressIndicator(
+                                color: context.color.bluePinkLight,
+                              ),
+                            ),
+                          );
+                        }
+                        return CustomShareButton(
+                          size: 25,
+                          onTap: () {},
+                        );
+                      },
+                      success: () {
+                        return CustomShareButton(
+                          size: 25,
+                          onTap: () {
+                            context.read<ShareCubit>().sendDynamicLinkProduct(
+                                  imageUrl: imageUrl,
+                                  productId: productId,
+                                  title: title,
+                                );
+                          },
+                        );
+                      },
+                    );
+                  },
+                ), */
+                // Favorite Button.
                 BlocBuilder<FavoritesCubit, FavoritesState>(
                   builder: (context, state) {
                     return CustomFavoriteButton(

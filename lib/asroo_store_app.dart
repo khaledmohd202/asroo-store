@@ -1,7 +1,6 @@
 import 'package:asroo_store/core/app/app_cubit/app_cubit.dart';
 import 'package:asroo_store/core/app/connectivity_controller.dart';
 import 'package:asroo_store/core/app/env.variables.dart';
-import 'package:asroo_store/core/app/share/share_cubit.dart';
 import 'package:asroo_store/core/common/screens/no_network_screen.dart';
 import 'package:asroo_store/core/di/injection_container.dart';
 import 'package:asroo_store/core/languages/app_localizations_setup.dart';
