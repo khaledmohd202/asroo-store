@@ -34,7 +34,7 @@ dependencies:
   package_info_plus: ^8.3.0
   carousel_slider: ^5.1.1
   share_plus: ^11.0.0
-  firebase_dynamic_links:
+  # firebase_dynamic_links:
 
   #Bloc
   flutter_bloc: ^9.1.1
