@@ -31,7 +31,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https" android:host="c841-213-181-240-41.ngrok-free.app"/>
+                <data android:scheme="https" android:host="com.example.asroo_store"/>
             </intent-filter>
         </activity>
         <!-- Don't delete the meta-data below.

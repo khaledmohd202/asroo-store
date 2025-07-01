@@ -39,6 +39,9 @@ void main() async {
 
   await HiveDatabase().setup();
 
+  // The Firebase Dynamic Links was Deprecated.
+  // await DynamicLinks().initDynamicLink();
+
   Bloc.observer = AppBlocObserver();
 
   await SystemChrome.setPreferredOrientations([
