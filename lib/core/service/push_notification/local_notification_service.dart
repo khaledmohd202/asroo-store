@@ -1,5 +1,9 @@
 import 'dart:async';
 
+import 'package:asroo_store/core/di/injection_container.dart';
+import 'package:asroo_store/core/extensions/context_extension.dart';
+import 'package:asroo_store/core/routes/app_routes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class LocalNotificationService {
@@ -19,12 +23,13 @@ class LocalNotificationService {
     );
   }
 
-  static StreamController<NotificationResponse> streamController =
-      StreamController();
-
   static void onTap(NotificationResponse notificationResponse) {
     // Navigate to the appropriate screen based on the notification tapped.
-    streamController.add(notificationResponse);
+    if (int.parse(notificationResponse.payload.toString()) == -1) return;
+    sl<GlobalKey<NavigatorState>>().currentState!.context.pushNamed(
+      AppRoutes.productDetails,
+      arguments: int.parse(notificationResponse.payload.toString()),
+    );
   }
 
   static Future<void> showSimpleNotification({
