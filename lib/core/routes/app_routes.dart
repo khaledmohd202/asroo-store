@@ -13,7 +13,6 @@ import 'package:asroo_store/features/customer/main/presentation/screen/main_scre
 import 'package:asroo_store/features/customer/product_details/presentation/screens/product_details_screen.dart';
 import 'package:asroo_store/features/customer/products_view_all/presentation/screen/products_view_all.dart';
 import 'package:asroo_store/features/customer/search/presentation/screen/search_screen.dart';
-import 'package:asroo_store/test_one_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -27,7 +26,6 @@ class AppRoutes {
   static const category = 'category';
   static const productsViewAll = 'productsViewAll';
   static const searchScreen = 'searchScreen';
-  static const testOne = 'testOne';
 
   static Route<void> onGenerateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -75,10 +73,6 @@ class AppRoutes {
       case searchScreen:
         return BaseRoutes(
           page: const SearchScreen(),
-        );
-      case testOne:
-        return BaseRoutes(
-          page: const TestOneScreen(),
         );
       default:
         return BaseRoutes(page: const PageUnderBuildScreen());

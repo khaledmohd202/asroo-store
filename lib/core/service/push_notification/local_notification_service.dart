@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class LocalNotificationService {
@@ -17,8 +19,12 @@ class LocalNotificationService {
     );
   }
 
+  static StreamController<NotificationResponse> streamController =
+      StreamController();
+
   static void onTap(NotificationResponse notificationResponse) {
-    // Navigate to the appropriate screen based on the notification tapped
+    // Navigate to the appropriate screen based on the notification tapped.
+    streamController.add(notificationResponse);
   }
 
   static Future<void> showSimpleNotification() async {
@@ -41,7 +47,7 @@ class LocalNotificationService {
       'title',
       'body',
       notificationDetails,
-      // payload: 'payload',
+      payload: 'Khaled Mohammad',
     );
   }
 }
