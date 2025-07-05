@@ -212,7 +212,7 @@ class FirebaseCloudMessaging {
     };
     // If you want to send productId, uncomment the line below.
     // and make sure to pass productId when calling this method.
-    if (productId != null) data['productId'] = productId;
+    if (productId != null) data['productId'] = productId.toString();
 
     return {
       'message': {
