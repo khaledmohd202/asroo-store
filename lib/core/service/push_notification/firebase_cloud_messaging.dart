@@ -1,9 +1,8 @@
-//
-// ignore_for_file: avoid_catches_without_on_clauses
 import 'package:asroo_store/core/app/env.variables.dart';
 import 'package:asroo_store/core/common/toast/show_toast.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/languages/lang_keys.dart';
+import 'package:asroo_store/core/service/push_notification/firebase_messaging_navigator.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +24,23 @@ class FirebaseCloudMessaging {
 
   // initialize notifications for this app or device
   Future<void> initNotification() async {
+    // Request permission for notifications.
     await _requestPermissionNotification();
+
+    // Foreground message handler.
+    FirebaseMessaging.onMessage.listen(
+      FirebaseMessagingNavigator.forGroundHandler,
+    );
+
+    // Terminated message handler.
+    await FirebaseMessaging.instance.getInitialMessage().then(
+      FirebaseMessagingNavigator.terminatedHandler
+    );
+
+    // Background message handler.
+    FirebaseMessaging.onMessageOpenedApp.listen(
+      FirebaseMessagingNavigator.backGroundHandler,
+    );
 
     // get device token
     final deviceToken = await _firebaseMessaging.getToken();
@@ -178,13 +193,13 @@ class FirebaseCloudMessaging {
       debugPrint(
         '=============================================================',
       );
-    } catch (e) {
+    } on Exception catch (e) {
       // Handle any errors that occur during the request
       debugPrint('Error sending notification: $e');
     }
   }
 
-  // Send notification to a topi.
+  // Send notification to a topic.
   Map<String, dynamic> topicNotificationBody({
     required String title,
     required String body,
@@ -197,7 +212,7 @@ class FirebaseCloudMessaging {
     };
     // If you want to send productId, uncomment the line below.
     // and make sure to pass productId when calling this method.
-    // if (productId != null) data['productId'] = productId;
+    if (productId != null) data['productId'] = productId;
 
     return {
       'message': {
@@ -255,7 +270,7 @@ class FirebaseCloudMessaging {
       debugPrint(
         '============================================================',
       );
-    } catch (e) {
+    } on Exception catch (e) {
       debugPrint('Error sending topic notification: $e');
     }
   }

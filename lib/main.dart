@@ -29,18 +29,20 @@ void main() async {
               '171888875723', // messagingSenderId ==> project Number
           projectId: 'asroostore-81f75',
         ),
-      )
-      : Firebase.initializeApp();
+      ).whenComplete(() {
+        FirebaseCloudMessaging().initNotification();
+        LocalNotificationService.initialize();
+      })
+      : Firebase.initializeApp().whenComplete(() {
+        FirebaseCloudMessaging().initNotification();
+        LocalNotificationService.initialize();
+      });
 
   await SharedPref().instantiatePreferences();
 
   await setupInjector();
 
-  await FirebaseCloudMessaging().initNotification();
-
   await HiveDatabase().setup();
-
-  await LocalNotificationService.initialize();
 
   // The Firebase Dynamic Links was Deprecated.
   // await DynamicLinks().initDynamicLink();
