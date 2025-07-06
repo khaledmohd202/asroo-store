@@ -1,6 +1,6 @@
 import 'package:asroo_store/core/enum/nav_bar_enum.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
-import 'package:asroo_store/features/customer/categories/presentation/screen/categories_screen.dart';
+import 'package:asroo_store/features/customer/notifications/presentation/screen/notifications_screen.dart';
 import 'package:asroo_store/features/customer/favorites/presentation/screen/favorites_screen.dart';
 import 'package:asroo_store/features/customer/home/presentation/screen/home_screen.dart';
 import 'package:asroo_store/features/customer/main/presentation/cubit/main/main_cubit.dart';
@@ -31,8 +31,8 @@ class MainScreen extends StatelessWidget {
               child: BlocBuilder<MainCubit, MainState>(
                 builder: (context, state) {
                   final cubit = context.read<MainCubit>();
-                  if (cubit.navBarEnum == NavBarEnum.categories) {
-                    return const CategoriesScreen();
+                  if (cubit.navBarEnum == NavBarEnum.notifications) {
+                    return const NotificationsScreen();
                   } else if (cubit.navBarEnum == NavBarEnum.favorites) {
                     return const FavoritesScreen();
                   } else if (cubit.navBarEnum == NavBarEnum.profile) {
