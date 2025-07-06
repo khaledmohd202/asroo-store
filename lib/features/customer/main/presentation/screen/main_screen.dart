@@ -38,7 +38,7 @@ class MainScreen extends StatelessWidget {
                   } else if (cubit.navBarEnum == NavBarEnum.profile) {
                     return const ProfileScreen();
                   }
-                    return const HomeScreen();
+                  return const HomeScreen();
                 },
               ),
             ),

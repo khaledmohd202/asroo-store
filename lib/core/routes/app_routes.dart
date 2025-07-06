@@ -66,11 +66,11 @@ class AppRoutes {
             categoryInfo: args! as ({String categoryName, int categoryId}),
           ),
         );
-        case productsViewAll:
+      case productsViewAll:
         return BaseRoutes(
           page: const ProductsViewAll(),
         );
-        case searchScreen:
+      case searchScreen:
         return BaseRoutes(
           page: const SearchScreen(),
         );

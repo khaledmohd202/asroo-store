@@ -8,6 +8,7 @@ import 'package:asroo_store/core/app/env.variables.dart';
 import 'package:asroo_store/core/di/injection_container.dart';
 import 'package:asroo_store/core/service/hive/hive_database.dart';
 import 'package:asroo_store/core/service/push_notification/firebase_cloud_messaging.dart';
+import 'package:asroo_store/core/service/push_notification/local_notification_service.dart';
 import 'package:asroo_store/core/service/shared_pref/shared_pref.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -28,14 +29,18 @@ void main() async {
               '171888875723', // messagingSenderId ==> project Number
           projectId: 'asroostore-81f75',
         ),
-      )
-      : Firebase.initializeApp();
+      ).whenComplete(() {
+        FirebaseCloudMessaging().initNotification();
+        LocalNotificationService.initialize();
+      })
+      : Firebase.initializeApp().whenComplete(() {
+        FirebaseCloudMessaging().initNotification();
+        LocalNotificationService.initialize();
+      });
 
   await SharedPref().instantiatePreferences();
 
   await setupInjector();
-
-  await FirebaseCloudMessaging().initNotification();
 
   await HiveDatabase().setup();
 
