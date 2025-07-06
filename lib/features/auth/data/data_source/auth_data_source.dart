@@ -1,10 +1,12 @@
 import 'package:asroo_store/core/service/graphql/api_service.dart';
 import 'package:asroo_store/core/service/graphql/graphql_queries/auth/auth_queries.dart';
+import 'package:asroo_store/core/utils/app_strings.dart';
 import 'package:asroo_store/features/auth/data/models/login_request_body.dart';
 import 'package:asroo_store/features/auth/data/models/login_response.dart';
 import 'package:asroo_store/features/auth/data/models/sign_up_request_body.dart';
 import 'package:asroo_store/features/auth/data/models/sign_up_response.dart';
 import 'package:asroo_store/features/auth/data/models/user_role_response.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
@@ -38,5 +40,13 @@ class AuthDataSource {
       AuthQueries().signUpMapQuery(body: body),
     );
     return response;
+  }
+
+  // Add User ID in Firebase to used with Notification DataBase.
+  Future<void> addUserIdToFirebase({required String userId}) async {
+    await FirebaseFirestore.instance
+        .collection(usersCollection)
+        .doc(userId)
+        .set({});
   }
 }

@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 extension StringFormat on String {
   // to fix the image prob and to make all images appear in screen.
   String imageProductFormat() {
@@ -14,15 +16,11 @@ extension StringFormat on String {
     final shortString = words.sublist(0, words.length - 2).join(' ');
     return shortString;
 
-  // we remove this line because
-  // final shortString = split(' ').sublist(0, split(' ').length - 2).join(' ');
-  // If your string has fewer than 2 words, split(' ').length - 2
-  //becomes negative, causing sublist to throw a RangeError.
   }
 
-  // String convertDataFormate() {
-  //   final now = DateTime.now();
+  String convertDataFormate() {
+    final now = DateTime.now();
 
-  //   return DateFormat('d MMM, y - h:mm a').format(now);
-  // }
+    return DateFormat('d MMM, y - h:mm a').format(now);
+  }
 }

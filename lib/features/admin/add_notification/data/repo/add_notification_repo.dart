@@ -25,4 +25,17 @@ class AddNotificationRepo {
       return ApiResult.failure('$errorMessage: $e');
     }
   }
+
+  // Add Notification to all users in Cloud Firestore.
+  Future<void> addNotificationToAllUsersFirebase({
+    required String title,
+    required String body,
+    required int productId,
+  }) async {
+    await _dataSource.addNotificationToAllUsersFirebase(
+      title: title,
+      body: body,
+      productId: productId,
+    );
+  }
 }

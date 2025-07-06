@@ -41,4 +41,9 @@ class AuthRepo {
       return const ApiResult.failure('Please, try again we have error.');
     }
   }
+
+  // Add User ID in Firebase to used with Notification DataBase.
+  Future<void> addUserIdToFirebase({required String userId}) async {
+    await _dataSource.addUserIdToFirebase(userId: userId);
+  }
 }

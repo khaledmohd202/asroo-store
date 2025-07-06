@@ -70,6 +70,19 @@ class MainCustomerAppBar extends StatelessWidget
                 ),
               ),
             );
+          } else if (cubit.navBarEnum == NavBarEnum.notifications) {
+            return CustomFadeInRight(
+              duration: 500,
+              child: TextApp(
+                text: 'Notifications',
+                theme: context.textStyle.copyWith(
+                  fontSize: 20.sp,
+                  fontWeight: FontWeightHelper.bold,
+                  color: context.color.textColor,
+                  fontFamily: FontFamilyHelper.poppinsEnglish,
+                ),
+              ),
+            );
           }
           return const SizedBox.shrink();
         },
