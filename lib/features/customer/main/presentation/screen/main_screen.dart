@@ -1,11 +1,11 @@
 import 'package:asroo_store/core/enum/nav_bar_enum.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
-import 'package:asroo_store/features/customer/notifications/presentation/screen/notifications_screen.dart';
 import 'package:asroo_store/features/customer/favorites/presentation/screen/favorites_screen.dart';
 import 'package:asroo_store/features/customer/home/presentation/screen/home_screen.dart';
 import 'package:asroo_store/features/customer/main/presentation/cubit/main/main_cubit.dart';
 import 'package:asroo_store/features/customer/main/presentation/refactors/main_customer_app_bar.dart';
 import 'package:asroo_store/features/customer/main/presentation/refactors/main_customer_bottom_nav_bar.dart';
+import 'package:asroo_store/features/customer/notifications/presentation/screen/notifications_screen.dart';
 import 'package:asroo_store/features/customer/profile/presentation/screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
