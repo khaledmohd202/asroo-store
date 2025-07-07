@@ -12,8 +12,16 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class NotificationsBody extends StatelessWidget {
+class NotificationsBody extends StatefulWidget {
   const NotificationsBody({super.key});
+
+  @override
+  State<NotificationsBody> createState() => _NotificationsBodyState();
+}
+
+class _NotificationsBodyState extends State<NotificationsBody> {
+  List<NotificationsModel> _notifications = [];
+  bool _initialized = false;
 
   @override
   Widget build(BuildContext context) {
@@ -50,36 +58,46 @@ class NotificationsBody extends StatelessWidget {
             );
           }
 
+          // Initialize local list only once per stream update
+          if (!_initialized || _notifications.length != snapshot.data!.length) {
+            _notifications = List.from(snapshot.data!);
+            _initialized = true;
+          }
+
           return ListView.separated(
-            itemCount: snapshot.data!.length ,
+            itemCount: _notifications.length,
             itemBuilder: (context, index) {
+              final notification = _notifications[index];
               return NotificationItem(
-                body: snapshot.data![index].body,
-                title: snapshot.data![index].title,
-                isRead: snapshot.data![index].isRead,
-                createdAt: snapshot.data![index].createdAt,
+                body: notification.body,
+                title: notification.title,
+                isRead: notification.isRead,
+                createdAt: notification.createdAt,
                 onTapSelected: () async {
                   await FirebaseFirestore.instance
                       .collection(usersCollection)
                       .doc(SharedPref().getInt(PrefKeys.userId).toString())
                       .collection(notificationCollection)
-                      .doc(snapshot.data![index].notificationId)
+                      .doc(notification.notificationId)
                       .update({'is_read': true});
 
-                  if (snapshot.data![index].productId != -1) {
+                  if (notification.productId != -1) {
                     if (!context.mounted) return;
                     await context.pushNamed(
                       AppRoutes.productDetails,
-                      arguments: snapshot.data![index].productId,
+                      arguments: notification.productId,
                     );
                   }
                 },
                 onTapRemoved: () async {
+                  setState(() {
+                    _notifications.removeAt(index);
+                  });
                   await FirebaseFirestore.instance
                       .collection(usersCollection)
                       .doc(SharedPref().getInt(PrefKeys.userId).toString())
                       .collection(notificationCollection)
-                      .doc(snapshot.data![index].notificationId)
+                      .doc(notification.notificationId)
                       .delete();
                 },
               );
