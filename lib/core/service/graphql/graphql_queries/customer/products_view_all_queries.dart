@@ -12,7 +12,7 @@ class ProductsViewAllQueries {
     return {
       'query': '''
           {
-          products(limit: 2, offset: $offset) {
+          products(limit: 6, offset: $offset) {
             id
             title
             price
