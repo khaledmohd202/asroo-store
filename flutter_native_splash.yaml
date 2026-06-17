@@ -1,0 +1,12 @@
+flutter_native_splash:
+  #ios and android 11
+  color: "#6EC1E5"
+  image: assets/images/core/splash_ios_android_11.png
+  # android_gravity: center
+
+  android_12:
+    image: assets/images/core/splash_android_12.png
+    color: "#6EC1E5"
+  # Adjust scaling
+  android_gravity: fill # Options: center, top, bottom, fill, etc.
+  ios_content_mode: scaleAspectFill # Options: scaleToFill, scaleAspectFit, scaleAspectFill, etc.
